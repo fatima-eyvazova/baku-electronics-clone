@@ -105,10 +105,10 @@ const Header = ({ setShow, size }) => {
               </Link>
             </li>
             <li>
-              <Link href="/cart" onClick={() => setShow(false)}>
+              <Link href="/cart">
                 <button>
                   <AiOutlineShoppingCart />
-                  <span>{size}</span>
+                  <span></span>
                 </button>
               </Link>
             </li>

@@ -11,14 +11,21 @@ import { AiOutlinePieChart } from "react-icons/ai"
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
-import { useDispatch } from "react-redux";
-import { addToFavoritesAction } from "../../../../../store/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavoritesAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
+  const favs = useSelector(state => state.favorites.favoriteProducts);
+  const [heartColor, setHeartColor] = useState('black');
   const dispatch = useDispatch();
   const router = useRouter();
   const { query } = router;
+
+  useEffect(() => {
+    const findedItem = favs?.find(item => item.id === product?.id && item.name === product?.name);
+    setHeartColor(findedItem ? 'red' : 'black');
+  }, [favs, product]);
 
   useEffect(() => {
     const selected = dataJson?.products?.[query.catalogProducts]?.find(
@@ -28,9 +35,22 @@ const SingleProductPage = () => {
   }, [query.catalogProducts, query.singleProduct]);
   const starList = [1, 2, 3, 4, 5];
 
-  const handleAddToFavs = (product) => {
-    dispatch(addToFavoritesAction(product));
+  const handleClickOnHeart = (product) => {
+    if (product) {
+      const findedItem = favs?.find(item => item.id === product?.id && item.name === product?.name);
+      if (findedItem) {
+        setHeartColor('black');
+        dispatch(removeFromFavoritesAction(product));
+      } else {
+        setHeartColor('red');
+        dispatch(addToFavoritesAction(product));
+      }
+    }
   }
+
+  useEffect(() => {
+    console.log('favs', favs, product, query);
+  }, [favs, product])
 
   // burda biz uje filter elemishik bize lazim olani, prosto istifade edeceksen
 
@@ -45,11 +65,11 @@ const SingleProductPage = () => {
           <div className="catagorys">
             <span className="catagory">Bütün kateqoriyalar</span>
             <span className="icon"><HiOutlineArrowNarrowRight /></span>
-            <span className="catagory">{product?.characteristics?.technique}</span>
+            <span className="catagory">{product?.category}</span>
             <span className="icon"><HiOutlineArrowNarrowRight /></span>
-            <span className="catagory">{product?.characteristics?.notebook}</span>
+            <span className="catagory">{product?.subCategory}</span>
             <span className="icon"><HiOutlineArrowNarrowRight /></span>
-            <span className="marka">{product?.marka}</span>
+            <span className="marka">{product?.title}</span>
           </div>
           {/* section one */}
           <section className="top">
@@ -116,9 +136,9 @@ const SingleProductPage = () => {
                   <div className="price-right">
                     <span className="pricee">{product?.price}</span>
                     <button className="get" >Almaq</button>
-                    <div className="heart">
-                      <button >
-                        <span className="heart-icon">
+                    <div className="heart" onClick={() => handleClickOnHeart(product)}>
+                      <button>
+                        <span className="heart-icon" style={{ color: heartColor }}>
                           <BiHeart />
                         </span>
                       </button>
@@ -200,7 +220,7 @@ const SingleProductPage = () => {
                   <span>Brend: </span>
                   <span>{product?.characteristics?.brand}</span>
                 </li>
-                {product?.subCategory === 'smarthpones' && (
+                {product?.subCategory === 'smartphones, mobile phones' && (
                   <>
                     <li>
                       <span>Məhsul tipi: </span>

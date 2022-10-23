@@ -5,24 +5,24 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 
 const ProductCard = ({ item, handleClick }) => {
   const starList = [1, 2, 3, 4, 5];
-  const { title, discountAmount, price, image, subCategory, path } = item;
+
   return (
     <li>
       <div className="product-cart">
         <Link
-          href={`/catalog/${category}/${subCategory}/${path}`}
+          href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
         >
           <a>
             <Image
-              src={image}
+              src={item?.image}
               width={260}
               height={220}
               alt="notebook"
             />
-            {product?.hasDiscount && (
+            {item?.hasDiscount && (
               <div className="product-discount">
                 <div className="discount-price">
-                  <span className="icon">{discountAmount}</span>
+                  <span className="icon">{item?.discountAmount}</span>
                   <span className="sale" onClick={() => handleClick()}>Nağd alışa ENDİRİM</span>
                 </div>
               </div>
@@ -39,25 +39,25 @@ const ProductCard = ({ item, handleClick }) => {
           </div>
           <div className="comment">
             <Link
-              href={`/catalog/${category}/${subCategory}/${path}`}
+              href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
             >
-              {`${product?.reviewCount} rəy`}
+              {`${item?.reviewCount} rəy`}
             </Link>
           </div>
         </div>
 
         <Link
-          href={`/catalog/${category}/${subCategory}/${path}`}
+          href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
         >
-          {title}
+          {item?.title}
         </Link>
         <div className="product-value">
-          <div className="product-price">{price} </div>
+          <div className="product-price">{item?.price} </div>
         </div>
       </div>
       <div className="mobile">
-        <Link href={`/catalog/${category}/${subCategory}`}>
-          {subCategory}
+        <Link href={`/catalog/${item?.category}/${item?.subCategory}`}>
+          {item?.subCategory}
         </Link>
         <span className="icon-row">
           <HiOutlineArrowRight />

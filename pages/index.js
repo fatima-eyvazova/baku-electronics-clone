@@ -535,7 +535,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.smartphones?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
@@ -551,7 +551,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.watches?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
@@ -567,7 +567,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.notebooks?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
@@ -582,7 +582,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.refrigerators?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
@@ -597,7 +597,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.tv?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
@@ -612,7 +612,7 @@ export default function Home() {
             <div className="list-holder">
               <ul>
                 {data?.products?.washingMachine?.slice(0, 4).map((product) => (
-                  <ProductCard key={product?.id} product={product} />
+                  <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
             </div>
