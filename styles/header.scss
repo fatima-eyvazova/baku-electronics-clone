@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(236, 230, 230);
+
+  .header-left {
+    padding: 0 25px 0 5px;
+
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .holder {
+      display: flex;
+      padding: 0 5px;
+
+      .icon {
+        input {
+          height: 50px;
+          position: relative;
+          z-index: 2;
+          border-radius: 30px;
+          width: 100%;
+          line-height: 48px;
+          padding: 0 40px 0 25px;
+          outline: 0;
+          border: none;
+          font-size: 14px;
+          border: 1px solid rgb(212, 209, 209);
+          width: 261px;
+        }
+
+        svg {
+          position: absolute;
+          right: 51%;
+          top: 50px;
+          font-size: 24px;
+          z-index: 10;
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 50px;
+
+        .compaigns {
+          a {
+            color: red;
+          }
+        }
+
+        .other {
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 3px;
+
+          button {
+            color: #020303;
+            font-size: 14px;
+            line-height: 1.29;
+            border-bottom: 1px solid #dedede;
+          }
+
+
+        }
+
+        li {
+          padding: 0 10px;
+
+          a {
+            color: #020303;
+            font-size: 14px;
+            line-height: 1.29;
+            border-bottom: 1px solid #dedede;
+          }
+
+
+
+        }
+      }
+
+      .call {
+        justify-content: center;
+        color: #020303;
+        transition: color .3s ease;
+        font-size: 36px;
+        align-items: center;
+        padding-right: 10px;
+        font-family: 'Oswald', sans-serif;
+
+        a {
+          color: #020303;
+          font-weight: 700;
+
+        }
+
+        i {
+          cursor: pointer;
+
+        }
+      }
+    }
+
+    .users {
+      ul {
+        display: flex;
+
+
+        li {
+          padding: 0 5px;
+
+          button,
+          a {
+            justify-content: center;
+            color: #020303;
+            border: 1px solid #e1e2e7;
+            border-radius: 50%;
+            height: 48px;
+            width: 48px;
+            font-size: 24px;
+            line-height: 1;
+            transition: border-color .3s ease;
+            display: flex;
+            align-items: center;
+
+
+            svg {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

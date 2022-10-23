@@ -1,0 +1,454 @@
+@mixin list-style {
+    padding-bottom: 15px;
+    width: 239px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 15px;
+
+    .dropdawn {
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin hover-dropdawn {
+
+    .dropdawn {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 361px;
+        background-color: #efe8de;
+        padding: 10px 0 20px 50px;
+        height: 570px;
+
+        li {
+
+            padding-bottom: 15px;
+
+            a {
+                transition: color .3s ease;
+                font-size: 15px;
+                font-weight: 300;
+                display: block;
+                padding-right: 40px;
+            }
+
+            span {
+                padding-right: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@mixin carts {
+    .container {
+        margin-left: 10px;
+
+        .title {
+            padding: 70px 0px 50px 90px;
+
+            h2 {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 700;
+                margin: 0 0 15px;
+                color: #020303;
+                font-size: 34px;
+
+            }
+        }
+
+        .list-holder {
+            padding-bottom: 70px;
+
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 30px;
+
+                li {
+
+                    .product-cart {
+                        background-color: #fff;
+                        border-radius: 4px;
+                        box-shadow: 0 3px 0 0 rgb(163 163 163 / 5%);
+                        margin: 0 0 18px;
+                        width: 300px;
+                        height: 430px;
+                        padding: 20px 20px 11px;
+
+                        a {
+                            position: relative;
+
+                            .product-discount {
+                                width: 70px;
+                                height: 70px;
+                                display: flex;
+                                font-size: 12px;
+                                text-align: center;
+                                color: #fff;
+                                background-color: #ea2427;
+                                border-radius: 50%;
+                                margin-bottom: 10px;
+                                position: absolute;
+                                bottom: 1px;
+
+                                .discount-price {
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    text-align: center;
+
+                                    .icon {
+                                        font-size: 14px;
+                                        font-weight: 700;
+                                        font-family: Arial, Helvetica, sans-serif;
+                                        color: #fff;
+                                    }
+
+                                    .sale {
+                                        text-align: center;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+
+
+                        }
+
+                        .product-rate {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            margin-bottom: 8px;
+
+                            .icons {
+                                font-size: 19px;
+                                margin-right: 15px;
+                                color: rgb(243, 202, 21);
+                            }
+
+                            .comment {
+                                a {
+                                    font-size: 17px;
+                                    color: #0076ff;
+                                }
+
+                            }
+                        }
+
+                        a {
+                            &:hover {
+                                transition: color .3s ease;
+                                color: #0076ff;
+                            }
+
+                            color: #020303;
+                            margin-bottom: 10px;
+                            font-family: 'Segoe UI',
+                            Tahoma,
+                            Geneva,
+                            Verdana,
+                            sans-serif;
+                        }
+
+                        .product-value {
+                            margin-top: 10px;
+
+                            .product-price {
+                                line-height: 1;
+                                font-weight: 700;
+                                font-size: 24px;
+                                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            }
+                        }
+
+
+                    }
+
+                    .mobile {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 10px;
+
+                        a {
+                            color: #0076ff;
+                        }
+
+                        .icon-row {
+                            padding-top: 8px;
+                            color: #0076ff;
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// -----------------aside-----------------
+
+.dropdawn {
+    position: absolute;
+    left: 106%;
+    width: 300px;
+    height: 667px;
+    display: none;
+}
+
+.span {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+
+// -----------------aside-----------------
+.aside {
+    padding: 130px 0 20px 80px;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 350px;
+
+
+    .content-childe {
+        padding-top: 20px;
+
+        .childe-one {
+            &:hover {
+
+                .dropdawn {
+                    top: -20px;
+                    position: absolute;
+                    left: 106%;
+                    width: 300px;
+                    height: 667px;
+                    display: none;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+
+        }
+
+        .childe-two {
+
+
+            &:hover {
+
+                .dropdawn {
+                    top: -75px;
+                }
+
+                @include hover-dropdawn;
+
+            }
+
+            @include list-style;
+        }
+
+        .childe-three {
+
+            &:hover {
+
+                .dropdawn {
+                    top: -111px;
+                }
+
+                @include hover-dropdawn;
+
+            }
+
+            @include list-style;
+
+        }
+
+        .childe-four {
+            &:hover {
+
+                .dropdawn {
+                    top: -145px;
+                }
+
+                @include hover-dropdawn;
+
+            }
+
+            @include list-style;
+        }
+
+        .childe-five {
+            &:hover {
+
+                .dropdawn {
+                    top: -200px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+
+        }
+
+        .childe-six {
+
+
+            &:hover {
+                .dropdawn {
+                    top: -235px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+
+        }
+
+        .childe-seven {
+            &:hover {
+                .dropdawn {
+                    top: -270px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-eight {
+            &:hover {
+                .dropdawn {
+                    top: -305px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-nine {
+            &:hover {
+                .dropdawn {
+                    top: -341px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-ten {
+            &:hover {
+                .dropdawn {
+                    top: -376px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-elevn {
+            &:hover {
+                .dropdawn {
+                    top: -411px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-twelve {
+            &:hover {
+                .dropdawn {
+                    top: -445px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-thirteen {
+            &:hover {
+                .dropdawn {
+                    top: -481px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+        .childe-fourteen {
+            &:hover {
+                .dropdawn {
+                    top: -517px;
+                }
+
+                @include hover-dropdawn;
+            }
+
+            @include list-style;
+        }
+
+    }
+
+}
+
+// -------------section smartphones-----------
+.smartphones {
+    background-color: #eaf2fb;
+    @include carts;
+}
+
+.watches {
+    background-color: #F1F1F1;
+    @include carts;
+}
+
+.notebook {
+    background-color: #EAF2FB;
+    @include carts;
+}
+
+.refrigerators {
+    background-color: #F1F1F1;
+    @include carts;
+
+}
+
+.tv {
+    background-color: #EAF2FB;
+    @include carts;
+}
+
+.washing-machines {
+    background-color: #F1F1F1;
+    @include carts;
+
+}
