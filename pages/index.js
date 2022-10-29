@@ -69,7 +69,7 @@ export default function Home() {
             <div className="aside">
               <ul className="content-childe">
                 <li className="childe-one">
-                  <Link href="/singleProduct">
+                  <Link href="/catalog/telefonlar-qadcetler">
                     Telefonlar, planşetlər və qadcetlər
                   </Link>
 
@@ -79,7 +79,7 @@ export default function Home() {
                   <div></div>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Smartfonlar, mobil telefonlar</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/smartphones">Smartfonlar, mobil telefonlar</Link>
                     </li>
                     <li>
                       <Link href="/">Planşetlər</Link>
@@ -711,7 +711,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.smartphones?.items?.slice(0, 4).map((product) => (
+                {data?.products?.["telefonlar-qadcetler"]?.smartphones?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -727,7 +727,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.watches?.slice(0, 4).map((product) => (
+                {data?.products?.["telefonlar-qadcetler"]?.watches?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -743,7 +743,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.notebooks?.slice(0, 4).map((product) => (
+                {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -758,7 +758,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.refrigerators?.slice(0, 4).map((product) => (
+                {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -773,7 +773,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.tv?.slice(0, 4).map((product) => (
+                {data?.products?.["tv-audio-video"]?.tv?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -788,7 +788,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.washingMachine?.slice(0, 4).map((product) => (
+                {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>

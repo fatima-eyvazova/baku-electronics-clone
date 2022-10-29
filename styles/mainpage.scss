@@ -1,7 +1,6 @@
 @mixin list-style {
     padding-bottom: 15px;
     width: 239px;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +27,7 @@
         background-color: #efe8de;
         padding: 10px 0 20px 50px;
         height: 570px;
+        position: absolute;
 
         li {
 
@@ -199,7 +199,7 @@
 
 .dropdawn {
     position: absolute;
-    left: 106%;
+    left: 239px;
     width: 300px;
     height: 667px;
     display: none;
@@ -227,19 +227,14 @@
 
         .content-childe {
             padding-top: 20px;
+            position: relative;
 
             .childe-one {
 
 
                 &:hover {
-
                     .dropdawn {
                         top: -20px;
-                        position: absolute;
-                        left: 106%;
-                        width: 300px;
-                        height: 516px;
-                        display: none;
                     }
 
                     @include hover-dropdawn;

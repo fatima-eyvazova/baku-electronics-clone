@@ -10,6 +10,8 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const CatalogProductPage = () => {
   const [products, setProducts] = useState([]);
+  const [filteredByBrand, setFilteredByBrand] = useState([]);
+  const [brand, setBrand] = useState('');
   const router = useRouter();
   const { query } = router;
   const [toggle, setToggle] = useState(false)
@@ -24,12 +26,24 @@ const CatalogProductPage = () => {
     setPriceMax(values[1]);
   }
   useEffect(() => {
-    const selected = dataJson?.products?.[query.catalogProducts];
+    const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts];
     setProducts(selected);
   }, [query.catalogProducts]);
   const starList = [1, 2, 3, 4, 5];
 
-  console.log({ products });
+  const handleCheckbox = (e) => {
+    if (brand === e.target.name) {
+      setBrand('');
+    } else {
+      setBrand(e.target.name);
+    }
+  }
+
+  useEffect(() => {
+    setFilteredByBrand(products?.items?.filter(item => item?.characteristics?.brand === brand));
+  }, [brand]);
+
+  const list = !!brand ? filteredByBrand : products?.items;
 
   return (
     <>
@@ -40,24 +54,24 @@ const CatalogProductPage = () => {
               <div className="sidebar-title"> Brend</div>
               <div className="sidebar-bottom">
                 <div className="form-row">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                  <label for="vehicle1">Samsung</label>
+                  <input type="checkbox" id="samsung" name="Samsung" checked={brand === 'Samsung'} onChange={(e) => handleCheckbox(e)} />
+                  <label for="samsung">Samsung</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                  <label for="vehicle1">XIAOMI</label>
+                  <input type="checkbox" id="XIAOMI" name="XIAOMI" checked={brand === 'XIAOMI'} onChange={(e) => handleCheckbox(e)} />
+                  <label for="XIAOMI">XIAOMI</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                  <label for="vehicle1">INFINIX</label>
+                  <input type="checkbox" id="INFINIX" name="INFINIX" checked={brand === 'INFINIX'} onChange={(e) => handleCheckbox(e)} />
+                  <label for="INFINIX">INFINIX</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                  <label for="vehicle1">Apple</label>
+                  <input type="checkbox" id="Apple" name="Apple" checked={brand === 'Apple'} onChange={(e) => handleCheckbox(e)} />
+                  <label for="Apple">Apple</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                  <label for="vehicle1">HUAWEI</label>
+                  <input type="checkbox" id="HUAWEI" name="HUAWEI" checked={brand === 'HUAWEI'} onChange={(e) => handleCheckbox(e)} />
+                  <label for="HUAWEI">HUAWEI</label>
                 </div>
 
               </div>
@@ -97,7 +111,7 @@ const CatalogProductPage = () => {
 
 
           <ul className="catalog">
-            {products?.items?.map(item => (
+            {list?.map(item => (
               <li>
                 <div className="products">
                   <Link
