@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AiOutlineStar } from "react-icons/ai";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
-const ProductCard = ({ item, handleClick }) => {
+const ProductCard = ({ item, handleClick, isViewed }) => {
   const starList = [1, 2, 3, 4, 5];
 
   return (
@@ -55,14 +55,16 @@ const ProductCard = ({ item, handleClick }) => {
           <div className="product-price">{item?.price} </div>
         </div>
       </div>
-      <div className="mobile">
-        <Link href={`/catalog/${item?.category}/${item?.subCategory}`}>
-          {item?.subCategory}
-        </Link>
-        <span className="icon-row">
-          <HiOutlineArrowRight />
-        </span>
-      </div>
+      {!isViewed && (
+        <div className="mobile">
+          <Link href={`/catalog/${item?.category}/${item?.subCategory}`}>
+            {item?.subCategory}
+          </Link>
+          <span className="icon-row">
+            <HiOutlineArrowRight />
+          </span>
+        </div>
+      )}
     </li>
   );
 };

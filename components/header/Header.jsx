@@ -55,8 +55,7 @@ const Header = ({ setShow, size }) => {
       <div className="header-left">
         <div className="logo">
           <Link href="/">
-            <Image src={logo} alt="logo" onClick={() => setShow(true)} />
-
+            <Image src={logo} alt="logo" />
           </Link>
         </div>
       </div>

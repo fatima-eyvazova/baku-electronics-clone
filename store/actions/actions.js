@@ -1,4 +1,4 @@
-import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "./actionTypes";
+import { ADD_TO_FAVORITES, ADD_TO_VIEWED, REMOVE_FROM_FAVORITES } from "./actionTypes";
 
 export const addToFavoritesAction = (product) => {
   return {
@@ -13,3 +13,10 @@ export const removeFromFavoritesAction = (product) => {
     data: product,
   };
 };
+
+export const addToViewedAction = (product) => {
+  return {
+    type: ADD_TO_VIEWED,
+    data: product,
+  }
+}

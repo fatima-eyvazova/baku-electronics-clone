@@ -181,6 +181,8 @@
                                 font-size: 24px;
 
                             }
+
+
                         }
 
                     }
@@ -225,6 +227,7 @@
                         font-size: 19px;
                         line-height: 1;
                         padding-bottom: 17px;
+                        text-align: center;
                     }
 
                     ul {
@@ -291,6 +294,7 @@
 
                 li {
                     display: flex;
+                    justify-content: flex-start;
                     padding: 14px 0;
                     border-bottom: 1px solid rgb(231, 231, 231);
 
@@ -300,6 +304,7 @@
                             font-size: 14px;
                             padding-right: 20px;
                             width: 250px;
+
                         }
 
                         &:nth-child(even) {

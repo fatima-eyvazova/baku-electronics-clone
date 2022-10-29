@@ -5,18 +5,18 @@ import dataJson from "../../../../../data/data.json";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { GiScales } from "react-icons/gi"
 import { BiHeart } from "react-icons/bi"
-import { AiOutlineStar } from "react-icons/ai"
+import { AiOutlineStar, AiOutlinePieChart } from "react-icons/ai"
 import { CgTimer } from "react-icons/cg"
-import { AiOutlinePieChart } from "react-icons/ai"
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavoritesAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
+import { addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
   const favs = useSelector(state => state.favorites.favoriteProducts);
+  const viewedProducts = useSelector(state => state.viewed.viewedProducts);
   const [heartColor, setHeartColor] = useState('black');
   const dispatch = useDispatch();
   const router = useRouter();
@@ -28,11 +28,20 @@ const SingleProductPage = () => {
   }, [favs, product]);
 
   useEffect(() => {
-    const selected = dataJson?.products?.[query.catalogProducts]?.find(
+    const selected = dataJson?.products?.[query.catalogProducts]?.items?.find(
       (item) => item?.path === query.singleProduct
     );
     setProduct(selected);
   }, [query.catalogProducts, query.singleProduct]);
+
+  useEffect(() => {
+    const viewedItem = viewedProducts?.find(item => item?.id === product?.id && item?.name === product?.name);
+    if (!viewedItem && product) {
+      dispatch(addToViewedAction(product));
+    }
+  }, [product, viewedProducts]);
+
+
   const starList = [1, 2, 3, 4, 5];
 
   const handleClickOnHeart = (product) => {
@@ -52,7 +61,6 @@ const SingleProductPage = () => {
     console.log('favs', favs, product, query);
   }, [favs, product])
 
-  // burda biz uje filter elemishik bize lazim olani, prosto istifade edeceksen
 
   return (
     <>
@@ -79,19 +87,19 @@ const SingleProductPage = () => {
                   <Image
                     src={product?.image}
                     alt={product?.title}
-                    width={90}
+                    width={109}
                     height={90}
                   />
                   <Image
                     src={product?.characteristics?.imageRefregeritor}
                     alt={product?.title}
-                    width={99}
+                    width={109}
                     height={97}
                   />
                   <Image
                     src={product?.characteristics?.share}
                     alt={product?.title}
-                    width={90}
+                    width={109}
                     height={90}
                   />
 
@@ -165,7 +173,7 @@ const SingleProductPage = () => {
 
                     <div className="add">
                       <span>Hissə-hissə ödə</span>
-                      <span>18 ay, ayda {product?.characteristics?.credit}</span>
+                      <span>12 ay, ayda {product?.characteristics?.credit}</span>
                     </div>
                   </button>
                 </div>
@@ -220,7 +228,7 @@ const SingleProductPage = () => {
                   <span>Brend: </span>
                   <span>{product?.characteristics?.brand}</span>
                 </li>
-                {product?.subCategory === 'smartphones, mobile phones' && (
+                {product?.subCategory === 'smartphones' && (
                   <>
                     <li>
                       <span>Məhsul tipi: </span>
@@ -239,7 +247,7 @@ const SingleProductPage = () => {
                       <span>{product?.characteristics?.simSize}</span>
                     </li>
                     <li>
-                      <span> Ekran icazəsi:: </span>
+                      <span> Ekran icazəsi: </span>
                       <span>{product?.characteristics?.screenWarning}</span>
                     </li>
 
@@ -362,27 +370,92 @@ const SingleProductPage = () => {
                   </>
                 )}
 
-                {product?.subCategory === 'refrigerators' && (
+                {product?.subCategory === 'watches' && (
                   <>
                     <li>
-                      <span>Soyuducu növü: </span>
-                      <span>{product?.characteristics?.refrigeratorType}</span>
+                      <span>Ekranın ölçüsü: </span>
+                      <span>{product?.characteristics?.screenSize}</span>
                     </li>
                     <li>
-                      <span>Enerji sərfiyyatı sinfi:</span>
-                      <span></span>
+                      <span>Ekran icazəsi:</span>
+                      <span>{product?.characteristics?.displayPermission}</span>
                     </li>
                     <li>
-                      <span>Kompressor tipi:</span>
-                      <span>{product?.characteristics?.compressorType}</span>
+                      <span>Matris tipi:</span>
+                      <span>{product?.characteristics?.matrixType}</span>
                     </li>
                     <li>
-                      <span>Kompressor sayı: </span>
-                      <span>{product?.characteristics?.compressorAmount}</span>
+                      <span>Prosessor tipi:</span>
+                      <span>{product?.characteristics?.processorType}</span>
+                    </li>
+                    <li>
+                      <span>Əməliyyat sistemi:</span>
+                      <span>{product?.characteristics?.operatingSystem}</span>
+                    </li>
+                    <li>
+                      <span>Akkumulyatorun həcmi:</span>
+                      <span>{product?.characteristics?.batteryCapacity}</span>
+                    </li>
+                    <li>
+                      <span> Simsiz şarj imkanı: </span>
+                      <span>{product?.characteristics?.wirelessCharging}</span>
+                    </li>
+
+                    <li>
+                      <span> Wi-Fi:</span>
+                      <span>{product?.characteristics?.wifi}</span>
+                    </li>
+
+                    <li>
+                      <span>Bluetooth: </span>
+                      <span>{product?.characteristics?.bluetooth}</span>
+                    </li>
+                    <li>
+                      <span>Sudan və tozdan qorunma:</span>
+                      <span>{product?.characteristics?.protection}</span>
+                    </li>
+                    <li>
+                      <span>Dəyişilən bilərzik:</span>
+                      <span>{product?.characteristics?.interchangeableBracelet}</span>
+                    </li>
+                    <li>
+                      <span>Bildirişlər:</span>
+                      <span>{product?.characteristics?.notices}</span>
+                    </li>
+                    <li>
+                      <span>Bilərzik materialı:</span>
+                      <span>{product?.characteristics?.braceletMaterial}</span>
+                    </li>
+                    <li>
+                      <span>Korpus Materialı:</span>
+                      <span>{product?.characteristics?.caseMaterial}</span>
+                    </li>
+                    <li>
+                      <span>Ölçülər: Hündürlüyü / Eni / Dərinliyi:</span>
+                      <span>{product?.characteristics?.dimensions}</span>
+                    </li>
+                    <li>
+                      <span>Çəki:</span>
+                      <span>{product?.characteristics?.weight}</span>
+                    </li>
+                    <li>
+                      <span>Korpusun rəngi:</span>
+                      <span>{product?.characteristics?.bodyColor}</span>
+                    </li>
+                    <li>
+                      <span>Bilərziyin rəngi:</span>
+                      <span>{product?.characteristics?.braceletColor}</span>
+                    </li>
+                    <li>
+                      <span>Qablaşdırmaya daxildir:</span>
+                      <span>{product?.characteristics?.packagingIncludes}</span>
+                    </li>
+                    <li>
+                      <span>Zәmanәt:</span>
+                      <span>{product?.characteristics?.garranty}</span>
                     </li>
                   </>
                 )}
-
 
                 {product?.subCategory === 'notebooks' && (
                   <>
@@ -485,6 +558,305 @@ const SingleProductPage = () => {
                     </li>
                   </>
                 )}
+
+                {product?.subCategory === 'refrigerators' && (
+                  <>
+                    <li>
+                      <span>Soyuducu növü: </span>
+                      <span>{product?.characteristics?.refrigeratorType}</span>
+                    </li>
+
+                    <li>
+                      <span>Enerji sərfiyyatı sinfi:</span>
+                      <span>{product?.characteristics?.energyConsumption}</span>
+                    </li>
+
+                    <li>
+                      <span>Kompressor tipi:</span>
+                      <span>{product?.characteristics?.compressorType}</span>
+                    </li>
+                    <li>
+                      <span>Kompressor sayı:</span>
+                      <span>{product?.characteristics?.numberCompressors}</span>
+                    </li>
+                    <li>
+                      <span>Soyuducu kameranın yararlı həcmi: </span>
+                      <span>{product?.characteristics?.refrigerantVolume}</span>
+                    </li>
+                    <li>
+                      <span>Dondurucu kameranın yararlı həcmi: </span>
+                      <span>{product?.characteristics?.freezerVolume}</span>
+                    </li>
+                    <li>
+                      <span>Toplam həcm:</span>
+                      <span>{product?.characteristics?.maxSpace}</span>
+                    </li>
+                    <li>
+                      <span>Soyuducu kameranın donunun açılması:</span>
+                      <span>{product?.characteristics?.refrigeratorCompartment}</span>
+                    </li>
+                    <li>
+                      <span>Dondurucu kameranın bölmələrin sayı:</span>
+                      <span>{product?.characteristics?.compartmentsFreezer}</span>
+                    </li>
+                    <li>
+                      <span>Qapı rəfi:</span>
+                      <span>{product?.characteristics?.doorShelf}</span>
+                    </li>
+                    <li>
+                      <span>Daxili işlıqlandırma dondurucu kamera:</span>
+                      <span>{product?.characteristics?.lightingFreezer}</span>
+                    </li>
+                    <li>
+                      <span>Daxili işıqlandırma soyuducu kamera:</span>
+                      <span>{product?.characteristics?.lightingCooling}</span>
+                    </li>
+                    <li>
+                      <span>Dondurucu kameranın donun açılması:</span>
+                      <span>{product?.characteristics?.defrostingFreezer}</span>
+                    </li>
+                    <li>
+                      <span>Soyuducu kameranın bölmələrinin sayı:</span>
+                      <span>{product?.characteristics?.refrigeratingChamber}</span>
+                    </li>
+                    <li>
+                      <span>Dondurucu kameranın yerləşdirilməsi:</span>
+                      <span>{product?.characteristics?.placementFreeze}</span>
+                    </li>
+                    <li>
+                      <span>Dəyişəbilən qapı yönü:</span>
+                      <span>{product?.characteristics?.reversibleDoor}</span>
+                    </li>
+                    <li>
+                      <span>Qapı açıq olarkən siqnal vermə:</span>
+                      <span>{product?.characteristics?.signal}</span>
+                    </li>
+                    <li>
+                      <span>Buz hazırlayan:</span>
+                      <span>{product?.characteristics?.iceMaker}</span>
+                    </li>
+                    <li>
+                      <span>Ölçülər: Hündürlüyü / Eni / Dərinliyi:</span>
+                      <span>{product?.characteristics?.dimensions}</span>
+                    </li>
+                    <li>
+                      <span>Çəki:</span>
+                      <span>{product?.characteristics?.weight}</span>
+                    </li>
+                    <li>
+                      <span>Rəng:</span>
+                      <span>{product?.characteristics?.color}</span>
+                    </li>
+
+                    <li>
+                      <span>İstehsalçı ölkə:</span>
+                      <span>{product?.characteristics?.producingCountry}</span>
+                    </li>
+                    <li>
+                      <span>Zәmanәt:</span>
+                      <span>{product?.characteristics?.garranty}</span>
+                    </li>
+
+                  </>
+                )}
+
+                {product?.subCategory === 'tv' && (
+                  <>
+                    <li>
+                      <span>Televizor növü: </span>
+                      <span>{product?.characteristics?.tvType}</span>
+                    </li>
+
+                    <li>
+                      <span>Smart TV:</span>
+                      <span>{product?.characteristics?.smartTv}</span>
+                    </li>
+
+                    <li>
+                      <span>Əməliyyat sistemi:</span>
+                      <span>{product?.characteristics?.operatingSystem}</span>
+                    </li>
+                    <li>
+                      <span>Ekranın ölçüsü:</span>
+                      <span>{product?.characteristics?.screenSize}</span>
+                    </li>
+                    <li>
+                      <span>Texnologiya </span>
+                      <span>{product?.characteristics?.technology}</span>
+                    </li>
+                    <li>
+                      <span>İşıqlandırma növü: </span>
+                      <span>{product?.characteristics?.lightingType}</span>
+                    </li>
+                    <li>
+                      <span>Ekran formatı:</span>
+                      <span>{product?.characteristics?.screenFormat}</span>
+                    </li>
+                    <li>
+                      <span>Ekran icazəsi:</span>
+                      <span>{product?.characteristics?.displayPermission}</span>
+                    </li>
+                    <li>
+                      <span>Dinamiklərın sayı:</span>
+                      <span>{product?.characteristics?.numberSpeakers}</span>
+                    </li>
+                    <li>
+                      <span>Səs gücü:</span>
+                      <span>{product?.characteristics?.volume}</span>
+                    </li>
+                    <li>
+                      <span>Kompozit giriş:</span>
+                      <span>{product?.characteristics?.compositEntry}</span>
+                    </li>
+                    <li>
+                      <span>3,5 mm audio çıxış:</span>
+                      <span>{product?.characteristics?.audiOutput}</span>
+                    </li>
+                    <li>
+                      <span>HDMI:</span>
+                      <span>{product?.characteristics?.hdmi}</span>
+                    </li>
+                    <li>
+                      <span>Optik çıxış:</span>
+                      <span>{product?.characteristics?.opticalOutput}</span>
+                    </li>
+                    <li>
+                      <span>USB:</span>
+                      <span>{product?.characteristics?.usb}</span>
+                    </li>
+                    <li>
+                      <span>Ethernet (LAN):</span>
+                      <span>{product?.characteristics?.ethernet}</span>
+                    </li>
+                    <li>
+                      <span>Wi-Fi:</span>
+                      <span>{product?.characteristics?.wifi}</span>
+                    </li>
+                    <li>
+                      <span>CAM modul:</span>
+                      <span>{product?.characteristics?.modul}</span>
+                    </li>
+                    <li>
+                      <span>VESA standartı:</span>
+                      <span>{product?.characteristics?.vesa}</span>
+                    </li>
+                    <li>
+                      <span>Rəng:</span>
+                      <span>{product?.characteristics?.color}</span>
+                    </li>
+                    <li>
+                      <span>Qablaşdırmaya daxildir:</span>
+                      <span>{product?.characteristics?.packagingIncludes}</span>
+                    </li>
+                    <li>
+                      <span>Zәmanәt:</span>
+                      <span>{product?.characteristics?.garranty}</span>
+                    </li>
+
+                  </>
+                )}
+
+                {product?.subCategory === 'washingMachine' && (
+                  <>
+                    <li>
+                      <span>Məhsul tipi: </span>
+                      <span>{product?.characteristics?.productType}</span>
+                    </li>
+
+                    <li>
+                      <span>Paltaryuyan növü:</span>
+                      <span>{product?.characteristics?.washingType}</span>
+                    </li>
+
+                    <li>
+                      <span>Yükləmə tipi:</span>
+                      <span>{product?.characteristics?.downloadType}</span>
+                    </li>
+                    <li>
+                      <span>Maksimal yükləmə:</span>
+                      <span>{product?.characteristics?.maximumDownload}</span>
+                    </li>
+                    <li>
+                      <span>Mühərrik tipi:</span>
+                      <span>{product?.characteristics?.engineType}</span>
+                    </li>
+                    <li>
+                      <span>Enerji sərfiyyatı sinfi: </span>
+                      <span>{product?.characteristics?.energyConsumption}</span>
+                    </li>
+                    <li>
+                      <span>Su sərfiyyatı:</span>
+                      <span>{product?.characteristics?.waterConsumption}</span>
+                    </li>
+                    <li>
+                      <span>Yuyulma sinfi:</span>
+                      <span>{product?.characteristics?.washingClass}</span>
+                    </li>
+                    <li>
+                      <span>Sıxılma sinfi:</span>
+                      <span>{product?.characteristics?.compressionClass}</span>
+                    </li>
+                    <li>
+                      <span>Fırlanma sürəti, dövr/dəq:</span>
+                      <span>{product?.characteristics?.rotationSpeed}</span>
+                    </li>
+                    <li>
+                      <span>Yuma zamanı səs səviyyəsi:</span>
+                      <span>{product?.characteristics?.duringWashing}</span>
+                    </li>
+                    <li>
+                      <span>Sıxılma zamanı səs səviyyəsi:</span>
+                      <span>{product?.characteristics?.duringCompression}</span>
+                    </li>
+                    <li>
+                      <span>Proqramların sayı:</span>
+                      <span>{product?.characteristics?.numberPrograms}</span>
+                    </li>
+                    <li>
+                      <span>VarioPerfect:</span>
+                      <span>{product?.characteristics?.varioPerfect}</span>
+                    </li>
+                    <li>
+                      <span>Disbalansın kontrol edilməsi:</span>
+                      <span>{product?.characteristics?.controllingImbalance}</span>
+                    </li>
+                    <li>
+                      <span>Sızmadan müdafiə:</span>
+                      <span>{product?.characteristics?.leakProtection}</span>
+                    </li>
+                    <li>
+                      <span>Uşaq kilidi:</span>
+                      <span>{product?.characteristics?.childLock}</span>
+                    </li>
+                    <li>
+                      <span>Çəki:</span>
+                      <span>{product?.characteristics?.weight}</span>
+                    </li>
+                    <li>
+                      <span>Rəng:</span>
+                      <span>{product?.characteristics?.color}</span>
+                    </li>
+                    <li>
+                      <span>Ölçülər: Hündürlüyü / Eni / Dərinliyi:</span>
+                      <span>{product?.characteristics?.dimensions}</span>
+                    </li>
+
+                    <li>
+                      <span>Qablaşdırmaya daxildir:</span>
+                      <span>{product?.characteristics?.packagingIncludes}</span>
+                    </li>
+                    <li>
+                      <span>İstehsalçı ölkə:</span>
+                      <span>{product?.characteristics?.producingCountry}</span>
+                    </li>
+                    <li>
+                      <span>Zәmanәt:</span>
+                      <span>{product?.characteristics?.garranty}</span>
+                    </li>
+
+                  </>
+                )}
+
               </ul>
             </div>
             <div className="two-right">

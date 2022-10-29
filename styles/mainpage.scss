@@ -71,11 +71,13 @@
 
             ul {
                 display: flex;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
                 gap: 30px;
 
                 li {
+                    display: flex;
+                    flex-direction: column;
 
                     .product-cart {
                         background-color: #fff;
@@ -103,9 +105,7 @@
                                 bottom: 1px;
 
                                 .discount-price {
-                                    display: flex;
-                                    justify-content: center;
-                                    flex-direction: column;
+
                                     text-align: center;
 
                                     .icon {
@@ -126,9 +126,7 @@
                         }
 
                         .product-rate {
-                            display: flex;
-                            align-items: center;
-                            justify-content: flex-start;
+
                             margin-bottom: 8px;
 
                             .icons {
@@ -198,7 +196,6 @@
     }
 }
 
-// -----------------aside-----------------
 
 .dropdawn {
     position: absolute;
@@ -206,6 +203,7 @@
     width: 300px;
     height: 667px;
     display: none;
+    z-index: 10;
 }
 
 .span {
@@ -215,212 +213,295 @@
 
 
 // -----------------aside-----------------
-.aside {
-    padding: 130px 0 20px 80px;
-    background-color: #fff;
-    margin-top: 0px;
-    padding-top: 0px;
-    width: 350px;
+.aside-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .aside {
+        padding: 130px 0 20px 80px;
+        background-color: #fff;
+        margin-top: 0px;
+        padding-top: 0px;
+        width: 350px;
+
+        .content-childe {
+            padding-top: 20px;
+
+            .childe-one {
 
 
-    .content-childe {
-        padding-top: 20px;
+                &:hover {
 
-        .childe-one {
-            &:hover {
+                    .dropdawn {
+                        top: -20px;
+                        position: absolute;
+                        left: 106%;
+                        width: 300px;
+                        height: 516px;
+                        display: none;
+                    }
 
-                .dropdawn {
-                    top: -20px;
-                    position: absolute;
-                    left: 106%;
-                    width: 300px;
-                    height: 667px;
-                    display: none;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
-            }
-
-            @include list-style;
-
-        }
-
-        .childe-two {
-
-
-            &:hover {
-
-                .dropdawn {
-                    top: -75px;
-                }
-
-                @include hover-dropdawn;
+                @include list-style;
 
             }
 
-            @include list-style;
-        }
+            .childe-two {
 
-        .childe-three {
 
-            &:hover {
+                &:hover {
 
-                .dropdawn {
-                    top: -111px;
+                    .dropdawn {
+                        top: -75px;
+                    }
+
+                    @include hover-dropdawn;
+
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
+            }
+
+            .childe-three {
+
+                &:hover {
+
+                    .dropdawn {
+                        top: -111px;
+                    }
+
+                    @include hover-dropdawn;
+
+                }
+
+                @include list-style;
 
             }
 
-            @include list-style;
+            .childe-four {
+                &:hover {
 
-        }
+                    .dropdawn {
+                        top: -145px;
+                    }
 
-        .childe-four {
-            &:hover {
+                    @include hover-dropdawn;
 
-                .dropdawn {
-                    top: -145px;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
+            }
+
+            .childe-five {
+                &:hover {
+
+                    .dropdawn {
+                        top: -200px;
+                    }
+
+                    @include hover-dropdawn;
+                }
+
+                @include list-style;
 
             }
 
-            @include list-style;
-        }
+            .childe-six {
 
-        .childe-five {
-            &:hover {
 
-                .dropdawn {
-                    top: -200px;
+                &:hover {
+                    .dropdawn {
+                        top: -235px;
+                    }
+
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
+
             }
 
-            @include list-style;
+            .childe-seven {
+                &:hover {
+                    .dropdawn {
+                        top: -270px;
+                    }
 
-        }
-
-        .childe-six {
-
-
-            &:hover {
-                .dropdawn {
-                    top: -235px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
+            .childe-eight {
+                &:hover {
+                    .dropdawn {
+                        top: -305px;
+                    }
 
-        }
-
-        .childe-seven {
-            &:hover {
-                .dropdawn {
-                    top: -270px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-nine {
+                &:hover {
+                    .dropdawn {
+                        top: -341px;
+                    }
 
-        .childe-eight {
-            &:hover {
-                .dropdawn {
-                    top: -305px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-ten {
+                &:hover {
+                    .dropdawn {
+                        top: -376px;
+                    }
 
-        .childe-nine {
-            &:hover {
-                .dropdawn {
-                    top: -341px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-elevn {
+                &:hover {
+                    .dropdawn {
+                        top: -411px;
+                    }
 
-        .childe-ten {
-            &:hover {
-                .dropdawn {
-                    top: -376px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-twelve {
+                &:hover {
+                    .dropdawn {
+                        top: -445px;
+                    }
 
-        .childe-elevn {
-            &:hover {
-                .dropdawn {
-                    top: -411px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-thirteen {
+                &:hover {
+                    .dropdawn {
+                        top: -481px;
+                    }
 
-        .childe-twelve {
-            &:hover {
-                .dropdawn {
-                    top: -445px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
+            .childe-fourteen {
+                &:hover {
+                    .dropdawn {
+                        top: -517px;
+                    }
 
-        .childe-thirteen {
-            &:hover {
-                .dropdawn {
-                    top: -481px;
+                    @include hover-dropdawn;
                 }
 
-                @include hover-dropdawn;
+                @include list-style;
             }
 
-            @include list-style;
-        }
-
-        .childe-fourteen {
-            &:hover {
-                .dropdawn {
-                    top: -517px;
-                }
-
-                @include hover-dropdawn;
-            }
-
-            @include list-style;
         }
 
     }
 
+
+    .swiper {
+
+
+        #app {
+            height: 100%;
+        }
+
+        html {
+            position: relative;
+            height: 100%;
+        }
+
+        .swiper-button-prev {
+            color: transparent;
+            background-image: url('../public/images/prev.svg');
+            width: 61px;
+            height: 76px;
+            margin-left: 33px;
+        }
+
+        .swiper-button-next {
+            color: transparent;
+            background-image: url('../public/images/arrow.svg');
+            width: 61px;
+            height: 76px;
+            margin-right: 33px;
+
+        }
+
+        body {
+            position: relative;
+            height: 100%;
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+
+            img {
+
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+    }
 }
 
-// -------------section smartphones-----------
+
 .smartphones {
     background-color: #eaf2fb;
     @include carts;

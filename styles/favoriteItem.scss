@@ -1,0 +1,124 @@
+li {
+    display: flex;
+    justify-content: center;
+
+    .product-cart {
+
+        &:hover {
+            box-shadow: 3px 3px 3px 3px rgba(27, 26, 26, 0.05);
+        }
+
+        background-color: #fff;
+        border-radius: 4px;
+        margin: 0 0 18px;
+        width: 800px;
+        height: 350px;
+        padding: 20px 20px 11px;
+
+        a {
+            position: relative;
+
+            .product-discount {
+                width: 70px;
+                height: 70px;
+                display: flex;
+                font-size: 12px;
+                text-align: center;
+                color: #fff;
+                background-color: #ea2427;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                position: absolute;
+                bottom: 1px;
+
+                .discount-price {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+
+                    .icon {
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: #fff;
+                    }
+
+                    .sale {
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+            }
+
+
+        }
+
+        .product-rate {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 8px;
+
+            .icons {
+                font-size: 19px;
+                margin-right: 15px;
+                color: rgb(243, 202, 21);
+            }
+
+            .comment {
+                a {
+                    font-size: 17px;
+                    color: #0076ff;
+                }
+
+            }
+        }
+
+        a {
+            &:hover {
+                transition: color .3s ease;
+                color: #0076ff;
+            }
+
+            color: #020303;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI',
+            Tahoma,
+            Geneva,
+            Verdana,
+            sans-serif;
+        }
+
+        .product-value {
+            margin-top: 10px;
+
+            .product-price {
+                line-height: 1;
+                font-weight: 700;
+                font-size: 24px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        }
+
+
+    }
+
+    .mobile {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+
+        a {
+            color: #0076ff;
+        }
+
+        .icon-row {
+            padding-top: 8px;
+            color: #0076ff;
+        }
+
+    }
+
+}
