@@ -1,14 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { AiOutlineStar } from "react-icons/ai";
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { BiHeart } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromFavoritesAction } from "../../store/actions/actions";
+
 const FavoriteItem = ({ product }) => {
+    const [update, setUpdate] = useState(false);
+    const favs = useSelector(state => state.favorites.favoriteProducts);
+    const dispatch = useDispatch();
     const starList = [1, 2, 3, 4, 5];
 
+    const handleClickOnHeart = (product) => {
+        if (product) {
+            const findedItem = favs?.find(item => item.id === product?.id && item.title === product?.title);
+            if (findedItem) {
+                setUpdate(prev => !prev);
+                dispatch(removeFromFavoritesAction(product));
+            }
+        }
+    }
+
     return (
-        // <li>
-        //     <h1>{product?.title}</h1>
-        // </li>
         <li>
             <div className="product-cart">
                 <Link
@@ -55,6 +69,13 @@ const FavoriteItem = ({ product }) => {
                 </Link>
                 <div className="product-value">
                     <div className="product-price">{product?.price} </div>
+                    <div className="heart" onClick={() => handleClickOnHeart(product)}>
+                        <button>
+                            <span className="heart-icon" style={{ color: 'red' }}>
+                                <BiHeart />
+                            </span>
+                        </button>
+                    </div >
                 </div>
             </div>
             {/* <div className="mobile">

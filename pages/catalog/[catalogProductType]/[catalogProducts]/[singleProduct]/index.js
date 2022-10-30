@@ -10,13 +10,14 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
+import { addToBasketAction, addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
 import Viewed from "../../../../../components/viewed/Viewed";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
   const favs = useSelector(state => state.favorites.favoriteProducts);
   const viewedProducts = useSelector(state => state.viewed.viewedProducts);
+  const basketProducts = useSelector(state => state.basket.basketProducts);
   const [heartColor, setHeartColor] = useState('black');
   const dispatch = useDispatch();
   const router = useRouter();
@@ -54,6 +55,20 @@ const SingleProductPage = () => {
       }
     }
   }
+
+  const handleAddToBasket = () => {
+    const findedItem = basketProducts?.find(item => {
+      console.log({ item, product });
+      return item.id === product?.id && item.title === product?.title
+    });
+    if (!findedItem) {
+      dispatch(addToBasketAction(product, 1));
+    } else {
+      dispatch(addToBasketAction(product, findedItem.count + 1));
+    }
+  }
+
+  console.log({ basketProducts });
 
   return (
     <>
@@ -132,7 +147,7 @@ const SingleProductPage = () => {
                   <span className="price-item">Qiymət</span>
                   <div className="price-right">
                     <span className="pricee">{product?.price}</span>
-                    <button className="get" >Almaq</button>
+                    <button className="get" onClick={handleAddToBasket} >Almaq</button>
                     <div className="heart" onClick={() => handleClickOnHeart(product)}>
                       <button>
                         <span className="heart-icon" style={{ color: heartColor }}>

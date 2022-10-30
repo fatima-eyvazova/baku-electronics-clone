@@ -14,7 +14,7 @@ export const favoritesReducer = (state = initialState, action) => {
     case REMOVE_FROM_FAVORITES: {
       return {
         ...state,
-        favoriteProducts: state.favoriteProducts.filter(item => item.id !== action.data.id || item.name !== action.data.name),
+        favoriteProducts: state.favoriteProducts.filter(item => item.id !== action.data.id || item.title !== action.data.title),
       }
     }
   }
