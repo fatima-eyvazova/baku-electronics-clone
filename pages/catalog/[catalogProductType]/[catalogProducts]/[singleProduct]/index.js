@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import dataJson from "../../../../../data/data.json";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { GiScales } from "react-icons/gi"
 import { BiHeart } from "react-icons/bi"
 import { AiOutlineStar, AiOutlinePieChart } from "react-icons/ai"
 import { CgTimer } from "react-icons/cg"
@@ -24,30 +23,28 @@ const SingleProductPage = () => {
   const { query } = router;
 
   useEffect(() => {
-    const findedItem = favs?.find(item => item.id === product?.id && item.name === product?.name);
-    setHeartColor(findedItem ? 'red' : 'black');
-  }, [favs, product]);
-
-  useEffect(() => {
     const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts]?.items?.find(
       (item) => item?.path === query.singleProduct
     );
+    if (selected && favs) {
+      const findedItem = favs?.find(item => item.id === selected?.id && item.title === selected?.title);
+      setHeartColor(findedItem ? 'red' : 'black');
+    }
     setProduct(selected);
-  }, [query.catalogProducts, query.singleProduct]);
+  }, [query.catalogProducts, query.singleProduct, favs]);
 
   useEffect(() => {
-    const viewedItem = viewedProducts?.find(item => item?.id === product?.id && item?.name === product?.name);
+    const viewedItem = viewedProducts?.find(item => item?.id === product?.id && item?.title === product?.title);
     if (!viewedItem && product) {
       dispatch(addToViewedAction(product));
     }
   }, [product, viewedProducts]);
 
-
   const starList = [1, 2, 3, 4, 5];
 
   const handleClickOnHeart = (product) => {
     if (product) {
-      const findedItem = favs?.find(item => item.id === product?.id && item.name === product?.name);
+      const findedItem = favs?.find(item => item.id === product?.id && item.title === product?.title);
       if (findedItem) {
         setHeartColor('black');
         dispatch(removeFromFavoritesAction(product));
@@ -874,8 +871,8 @@ const SingleProductPage = () => {
                         {product?.price}
                       </div>
                     </div>
-                    <div className="icons">
-                      <button><span className="icon-bi"><BiHeart /></span></button>
+                    <div className="icons" >
+                      <button onClick={() => handleClickOnHeart(product)}><span className="icon-bi" style={{ color: heartColor }}><BiHeart /></span></button>
                     </div>
                   </div>
                   <div className="product-value">

@@ -13,7 +13,6 @@ import Image from "next/image";
 import logo from "../../public/images/logo.svg";
 // icons
 import { BiPhoneCall, BiUser, BiHeart } from "react-icons/bi";
-import { GiScales } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscSearch } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
@@ -93,13 +92,6 @@ const Header = ({ setShow, size }) => {
               <Link href="/favorites">
                 <button>
                   <BiHeart />
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/comparison">
-                <button>
-                  <GiScales />
                 </button>
               </Link>
             </li>
