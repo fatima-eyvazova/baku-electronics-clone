@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from 'next/link';
-import { useDispatch, useSelector } from "react-redux";
-import { incrementAction } from "../store/actions/actions";
-import CatalogProductPage from "./catalog/[catalogProductType]/index";
 import slider1 from "../public/images/slider1.jpeg"
 import slider2 from "../public/images/slider2.jpeg"
 import slider3 from "../public/images/slider3.jpeg"
@@ -21,35 +18,19 @@ import slider13 from "../public/images/slider13.jpeg"
 // icons
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { HiOutlineArrowRight } from "react-icons/hi";
-import { AiOutlineStar } from "react-icons/ai";
 import ProductCard from "../components/productCard/ProductCard";
 import dataJson from "../data/data.json";
-import React, { useRef, useState, useEffect, Component } from "react";
-// Import Swiper React components
+import React, { useState, useEffect, Component } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import ItemsCarousel from "react-items-carousel";
+import Viewed from "../components/viewed/Viewed";
 
 export default function Home() {
-
-  const starList = [1, 2, 3, 4, 5];
-
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const chevronWidth = 40;
-  const dispatch = useDispatch();
-  const viewedProducts = useSelector(state => state.viewed.viewedProducts);
-
   const [data, setData] = useState();
-
-  const handleClick = () => {
-    dispatch(incrementAction());
-  };
 
   useEffect(() => {
     setData(dataJson);
@@ -680,30 +661,7 @@ export default function Home() {
           </div>
           {/* section Smartphones */}
         </section>
-
-        <section className="history">
-          <h1>Baxdiqlarimiz</h1>
-          <h3>{viewedProducts?.length} mehsul</h3>
-          <div>
-            <div style={{ padding: `0 ${chevronWidth}px` }}>
-              <ItemsCarousel
-                requestToChangeActive={setActiveItemIndex}
-                activeItemIndex={activeItemIndex}
-                numberOfCards={3}
-                gutter={20}
-                leftChevron={<button>{"<"}</button>}
-                rightChevron={<button>{">"}</button>}
-                outsideChevron
-                chevronWidth={chevronWidth}
-              >
-                {viewedProducts?.map(item => (
-                  <ProductCard key={item?.id} item={item} isViewed={true} />
-                ))}
-
-              </ItemsCarousel>
-            </div>
-          </div>
-        </section>
+        <Viewed />
         <section className="smartphones">
           <div className="container">
             <div className="title">
@@ -743,7 +701,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.slice(0, 4).map((product) => (
+                {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -758,7 +716,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.slice(0, 4).map((product) => (
+                {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -773,7 +731,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.["tv-audio-video"]?.tv?.slice(0, 4).map((product) => (
+                {data?.products?.["tv-audio-video"]?.tv?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -788,7 +746,7 @@ export default function Home() {
             </div>
             <div className="list-holder">
               <ul>
-                {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.slice(0, 4).map((product) => (
+                {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>

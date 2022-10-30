@@ -90,18 +90,16 @@ const CatalogProductPage = () => {
                 <span className="icon"><HiOutlineArrowNarrowRight /></span>
                 <span className="catagory">{products?.subCategoryDescription}</span>
                 <span className="icon"><HiOutlineArrowNarrowRight /></span>
-                <span className="catagory">{products?.subCategoryTitle}</span>
-                <span className="icon"><HiOutlineArrowNarrowRight /></span>
-                {/* <span className="marka">{product?.title}</span> */}
+                <span >{products?.subCategoryTitle}</span>
               </div>
 
-              <h1>{products?.subCategoryTitle}</h1>
+              <h1 className="title-category">{products?.subCategoryTitle}</h1>
             </div>
             <figure>
               <Image
                 src={products?.subCategoryImage}
-                width={260}
-                height={220}
+                width={288}
+                height={149}
                 alt="notebook"
               />
             </figure>

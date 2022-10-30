@@ -106,8 +106,6 @@
 
                         .star {
                             color: #ffb600;
-                            // margin-right: 20px;
-
                         }
 
                         .commet {
@@ -137,7 +135,7 @@
 
                     .price-right {
                         display: flex;
-                        align-items: baseline;
+                        align-items: center;
                         gap: 20px;
 
                         .pricee {
@@ -246,9 +244,9 @@
 
     .two {
         display: flex;
-        // justify-content: space-around;
-        // align-items: center;
-        padding-left: 85px;
+        justify-content: space-around;
+        position: relative;
+        padding: 40px 0;
 
         .two-left {
             .links {
@@ -319,9 +317,8 @@
 
         .two-right {
             .card {
-                position: fixed;
-                top: 140px;
-                left: 1020px;
+                position: sticky;
+                top: 200px;
                 width: 300px;
 
 

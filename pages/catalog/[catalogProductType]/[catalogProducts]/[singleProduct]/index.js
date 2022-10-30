@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
+import Viewed from "../../../../../components/viewed/Viewed";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
@@ -28,7 +29,7 @@ const SingleProductPage = () => {
   }, [favs, product]);
 
   useEffect(() => {
-    const selected = dataJson?.products?.[query.catalogProducts]?.items?.find(
+    const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts]?.items?.find(
       (item) => item?.path === query.singleProduct
     );
     setProduct(selected);
@@ -57,17 +58,8 @@ const SingleProductPage = () => {
     }
   }
 
-  useEffect(() => {
-    console.log('favs', favs, product, query);
-  }, [favs, product])
-
-
   return (
     <>
-      {/* </p>
-      <h2>Sub category ---- {query.catalogProducts}</h2>
-      <h2>{query.singleProduct}</h2>
-      <p>Routun ichinde olanlari goturdum</p> */}
       <div>
         <div className="container">
           <div className="catagorys">
@@ -151,12 +143,6 @@ const SingleProductPage = () => {
                         </span>
                       </button>
                     </div >
-                    <div className="heart">
-                      <button>
-                        <span className="heart-icon"><GiScales /></span>
-                      </button>
-                    </div>
-
                   </div>
                 </div>
                 <div className="discount-three">
@@ -890,7 +876,6 @@ const SingleProductPage = () => {
                     </div>
                     <div className="icons">
                       <button><span className="icon-bi"><BiHeart /></span></button>
-                      <button><span className="icon-gi"><GiScales /></span></button>
                     </div>
                   </div>
                   <div className="product-value">
@@ -908,7 +893,7 @@ const SingleProductPage = () => {
             </div>
 
           </section>
-
+          <Viewed />
 
         </div>
 
