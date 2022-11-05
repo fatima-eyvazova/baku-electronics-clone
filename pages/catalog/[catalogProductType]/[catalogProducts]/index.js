@@ -6,12 +6,19 @@ import { AiOutlineStar } from "react-icons/ai";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import Image from "next/image";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import styled from "styled-components";
+import { ButtonPlay } from "pure-react-carousel";
+import News from "../../../../components/news/News";
 
 
 const CatalogProductPage = () => {
   const [products, setProducts] = useState([]);
   const [filteredByBrand, setFilteredByBrand] = useState([]);
   const [brand, setBrand] = useState('');
+
+  const [filteredByColor, setFilteredByColor] = useState([]);
+  const [color, setColor] = useState('');
+
   const router = useRouter();
   const { query } = router;
   const [toggle, setToggle] = useState(false)
@@ -25,11 +32,63 @@ const CatalogProductPage = () => {
     setPriceMin(values[0]);
     setPriceMax(values[1]);
   }
+
+  let pageNumberArr;
+
   useEffect(() => {
     const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts];
     setProducts(selected);
+    if (selected) {
+      pageNumberArr = new Array(
+        Math.ceil(selected?.items?.length / limitOfThingsOnPage)
+      )
+        .fill(0)
+        .map((_, idx) => idx + 1);
+    }
+
   }, [query.catalogProducts]);
   const starList = [1, 2, 3, 4, 5];
+
+  const [pageNumber, setPageNumber] = useState(1);
+  const limitOfThingsOnPage = 2;
+
+  const [dataArray, setDataArray] = useState(dataJson);
+
+  console.log(products?.items);
+
+  const handlePrev = () => {
+    setPageNumber(pageNumber - 1);
+  };
+
+  const handleNext = () => {
+    setPageNumber(pageNumber + 1);
+  };
+
+
+  const hidehandler = (id) => {
+    console.log("Hide Handler callled with ", dataArray[id]);
+
+    const newDataArray = dataJson.map((image) => {
+      if (image.id === id) {
+        // return { ...tourCard, active: false };
+        console.log("Id is", id);
+        return { ...image, hide: false };
+      } else {
+        return { ...image, hide: true };
+      }
+    });
+
+    setDataArray([...newDataArray]);
+    // console.log(newDataArray);
+  };
+
+  useEffect(() => {
+    function paginatedData(page, limit) {
+      return products?.items?.slice(page * limit - limit, page * limit);
+    }
+    setDataArray(paginatedData(pageNumber, limitOfThingsOnPage));
+    //console.log(paginatedData(pageNumber, 2), tourTravelData);
+  }, [pageNumber]);
 
   const handleCheckbox = (e) => {
     if (brand === e.target.name) {
@@ -38,12 +97,32 @@ const CatalogProductPage = () => {
       setBrand(e.target.name);
     }
   }
+  const handleCheckboxs = (e) => {
+    if (color === e.target.name) {
+      setColor('');
+    } else {
+      setColor(e.target.name);
+    }
+  }
+
 
   useEffect(() => {
     setFilteredByBrand(products?.items?.filter(item => item?.characteristics?.brand === brand));
   }, [brand]);
 
-  const list = !!brand ? filteredByBrand : products?.items;
+  useEffect(() => {
+    setFilteredByColor(products?.items?.filter(item => item?.characteristics?.color === color));
+  }, [color]);
+
+  let list = !!brand ? filteredByBrand : products?.items;
+  list = !!color ? filteredByColor : products?.items;
+
+  // let page = current_page || 1,
+  //   per_page = per_page_items,
+  //   offset = (page - 1) * per_page,
+  //   paginatedItems = items.slice(offset).slice(0, per_page_items),
+  //   total_pages = Math.ceil(items.length / per_page);
+  // console.log("Anzahl: " + items.lgenth);
 
   return (
     <>
@@ -54,25 +133,60 @@ const CatalogProductPage = () => {
               <div className="sidebar-title"> Brend</div>
               <div className="sidebar-bottom">
                 <div className="form-row">
-                  <input type="checkbox" id="samsung" name="Samsung" checked={brand === 'Samsung'} onChange={(e) => handleCheckbox(e)} />
-                  <label for="samsung">Samsung</label>
+                  <input type="checkbox" id={products?.brandS} name={products?.brandS} checked={brand === `${products?.brandS}`} onChange={(e) => handleCheckbox(e)} />
+                  <label for={products?.brandS} >{products?.brandS}</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="XIAOMI" name="XIAOMI" checked={brand === 'XIAOMI'} onChange={(e) => handleCheckbox(e)} />
-                  <label for="XIAOMI">XIAOMI</label>
+                  <input type="checkbox" id={products?.brandX} name={products?.brandX} checked={brand === `${products?.brandX}`} onChange={(e) => handleCheckbox(e)} />
+                  <label for={products?.brandX}>{products?.brandX}</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="INFINIX" name="INFINIX" checked={brand === 'INFINIX'} onChange={(e) => handleCheckbox(e)} />
-                  <label for="INFINIX">INFINIX</label>
+                  <input type="checkbox" id={products?.brandI} name={products?.brandI} checked={brand === `${products?.brandI}`} onChange={(e) => handleCheckbox(e)} />
+                  <label for={products?.brandI}>{products?.brandI}</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="Apple" name="Apple" checked={brand === 'Apple'} onChange={(e) => handleCheckbox(e)} />
-                  <label for="Apple">Apple</label>
+                  <input type="checkbox" id={products?.brandA} name={products?.brandA} checked={brand === `${products?.brandA}`} onChange={(e) => handleCheckbox(e)} />
+                  <label for={products?.brandA}>{products?.brandA}</label>
                 </div>
                 <div className="form-row">
-                  <input type="checkbox" id="HUAWEI" name="HUAWEI" checked={brand === 'HUAWEI'} onChange={(e) => handleCheckbox(e)} />
-                  <label for="HUAWEI">HUAWEI</label>
+                  <input type="checkbox" id={products?.brandH} name={products?.brandH} checked={brand === `${products?.brandH}`} onChange={(e) => handleCheckbox(e)} />
+                  <label for={products?.brandH}>{products?.brandH}</label>
                 </div>
+
+              </div>
+            </div>
+            <div className="sidebar-block">
+              <div className="sidebar-title"> Rəng</div>
+              <div className="sidebar-bottom">
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorOne} name={products?.colorOne} checked={color === `${products?.colorOne}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorOne} >{products?.colorOne}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorTwo} name={products?.colorTwo} checked={color === `${products?.colorTwo}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorTwo}>{products?.colorTwo}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorThree} name={products?.colorThree} checked={color === `${products?.colorThree}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorThree}>{products?.colorThree}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorFour} name={products?.colorFour} checked={color === `${products?.colorFour}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorFour}>{products?.colorFour}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorFive} name={products?.colorFive} checked={color === `${products?.colorFive}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorFive}>{products?.colorFive}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorSix} name={products?.colorSix} checked={color === `${products?.colorSix}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorSix}>{products?.colorSix}</label>
+                </div>
+                <div className="form-row">
+                  <input type="checkbox" id={products?.colorSeven} name={products?.colorSeven} checked={color === `${products?.colorSeven}`} onChange={(e) => handleCheckboxs(e)} />
+                  <label for={products?.colorSeven}>{products?.colorSeven}</label>
+                </div>
+
 
               </div>
             </div>
@@ -95,73 +209,98 @@ const CatalogProductPage = () => {
 
               <h1 className="title-category">{products?.subCategoryTitle}</h1>
             </div>
-            <figure>
-              <Image
-                src={products?.subCategoryImage}
-                width={288}
-                height={149}
-                alt="notebook"
-              />
+            <figure className="image-catalog">
+              <span className="image-ctlg">
+                <Image
+                  src={products?.subCategoryImage}
+                  width={288}
+                  height={149}
+                  alt="notebook"
+                />
+              </span>
+
             </figure>
           </div>
 
-
-
-
           <ul className="catalog">
-            {list?.map(item => (
-              <li>
-                <div className="products">
-                  <Link
-                    href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
-                  >
-                    <a>
-                      <Image
-                        src={item?.image}
-                        width={260}
-                        height={220}
-                        alt="notebook"
-                      />
-                      {item?.hasDiscount && (
-                        <div className="product-childe">
-                          <div className="discount-childe-price">
-                            <span className="icon">{item?.discountAmount}</span>
-                            <span className="sale" onClick={() => handleClick()}>Nağd alışa ENDİRİM</span>
+            <>
+              {list?.map(item => (
+                <li>
+                  <div className="products">
+                    <Link
+                      href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
+                    >
+                      <a>
+                        <Image
+                          src={item?.image}
+                          width={260}
+                          height={220}
+                          alt="notebook"
+                        />
+                        {item?.hasDiscount && (
+                          <div className="product-childe">
+                            <div className="discount-childe-price">
+                              <span className="icon">{item?.discountAmount}</span>
+                              <span className="sale" onClick={() => handleClick()}>Nağd alışa ENDİRİM</span>
+                            </div>
                           </div>
-                        </div>
-                      )}
-                    </a>
-                  </Link>
-                  <div className="product-childe-rate">
-                    <div className="icons">
-                      {starList.map((star) => (
-                        <span key={star}>
-                          <AiOutlineStar />
-                        </span>
-                      ))}
+                        )}
+                      </a>
+                    </Link>
+                    <div className="product-childe-rate">
+                      <div className="icons">
+                        {starList.map((star) => (
+                          <span key={star}>
+                            <AiOutlineStar />
+                          </span>
+                        ))}
+                      </div>
+                      <div className="comments">
+                        <Link
+                          href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
+                        >
+                          {`${item?.reviewCount} rəy`}
+                        </Link>
+                      </div>
                     </div>
-                    <div className="comments">
-                      <Link
-                        href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
-                      >
-                        {`${item?.reviewCount} rəy`}
-                      </Link>
+
+                    <Link
+                      href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
+                    >
+                      {item?.title}
+                    </Link>
+                    <div className="product-value">
+                      <div className="product-price">{item?.price} </div>
                     </div>
                   </div>
 
-                  <Link
-                    href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
-                  >
-                    {item?.title}
-                  </Link>
-                  <div className="product-value">
-                    <div className="product-price">{item?.price} </div>
-                  </div>
-                </div>
+                </li>
 
-              </li>
-
-            ))}
+              ))}
+            </>
+            <>
+              <button
+                className="prev-btn"
+                disabled={pageNumber === 1}
+                onClick={handlePrev}
+              >
+                Prev
+              </button>
+              {pageNumberArr?.map((item, idx) => {
+                return (
+                  <ButtonPlay key={idx} onClick={() => setPageNumber(idx + 1)}>
+                    {item}
+                  </ButtonPlay>
+                );
+              })}
+              <button
+                className="next-btn"
+                disabled={pageNumber === dataJson?.products?.length / limitOfThingsOnPage}
+                onClick={handleNext}
+              >
+                Next
+              </button>
+            </>
           </ul>
 
 

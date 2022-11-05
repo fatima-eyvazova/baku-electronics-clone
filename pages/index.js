@@ -28,6 +28,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Viewed from "../components/viewed/Viewed";
+import News from "../components/news/News";
 
 export default function Home() {
   const [data, setData] = useState();
@@ -63,26 +64,26 @@ export default function Home() {
                       <Link href="/catalog/telefonlar-qadcetler/smartphones">Smartfonlar, mobil telefonlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Planşetlər</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/tablets">Planşetlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Smart saatlar və fitnes qolbaqları</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/watches">Smart saatlar və fitnes qolbaqları</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Qulaqlıqlar</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/headphones">Qulaqlıqlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Ev və ofis telefonları</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/phones">Ev və ofis telefonları</Link>
                     </li>
                     <li>
-                      <Link href="/">Qol saatları</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/hours">Qol saatları</Link>
                     </li>
                     <li>
-                      <Link href="/">Xarici akkumulyatorlar, Power Bank</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/accumulators">Xarici akkumulyatorlar, Power Bank</Link>
                     </li>
                     <li>
-                      <Link href="/">Aksesuarlar</Link>
+                      <Link href="/catalog/telefonlar-qadcetler/accessories">Aksesuarlar</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -90,40 +91,40 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-two">
-                  <Link href="/">Televizorlar, audio-video və foto</Link>
+                  <Link href="/catalog/tv-audio-video">Televizorlar, audio-video və foto</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Televizorlar</Link>
+                      <Link href="/catalog/tv-audio-video/tv">Televizorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Ev kinoteatrları və saundbarlar</Link>
+                      <Link href="/catalog/tv-audio-video/cinema">Ev kinoteatrları və saundbarlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Musiqi mərkəzləri</Link>
+                      <Link href="catalog/tv-audio-video/music-centers">Musiqi mərkəzləri</Link>
                     </li>
 
                     <li>
-                      <Link href="/">
+                      <Link href="/catalog/tv-audio-video/speakers">
                         Portativ dinamiklər və akustik sistemlər
                       </Link>
                     </li>
                     <li>
-                      <Link href="/">TV bokslar</Link>
+                      <Link href="/catalog/tv-audio-video/tv-boxes">TV bokslar</Link>
                     </li>
                     <li>
-                      <Link href="/">Proyektorlar</Link>
+                      <Link href="/catalog/tv-audio-video/projectors">Proyektorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Ekşn kameralar</Link>
+                      <Link href="/catalog/tv-audio-video/action-cameras">Ekşn kameralar</Link>
                     </li>
                     <li>
-                      <Link href="/">Fotoaparatlar</Link>
+                      <Link href="/catalog/tv-audio-video/cameras">Fotoaparatlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Aksesuarlar</Link>
+                      <Link href="/catalog/tv-audio-video/accessories">Aksesuarlar</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -131,44 +132,44 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-three">
-                  <Link href="/">Notbuklar və kompüter texnikası</Link>
+                  <Link href="/catalog/noutbuklar-kompyuterler/">Notbuklar və kompüter texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Notbuklar</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/notebooks">Notbuklar</Link>
                     </li>
                     <li>
-                      <Link href="/">Predator Thronos kompüterləri</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/predator-thronos-computers">Predator Thronos kompüterləri</Link>
                     </li>
                     <li>
-                      <Link href="/">Masaüstü kompüterlər</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/desktop-computers">Masaüstü kompüterlər</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Monobloklar</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/monoblocks">Monobloklar</Link>
                     </li>
                     <li>
-                      <Link href="/">Monitorlar</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/monitors">Monitorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Printerlər və kartriclər</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/printers-and-cartridges">Printerlər və kartriclər</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Klaviatura və kompüter siçanları</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/mouses">Klaviatura və kompüter siçanları</Link>
                     </li>
                     <li>
-                      <Link href="/">Şəbəkə avadanlığı</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/network">Şəbəkə avadanlığı</Link>
                     </li>
                     <li>
-                      <Link href="/">Xarici toplayıcı disklər HDD və SSD</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/hdd-and-ssd">Xarici toplayıcı disklər HDD və SSD</Link>
                     </li>
                     <li>
-                      <Link href="/">Aksesuarlar</Link>
+                      <Link href="/catalog/noutbuklar-kompyuterler/accessories">Aksesuarlar</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -176,38 +177,38 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-four">
-                  <Link href="/">Kondisionerlər və digər iqlim texnikası</Link>
+                  <Link href="/catalog/iqlim-texnikasi/">Kondisionerlər və digər iqlim texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Kombi</Link>
+                      <Link href="/catalog/iqlim-texnikasi/kombi/">Kombi</Link>
                     </li>
                     <li>
-                      <Link href="/">Kondisionerlər</Link>
+                      <Link href="/catalog/iqlim-texnikasi/kondisionerlər/">Kondisionerlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Su qızdırıcıları, qazanlar, kolonkalar</Link>
+                      <Link href="/catalog/iqlim-texnikasi/su-qizdiricilari/">Su qızdırıcıları, qazanlar, kolonkalar</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Kombi radiatorları</Link>
+                      <Link href="/catalog/iqlim-texnikasi/qizdirici-radiatorlar/">Kombi radiatorları</Link>
                     </li>
                     <li>
-                      <Link href="/">Konvektorlar</Link>
+                      <Link href="/catalog/iqlim-texnikasi/konvektorlar/">Konvektorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Mikroiqlim</Link>
+                      <Link href="/catalog/iqlim-texnikasi/mikroiqlim/">Mikroiqlim</Link>
                     </li>
                     <li>
-                      <Link href="/">Ventilyatorlar</Link>
+                      <Link href="/catalog/iqlim-texnikasi/ventilyatorlar/">Ventilyatorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Aksesuarlar</Link>
+                      <Link href="/catalog/iqlim-texnikasi/accessories/">Aksesuarlar</Link>
                     </li>
                     <li>
-                      <Link href="/">
+                      <Link href="/catalog/iqlim-texnikasi/merkezlesdirilmis-isitme-soyutma-havalandirma/">
                         Mərkəzləşdirilmiş isitmə, soyutma və havalandırma
                         sistemləri
                       </Link>
@@ -218,206 +219,206 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-five">
-                  <Link href="/">Böyük məişət texnikası</Link>
+                  <Link href="/catalog/boyuk-meiset-texnikasi/">Böyük məişət texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Soyuducular</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/refrigerators">Soyuducular</Link>
                     </li>
                     <li>
-                      <Link href="/">Dondurucu kameralar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/dondurucu-kameralar">Dondurucu kameralar</Link>
                     </li>
                     <li>
-                      <Link href="/">Paltaryuyan maşınlar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/washingMachine">Paltaryuyan maşınlar</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Quruducu maşınlar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/drying-machines">Quruducu maşınlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Qabyuyan maşınlar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/dishwashers">Qabyuyan maşınlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Aspiratorlar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/aspirators">Aspiratorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Bişirmə panelləri</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/cooking-panels">Bişirmə panelləri</Link>
                     </li>
                     <li>
-                      <Link href="/">Quraşdırılan sobalar</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/built-in-ovens">Quraşdırılan sobalar</Link>
                     </li>
                     <li>
-                      <Link href="/">Mətbəx plitələri</Link>
+                      <Link href="/catalog/boyuk-meiset-texnikasi/kitchen-tiles">Mətbəx plitələri</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-six">
-                  <Link href="/">Kiçik məişət texnikası</Link>
+                  <Link href="/catalog/kicik-meiset-texnikasi/">Kiçik məişət texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Mətbəx köməkçiləri</Link>
+                      <Link href="/catalog/kicik-meiset-texnikasi/metbex-komekcileri/">Mətbəx köməkçiləri</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Yemək hazırlanması</Link>
+                      <Link href="/catalog/kicik-meiset-texnikasi/yemek-hazirlanmasi/">Yemək hazırlanması</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Qəhvə, şirə, içkilər</Link>
+                      <Link href="/catalog/kicik-meiset-texnikasi/qehve-sire-ickiler">Qəhvə, şirə, içkilər</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
 
                     <li>
-                      <Link href="/">Evə və geyimə qulluq</Link>
+                      <Link href="/catalog/kicik-meiset-texnikasi/eve-geyime-qulluq/">Evə və geyimə qulluq</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Aksesuarlar</Link>
+                      <Link href="/catalog/kicik-meiset-texnikasi/accessories">Aksesuarlar</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-seven">
-                  <Link href="/">Gözəllik və sağlamlıq</Link>
+                  <Link href="/catalog/gozellik-saglamliq/">Gözəllik və sağlamlıq</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Fenlər</Link>
+                      <Link href="/catalog/gozellik-saglamliq/fen-daraqli-fenler">Fenlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Saç üçün düzləşdiricilər</Link>
+                      <Link href="/catalog/gozellik-saglamliq/sac-duzlendirici">Saç üçün düzləşdiricilər</Link>
                     </li>
                     <li>
-                      <Link href="/">Elektromaşa</Link>
+                      <Link href="/catalog/gozellik-saglamliq/elektromasa/">Elektromaşa</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Multistayler</Link>
+                      <Link href="/catalog/gozellik-saglamliq/multistayler">Multistayler</Link>
                     </li>
                     <li>
-                      <Link href="/">Elektrik üzqırxan</Link>
+                      <Link href="/catalog/gozellik-saglamliq/elektrik-ezqirxan">Elektrik üzqırxan</Link>
                     </li>
                     <li>
-                      <Link href="/">Saç qırxan</Link>
+                      <Link href="/catalog/gozellik-saglamliq/sac-qirxan">Saç qırxan</Link>
                     </li>
                     <li>
-                      <Link href="/">Trimmerlər</Link>
+                      <Link href="/catalog/gozellik-saglamliq/trimmerlər">Trimmerlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Epilyatorlar</Link>
+                      <Link href="/catalog/gozellik-saglamliq/epilyatorlar">Epilyatorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Döşəmə tərəziləri</Link>
+                      <Link href="/catalog/gozellik-saglamliq/doseme-terezi">Döşəmə tərəziləri</Link>
                     </li>
                     <li>
-                      <Link href="/">Elektrik diş fırçaları, irriqatorlar</Link>
+                      <Link href="/catalog/gozellik-saglamliq/dis-fircasi">Elektrik diş fırçaları, irriqatorlar</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-eight">
-                  <Link href="/">Oyun konsolları və aksessuarlar</Link>
+                  <Link href="/catalog/oyun-konsollari-oyunlar/">Oyun konsolları və aksessuarlar</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Oyun konsolları</Link>
+                      <Link href="/catalog/oyun-konsollari-oyunlar/oyun-konsollari/">Oyun konsolları</Link>
                     </li>
                     <li>
-                      <Link href="/">Video oyunlar</Link>
+                      <Link href="/catalog/oyun-konsollari-oyunlar/oyunlar">Video oyunlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Oyun konsolları üçün aksessuarlar</Link>
+                      <Link href="/catalog/oyun-konsollari-oyunlar/aksesuarlar">Oyun konsolları üçün aksessuarlar</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Oyun kresloları</Link>
+                      <Link href="/catalog/oyun-konsollari-oyunlar/oyun-kreslosu">Oyun kresloları</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-nine">
-                  <Link href="/">Mebel, tekstil və dekor</Link>
+                  <Link href="/catalog/mebel/">Mebel, tekstil və dekor</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Qonaq otağı</Link>
+                      <Link href="/catalog/mebel/qonaq-otagi-ucun-mebel">Qonaq otağı</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
 
                     <li>
-                      <Link href="/">Yataq otağı</Link>
+                      <Link href="/catalog/mebel/yataq-otagi-mebel">Yataq otağı</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Yumşaq mebel</Link>
+                      <Link href="/catalog/mebel/yumsaq-mebel">Yumşaq mebel</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
 
                     <li>
-                      <Link href="/">Gənc otağı</Link>
+                      <Link href="/catalog/mebel/genc-otagi/">Gənc otağı</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">TV stendlər</Link>
+                      <Link href="/catalog/mebel/tv-stendler">TV stendlər</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Jurnal masaları</Link>
+                      <Link href="/catalog/mebel/jurnal-masalari">Jurnal masaları</Link>
                     </li>
                     <li>
-                      <Link href="/">Döşəklər</Link>
+                      <Link href="/catalog/mebel/dosekler">Döşəklər</Link>
                     </li>
                     <li>
-                      <Link href="/">Ev tekstili</Link>
+                      <Link href="/catalog/mebel/ev-tekstili">Ev tekstili</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Dekor və interyer</Link>
+                      <Link href="/catalog/mebel/dekor">Dekor və interyer</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-ten">
-                  <Link href="/">Qab-qacaq, tava-qazan</Link>
+                  <Link href="/catalog/qab-qacaq">Qab-qacaq, tava-qazan</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Qab-qacaq</Link>
+                      <Link href="/catalog/qab-qacaq/qab-qacaq/">Qab-qacaq</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Tava-Qazan</Link>
+                      <Link href="/catalog/qab-qacaq/tava-qazan">Tava-Qazan</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -425,26 +426,26 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-elevn">
-                  <Link href="/">Ev və bağ</Link>
+                  <Link href="/catalog/ev-bag/">Ev və bağ</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Manqallar və aksessuarlar</Link>
+                      <Link href="/catalog/ev-bag/manqallar-aksessuarlar">Manqallar və aksessuarlar</Link>
                     </li>
                     <li>
-                      <Link href="/">İşıqlandırılma</Link>
+                      <Link href="/catalog/ev-bag/isiqlandirilma">İşıqlandırılma</Link>
                     </li>
                     <li>
-                      <Link href="/">Ağıllı ev</Link>
+                      <Link href="/catalog/ev-bag/agilli-ev">Ağıllı ev</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Seyflər</Link>
+                      <Link href="/catalog/ev-bag/seyf">Seyflər</Link>
                     </li>
                     <li>
-                      <Link href="/">İnşaat məhsulları</Link>
+                      <Link href="/catalog/ev-bag/insaat-mehsullari/">İnşaat məhsulları</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -452,48 +453,48 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-twelve">
-                  <Link href="/">İdman və fəal istirahət</Link>
+                  <Link href="/catalog/velosipedler-qirobordlar/">İdman və fəal istirahət</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Motosiklet</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/motosiklet">Motosiklet</Link>
                     </li>
                     <li>
-                      <Link href="/">Benzinli skuter</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/benzin-skuter">Benzinli skuter</Link>
                     </li>
                     <li>
-                      <Link href="/">Elektroskuter</Link>
-                    </li>
-
-                    <li>
-                      <Link href="/">Velosipedlər</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Samokatlar</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Elektrosamokatlar</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Skeytbordlar</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/elektroskuter/">Elektroskuter</Link>
                     </li>
 
                     <li>
-                      <Link href="/">Qiroskuterlər və siqveylər</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/velosipedler/">Velosipedlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Skuter və motosiklet aksesuarları</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/samokatlar/">Samokatlar</Link>
+                    </li>
+                    <li>
+                      <Link href="/catalog/velosipedler-qirobordlar/elektrosamokat/">Elektrosamokatlar</Link>
+                    </li>
+                    <li>
+                      <Link href="/catalog/velosipedler-qirobordlar/skeytbordlar/">Skeytbordlar</Link>
+                    </li>
+
+                    <li>
+                      <Link href="/catalog/velosipedler-qirobordlar/qirobordlar/">Qiroskuterlər və siqveylər</Link>
+                    </li>
+                    <li>
+                      <Link href="/catalog/velosipedler-qirobordlar/skuter-motosiklet-aksesuarlari/">Skuter və motosiklet aksesuarları</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
                     </li>
                     <li>
-                      <Link href="/">Velosiped aksesuarları</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/velosiped-aksesuarlari/">Velosiped aksesuarları</Link>
                     </li>
                     <li>
-                      <Link href="/">Turizm və kempinq</Link>
+                      <Link href="/catalog/velosipedler-qirobordlar/turizm-və-kempinq/">Turizm və kempinq</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -501,33 +502,33 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="childe-thirteen">
-                  <Link href="/">Uşaq aləmi</Link>
+                  <Link href="/catalog/usaq-alemi/">Uşaq aləmi</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">LEGO konstruktorlar</Link>
+                      <Link href="/catalog/usaq-alemi/lego-konstruktorlar/">LEGO konstruktorlar</Link>
                     </li>
                     <li>
-                      <Link href="/">Oyuncaqlar</Link>
+                      <Link href="/usaq-alemi/oyuncaqlar/">Oyuncaqlar</Link>
                     </li>
                   </ul>
                 </li>
                 <li className="childe-fourteen">
-                  <Link href="/">Musiqi alətləri və avadanlıqları</Link>
+                  <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/">Musiqi alətləri və avadanlıqları</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
                   </span>
                   <ul className="dropdawn">
                     <li>
-                      <Link href="/">Gitaralar</Link>
+                      <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/gitaralar/">Gitaralar</Link>
                     </li>
                     <li>
-                      <Link href="/">Nəfəsli alətlər</Link>
+                      <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/yayla-calinan-alətlər/">Yayla çalınan alətlər</Link>
                     </li>
                     <li>
-                      <Link href="/">Musiqi avadanlığı</Link>
+                      <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/musiqi-aletleri/">Musiqi alətləri</Link>
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
@@ -753,6 +754,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <News />
       </main >
     </>
 

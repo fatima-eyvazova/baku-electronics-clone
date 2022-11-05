@@ -2,9 +2,6 @@ import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "../actions/actionTypes";
 
 const initialState = {
     basketProducts: [],
-    basketProductCount: [],
-    totalCost: 0,
-    totalDiscount: 0,
 };
 
 export const basketReducer = (state = initialState, action) => {
@@ -12,7 +9,12 @@ export const basketReducer = (state = initialState, action) => {
         case ADD_TO_BASKET:
             return {
                 ...state,
-                basketProducts: [...state.basketProducts, { product: action.data, count: action.count }],
+                basketProducts: action.data,
+            };
+        case REMOVE_FROM_BASKET:
+            return {
+                ...state,
+                basketProducts: action.data,
             }
     }
     return state;

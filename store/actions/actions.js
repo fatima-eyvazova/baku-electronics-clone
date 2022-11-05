@@ -21,17 +21,16 @@ export const addToViewedAction = (product) => {
   }
 }
 
-export const addToBasketAction = (product, count) => {
+export const addToBasketAction = (data) => {
   return {
     type: ADD_TO_BASKET,
-    data: product,
-    count: count,
+    data: data,
   };
 };
 
-export const removeFromBasketAction = (product) => {
+export const removeFromBasketAction = (data) => {
   return {
     type: REMOVE_FROM_BASKET,
-    data: product,
+    data: data,
   };
 };

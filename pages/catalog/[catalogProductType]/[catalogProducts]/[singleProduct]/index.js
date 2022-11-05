@@ -27,6 +27,7 @@ const SingleProductPage = () => {
     const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts]?.items?.find(
       (item) => item?.path === query.singleProduct
     );
+
     if (selected && favs) {
       const findedItem = favs?.find(item => item.id === selected?.id && item.title === selected?.title);
       setHeartColor(findedItem ? 'red' : 'black');
@@ -57,18 +58,24 @@ const SingleProductPage = () => {
   }
 
   const handleAddToBasket = () => {
-    const findedItem = basketProducts?.find(item => {
-      console.log({ item, product });
-      return item.id === product?.id && item.title === product?.title
-    });
-    if (!findedItem) {
-      dispatch(addToBasketAction(product, 1));
-    } else {
-      dispatch(addToBasketAction(product, findedItem.count + 1));
-    }
-  }
+    const findedItem = basketProducts?.find((item) => item.product.id === product?.id && item.product.title === product?.title);
 
-  console.log({ basketProducts });
+    if (!findedItem) {
+      dispatch(
+        addToBasketAction([...basketProducts, { product: product, count: 1 }])
+      );
+    } else {
+      const filteredProducts = basketProducts?.filter((item) => item.product.id !== product?.id &&
+        item.product.title !== product?.title
+      );
+      dispatch(
+        addToBasketAction([
+          ...filteredProducts,
+          { product: product, count: findedItem.count + 1 },
+        ])
+      );
+    }
+  };
 
   return (
     <>
@@ -855,6 +862,136 @@ const SingleProductPage = () => {
                   </>
                 )}
 
+                {product?.subCategory === 'tablets' && (
+                  <>
+                    <li>
+                      <span>Məhsul tipi:</span>
+                      <span>{product?.characteristics?.productType}</span>
+                    </li>
+                    <li>
+                      <span>Şəbəkə:</span>
+                      <span>{product?.characteristics?.network}</span>
+                    </li>
+                    <li>
+                      <span>SIM-kart sayı:</span>
+                      <span>{product?.characteristics?.simNumber}</span>
+                    </li>
+                    <li>
+                      <span>SIM-kart ölçüsü:</span>
+                      <span>{product?.characteristics?.simSize}</span>
+                    </li>
+                    <li>
+                      <span>Ekranın ölçüsü:</span>
+                      <span>{product?.characteristics?.screenSize}</span>
+                    </li>
+                    <li>
+                      <span>Ekran icazəsi:</span>
+                      <span>{product?.characteristics?.displayPermission}</span>
+                    </li>
+                    <li>
+                      <span>Matris tipi:</span>
+                      <span>{product?.characteristics?.matrixType}</span>
+                    </li>
+                    <li>
+                      <span>Operativ yaddaş:</span>
+                      <span>{product?.characteristics?.operatingMemory}</span>
+                    </li>
+                    <li>
+                      <span>Quraşdırılmış yaddaş:</span>
+                      <span>{product?.characteristics?.builtMemory}</span>
+                    </li>
+                    <li>
+                      <span>Prosessor tipi:</span>
+                      <span>{product?.characteristics?.processorType}</span>
+                    </li>
+                    <li>
+                      <span>Nüvələrin sayı:</span>
+                      <span>{product?.characteristics?.numberCores}</span>
+                    </li>
+                    <li>
+                      <span>Prosessor tezliyi:</span>
+                      <span>{product?.characteristics?.processorFrequency}</span>
+                    </li>
+                    <li>
+                      <span>Əməliyyat sistemi:</span>
+                      <span>{product?.characteristics?.operatingSystem}</span>
+                    </li>
+                    <li>
+                      <span>Əsas kamera:</span>
+                      <span>{product?.characteristics?.mainCamera}</span>
+                    </li>
+                    <li>
+                      <span>Diafraqma:</span>
+                      <span>{product?.characteristics?.diaphragm}</span>
+                    </li>
+                    <li>
+                      <span>Optik zoom:</span>
+                      <span>{product?.characteristics?.opticalZoom}</span>
+                    </li>
+                    <li>
+                      <span>Led fləş:</span>
+                      <span>{product?.characteristics?.ledFlash}</span>
+                    </li>
+                    <li>
+                      <span>Video çəkiliş:</span>
+                      <span>{product?.characteristics?.videoShooting}</span>
+                    </li>
+                    <li>
+                      <span>Frontal kamera:</span>
+                      <span>{product?.characteristics?.frontCamera}</span>
+                    </li>
+                    <li>
+                      <span>Akkumulyatorun həcmi:</span>
+                      <span>{product?.characteristics?.batteryCapacity}</span>
+                    </li>
+                    <li>
+                      <span>Şarj bağlayıcısı:</span>
+                      <span>{product?.characteristics?.chargingConnector}</span>
+                    </li>
+                    <li>
+                      <span>Wi-Fi:</span>
+                      <span>{product?.characteristics?.wifi}</span>
+                    </li>
+                    <li>
+                      <span>Bluetooth:</span>
+                      <span>{product?.characteristics?.bluetooth}</span>
+                    </li>
+                    <li>
+                      <span>Naviqasiya sistemi:</span>
+                      <span>{product?.characteristics?.navigationSYstem}</span>
+                    </li>
+                    <li>
+                      <span>Sudan və tozdan qorunma:</span>
+                      <span>{product?.characteristics?.protection}</span>
+                    </li>
+                    <li>
+                      <span>Barmaq izi skaneri:</span>
+                      <span>{product?.characteristics?.scanner}</span>
+                    </li>
+                    <li>
+                      <span>Korpus Materialı:</span>
+                      <span>{product?.characteristics?.bodyMaterial}</span>
+                    </li>
+                    <li>
+                      <span>Ölçülər: Hündürlüyü / Eni / Dərinliyi:</span>
+                      <span>{product?.characteristics?.size}</span>
+                    </li>
+                    <li>
+                      <span>Çəki:</span>
+                      <span>{product?.characteristics?.weight}</span>
+                    </li>
+                    <li>
+                      <span>Rəng:</span>
+                      <span>{product?.characteristics?.color}</span>
+                    </li>
+                    <li>
+                      <span>Zәmanәt:</span>
+                      <span>{product?.characteristics?.garranty}</span>
+                    </li>
+                  </>
+
+
+                )}
               </ul>
             </div>
             <div className="two-right">

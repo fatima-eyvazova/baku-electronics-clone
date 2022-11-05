@@ -211,6 +211,82 @@
     cursor: pointer;
 }
 
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+    width: 500px;
+    background: #ece8e0;
+
+    .other-right {
+        .other-right-child {
+            padding: 50px 0px 0px 50px;
+
+            strong {
+                margin: 0 0 11px;
+                color: #020303;
+                font-size: 20px;
+            }
+
+            ul {
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 2.4;
+
+                li {
+                    &:hover {
+                        color: #0076ff;
+                    }
+
+                    transition: color .3s ease;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+
+    .modal {
+        .modal-inner {
+            .register {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .register-childe {
+                    width: 400px;
+
+                    .css-17665zs-MuiTypography-root {
+                        line-height: 1.5;
+                        letter-spacing: 0.00938em;
+                        margin-bottom: 40px;
+                        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+                        font-weight: 700;
+                        font-size: 23px;
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        button {
+                            margin-top: 20px;
+                            background-color: #ea2427;
+                            color: white;
+                            transition: opacity .5s cubic-bezier(.6, .05, .28, .91), background-color .5s cubic-bezier(.6, .05, .28, .91);
+                            border-radius: 100px;
+                            height: 50px;
+                            justify-content: center;
+                            color: #fff;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 1;
+                            padding: 5px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 // -----------------aside-----------------
 .aside-swiper {
@@ -437,7 +513,7 @@
             background-image: url('../public/images/prev.svg');
             width: 61px;
             height: 76px;
-            margin-left: 33px;
+            margin-left: 27px;
         }
 
         .swiper-button-next {
@@ -445,9 +521,10 @@
             background-image: url('../public/images/arrow.svg');
             width: 61px;
             height: 76px;
-            margin-right: 33px;
+            margin-right: 27px;
 
         }
+
 
         body {
             position: relative;
@@ -514,11 +591,8 @@
                 font-size: 28px;
             }
 
-            // .product-number {}
         }
     }
-
-
 
     .cards {
         .card {

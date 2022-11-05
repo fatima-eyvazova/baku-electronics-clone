@@ -1,0 +1,149 @@
+// .news {
+
+//     .icon-one {
+//         img {
+//             color: transparent;
+//             margin: 50px 0;
+//             height: 60px;
+//             width: 74px;
+//         }
+//     }
+// }
+
+
+// .jBtEUr {
+//     width: auto !important;
+// }
+
+// .slick-slide {
+//     display: flex;
+// }
+
+// .one {
+//     background-image: url('/images/new.jpeg');
+// }
+
+// .two {
+//     background-image: url('/images/new.jpeg');
+// }
+
+// .three {
+//     background-image: url('/images/new.jpeg');
+// }
+
+// .four {
+//     background-image: url('/images/new.jpeg');
+// }
+
+// .slider-card {
+//     position: relative;
+//     border-left: 4px solid red;
+//     border-radius: 4px;
+//     box-shadow: 0 3px 0 0 rgb(163 163 163 / 5%);
+//     height: 300px;
+//     width: 500px;
+//     // transition: background-size .5s cubic-bezier(.6, .05, .28, .91);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: 50% 50%;
+
+//     // display: flex;
+
+//     &::before {
+//         position: absolute;
+//         content: '';
+//         display: block;
+//         top: 0;
+//         left: 0;
+//         bottom: 0;
+//         right: 0;
+//         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(127, 128, 128, 0.51) 41%, #020303);
+//     }
+
+
+//     .new-card {
+//         display: block;
+//         width: 100%;
+
+
+
+//     }
+
+//     .news-about {
+//         position: absolute;
+//         bottom: 10px;
+//         left: 21px;
+//     }
+// }
+
+@mixin slider {
+    .slider-card {
+        position: relative;
+        border-left: 4px solid red;
+        border-radius: 4px;
+        box-shadow: 0 3px 0 0 rgb(163 163 163 / 5%);
+        height: 300px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(127, 128, 128, 0.51) 41%, #020303);
+
+        .news-about {
+            position: absolute;
+            bottom: 10px;
+            left: 21px;
+
+            // .news {}
+
+            // .about {}
+        }
+    }
+
+
+}
+
+.new {
+    .container {
+        .cards {
+            .swiper-bottom {
+                background-color: white;
+
+                .sc-ifAKCX {
+                    button {
+                        color: transparent;
+                        margin: 50px 0;
+                        background-image: url('../public/images/sl.svg');
+                        height: 60px;
+                        width: 74px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+
+                    }
+                }
+
+                .slick-slide {
+                    height: 300px;
+                    display: flex;
+
+
+                    // display: block;
+                    // width: 100%;
+
+                    .slick-slide {
+                        @include slider();
+                        background-image: url('/images/new.jpeg');
+
+                    }
+                }
+            }
+        }
+    }
+}

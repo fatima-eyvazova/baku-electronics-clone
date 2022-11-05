@@ -22,7 +22,7 @@ const CatalogProductTypePage = () => {
 
 
     return (
-        <ul style={{ display: 'grid', flexWrap: 'wrap' }}>
+        <ul className='product-wrap'>
             {products.map(item => (
                 <ProductCard key={item?.id} item={item} isViewed />
             ))}

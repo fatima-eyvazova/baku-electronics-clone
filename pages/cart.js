@@ -1,16 +1,74 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import BasketItem from "../components/basketItem/BasketItem";
 
 const BasketPage = () => {
-    const [price, setPrice] = useState(0);
+    const basketProducts = useSelector(state => state.basket.basketProducts);
 
+    const getProductTotalCount = () => {
+        let totalCount = 0;
 
+        basketProducts?.forEach((item) => {
+            totalCount += item?.count;
+        });
 
+        return totalCount;
+    }
 
+    const getDiscountTotal = () => {
+        let totalDiscount = 0;
+
+        basketProducts?.forEach((item) => {
+            totalDiscount += +item?.product?.discountAmount?.replace(' ₼', '') * item?.count;
+        });
+
+        return totalDiscount;
+    }
+
+    const getTotalPrice = () => {
+        let totalPrice = 0;
+
+        basketProducts?.forEach((item) => {
+            totalPrice += +item?.product?.price?.replace(' ₼', '') * item?.count;
+        });
+
+        return +totalPrice?.toFixed(2);
+    }
+
+    const totalPrice = getTotalPrice();
+    const totalDiscount = getDiscountTotal();
+
+    console.log({ basketProducts });
 
     return (
         <article>
-            <h1>Sebetiniz bosdur</h1>
-        </article>
+            {basketProducts.length > 0 ? (
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: "space-around", margin: "20px 0" }}>
+                    <div style={{ display: "flex", flexDirection: 'column', gap: 20 }}>
+                        {basketProducts?.map((item) => (
+                            item?.count > 0 && <BasketItem key={item?.product?.title} item={item} />
+                        ))}
+                    </div>
+                    <div style={{ width: 100, height: 100, backgroundColor: 'yellow' }}>
+                        <p>
+                            <span>{getProductTotalCount()} mehsul: </span>
+                            <span>{totalPrice} ₼</span>
+                        </p>
+                        <p>
+                            <span>Endirim: </span>
+                            <span>{totalDiscount} ₼</span>
+                        </p>
+                        <p>
+                            <span>Cemi: </span>
+                            <span>{totalPrice - totalDiscount} ₼</span>
+                        </p>
+                    </div>
+                </div>
+            ) : (
+                <h1>Sebetiniz bosdur</h1>
+            )
+            }
+        </article >
     );
 };
 

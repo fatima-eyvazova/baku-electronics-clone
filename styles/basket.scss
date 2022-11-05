@@ -1,0 +1,97 @@
+.basket-item-left {
+    .basket-item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        // flex-direction: row;
+        border-radius: 5px;
+        width: 100%;
+
+        .order-card {
+            display: flex;
+            height: 185px;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(157, 163, 179, 0.5);
+            padding: 0 10px;
+            gap: 20px;
+            min-width: 830px;
+
+            .order-title {
+                width: 319px;
+                display: flex;
+                flex-direction: column;
+                padding-right: 15px;
+
+                a {
+                    &:hover {
+                        transition: color .3s ease;
+                        color: #0076ff;
+                    }
+
+                    margin-bottom: 10px;
+                    line-height: 1.5;
+                }
+
+                .product-code {
+                    color: rgba(2, 3, 3, .5);
+                }
+            }
+
+            .order-counter {
+
+                form {
+
+                    .counter {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        button {
+                            &:hover {
+                                border-color: red;
+                            }
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 23px;
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 50%;
+                            border: 1px solid gray;
+                            display: flex;
+                            background-color: #fff;
+                            cursor: pointer;
+                            transition: border .5s cubic-bezier(.6, .05, .28, .91);
+                        }
+
+                        // span {}
+                    }
+
+                }
+
+            }
+
+            .order-price {
+                .price {
+                    .product-price-cur {
+                        span {
+                            font-size: 20px;
+                            font-weight: 600;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    }
+                }
+            }
+
+            .order-close {
+                button {
+                    font-size: 26px;
+
+                }
+            }
+        }
+    }
+}
