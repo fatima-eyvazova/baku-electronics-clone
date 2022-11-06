@@ -58,7 +58,7 @@ export default function Home() {
                   <span className="span">
                     <MdOutlineArrowForwardIos />
                   </span>
-                  <div></div>
+                  {/* <div></div> */}
                   <ul className="dropdawn">
                     <li>
                       <Link href="/catalog/telefonlar-qadcetler/smartphones">Smartfonlar, mobil telefonlar</Link>

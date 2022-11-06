@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const CompaniesPage = () => {
+const CampaignsPage = () => {
   return (
     <>
       <Head>
@@ -13,4 +13,4 @@ const CompaniesPage = () => {
   );
 };
 
-export default CompaniesPage;
+export default CampaignsPage;

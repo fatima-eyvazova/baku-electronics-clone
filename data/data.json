@@ -5,6 +5,13 @@
         "subCategoryImage": "/images/sll.png",
         "subCategoryTitle": "Smartfonlar, mobil telefonlar",
         "subCategoryDescription": "Telefonlar, planşetlər və qadcetlər",
+        "brands": [
+          "Samsung",
+          "XIAOMI",
+          "INFINIX",
+          "Apple",
+          "HUAWEI"
+        ],
         "brandS": "Samsung",
         "brandX": "XIAOMI",
         "brandI": "INFINIX",
@@ -1193,6 +1200,13 @@
         "subCategoryImage": "/images/sll.png",
         "subCategoryTitle": "Planshetler",
         "subCategoryDescription": "Planshetler",
+        "brands": [
+          "Samsung",
+          "XIAOMI",
+          "INFINIX",
+          "Apple",
+          "HUAWEI"
+        ],
         "brandS": "Samsung",
         "brandX": "XIAOMI",
         "brandI": "INFINIX",
@@ -1644,6 +1658,13 @@
         "subCategoryImage": "/images/w2.png",
         "subCategoryTitle": "Smart saatlar və fitnes qolbaqları",
         "subCategoryDescription": "Telefonlar, planşetlər və qadcetlər",
+        "brands": [
+          "Apple",
+          "BOROFONE",
+          "CANYON",
+          "Haylou",
+          "HUAWEI"
+        ],
         "brandS": "Apple",
         "brandX": "BOROFONE",
         "brandI": "CANYON",
@@ -5827,7 +5848,7 @@
     },
     "tv-audio-video": {
       "tv": {
-        "subCategoryImage": "/images/w15.png",
+        "subCategoryImage": "/images/s75.jpeg",
         "subCategoryTitle": "Paltaryuyan maşınlar",
         "subCategoryDescription": "Böyük məişət texnikası",
         "brandS": "Hisense",

@@ -38,8 +38,6 @@ const BasketPage = () => {
     const totalPrice = getTotalPrice();
     const totalDiscount = getDiscountTotal();
 
-    console.log({ basketProducts });
-
     return (
         <article>
             {basketProducts.length > 0 ? (
@@ -49,19 +47,28 @@ const BasketPage = () => {
                             item?.count > 0 && <BasketItem key={item?.product?.title} item={item} />
                         ))}
                     </div>
-                    <div style={{ width: 100, height: 100, backgroundColor: 'yellow' }}>
-                        <p>
-                            <span>{getProductTotalCount()} mehsul: </span>
-                            <span>{totalPrice} ₼</span>
-                        </p>
-                        <p>
-                            <span>Endirim: </span>
-                            <span>{totalDiscount} ₼</span>
-                        </p>
-                        <p>
-                            <span>Cemi: </span>
-                            <span>{totalPrice - totalDiscount} ₼</span>
-                        </p>
+                    <div className="yellow-basket">
+                        <div className="yellow-basket-item">
+                            <div className="paragraph-childe">
+                                <p className="paragraph-one">
+                                    <span>{getProductTotalCount()} mehsul: </span>
+                                    <span>{totalPrice} ₼</span>
+                                </p>
+                                <p className="paragraph-one">
+                                    <span>Endirim: </span>
+                                    <span>{totalDiscount} ₼</span>
+                                </p>
+                            </div>
+
+                            <p className="paragraph-three">
+                                <span>Cemi: </span>
+                                <span>{totalPrice - totalDiscount} ₼</span>
+                            </p>
+                            <div className="button-get">
+                                <button className="red-button">Sifarişi rәsmilәşdir</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             ) : (

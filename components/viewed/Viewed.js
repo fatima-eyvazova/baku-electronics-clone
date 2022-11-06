@@ -11,6 +11,10 @@ const Viewed = () => {
     const chevronWidth = 40;
     const starList = [1, 2, 3, 4, 5];
 
+    if (viewedProducts?.length === 0) {
+        return;
+    }
+
     return (
         <section className="history">
             <div className="container">

@@ -23,7 +23,7 @@
         display: block;
         justify-content: center;
         align-items: center;
-        width: 361px;
+        width: 331px;
         background-color: #efe8de;
         padding: 10px 0 20px 50px;
         height: 570px;
@@ -92,6 +92,9 @@
                             position: relative;
 
                             .product-discount {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
                                 width: 70px;
                                 height: 70px;
                                 display: flex;
@@ -105,7 +108,10 @@
                                 bottom: 1px;
 
                                 .discount-price {
-
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
                                     text-align: center;
 
                                     .icon {

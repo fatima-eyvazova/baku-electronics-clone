@@ -146,7 +146,7 @@ const Header = ({ setShow, size }) => {
           </div>
           <ul>
             <li className="compaigns">
-              <Link href="/companies">Kampaniyalar</Link>
+              <Link href="/campaigns">Kampaniyalar</Link>
             </li>
             <li>
               <Link href="/shops">Mağazalar</Link>

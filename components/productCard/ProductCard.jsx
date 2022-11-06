@@ -7,7 +7,11 @@ const ProductCard = ({ item, handleClick, isViewed }) => {
   const starList = [1, 2, 3, 4, 5];
 
   return (
-    <li>
+    <li style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
       <div className="product-cart">
         <Link
           href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
