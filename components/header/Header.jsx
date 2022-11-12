@@ -11,14 +11,18 @@ import ListItemText from "@mui/material/ListItemText";
 
 import Image from "next/image";
 import logo from "../../public/images/logo.svg";
+import baki from "../../public/images/bakii.png"
+
 // icons
 import { BiPhoneCall, BiUser, BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscSearch } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
 // forms
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -27,50 +31,73 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import InputAdornment from "@mui/material/InputAdornment";
-import * as yup from "yup";
-
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Xananı boş saxlamayın !")
-    .min(6, "Minimum 6 simvol"),
-  // surname: yup.string().required("Xananı boş saxlamayın !"),
-  email: yup.string().email().required(),
-  password: yup.string().min(4).max(15).required(),
-  confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
-
-  // mail: yup
-  //   .string()
-  //   .required("Xananı boş saxlamayın !")
-  // .matches(
-  //   /^((\+)?994(\s)?)?(5[015]|7[07]|99|10|60)(\s)?([0-9]{3})(\s)?([0-9]{2})(\s)?([0-9]{2})$/,
-  //   "Mobil nömrənizi düz qeyd edin !"
-  // ),
-});
-
-const defaultValues = {
-  name: "",
-  password: "",
-  email: "",
-};
+import { Divide as Hamburger } from "hamburger-react"
+// const GENDER_OPTIONS = [
+//   { text: "Male", value: "male" },
+//   { text: "Female", value: "female" },
+//   { text: "Other", value: "other" },
+// ]
+const schema = yup
+  .object({
+    name: yup.string().min(2).required("Name is required").matches(/^[a-z]+$/, 'Name should contain only letters'),
+    email: yup
+      .string()
+      .email("This must be a email")
+      .required("Email is required"),
+    password: yup
+      .string()
+      .required("Password is required")
+      .min(6, "The password must be six characters"),
+  })
+  .required();
 
 const Header = ({ setShow, size }) => {
 
-  const { control, formState, handleSubmit, watch, register, setValue } =
-    useForm({
-      mode: "onChange",
-      defaultValues,
-      resolver: yupResolver(schema),
-    });
-  const { isValid, dirtyFields, errors, setError } = formState;
+  const [showLinks, setShowLinks] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const [linkIsSent, setLinkIsSent] = useState(false)
 
-  function onSubmit({ name, surname, mail }) {
-    console.log(name, password, email);
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks)
   }
 
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: ""
+    },
+    mode: 'onChange',
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (values) => {
+    console.log(values);
+    setLinkIsSent(true);
+  };
+
+  // const [userDatas, setUserDatas] = useState(products);
+  // console.log(userDatas);
+
+  // const onSearchHandle = (value) => {
+  //   const newData = userData.filter(
+  //     (user) =>
+  //       user.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()) ||
+  //       user.order.includes(value) ||
+  //       user.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+  //   );
+  //   setUserDatas(newData);
+  // };
+
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-  const [user, setUser] = useState(false)
+  const [openAuthDrawer, setOpenAuthDrawer] = useState(false)
+  const [burgerMenu, setBurgerMenu] = useState(false)
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -91,7 +118,18 @@ const Header = ({ setShow, size }) => {
       return;
     }
 
-    setUser(open);
+    setOpenAuthDrawer(open);
+  };
+
+  const toggleMenu = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setBurgerMenu(open);
   };
   const list = () => (
     <Box
@@ -129,19 +167,62 @@ const Header = ({ setShow, size }) => {
       </List>
     </Box>
   );
+  const menu = () => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleMenu(false)}
+      onKeyDown={toggleMenu(false)}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
   return (
-    <header className="header">
+    <div className={`header ${showLinks ? "show-header" : "hide-header"} `}>
       <div className="header-left">
+        <div className="burger-menu" onClick={handleShowLinks}>
+          <button onClick={toggleMenu(true)} toggled={isOpen} rounded toggle={setOpen} size="40" >
+            <Hamburger />
+          </button>
+        </div>
         <div className="logo">
           <Link href="/">
             <Image src={logo} alt="logo" />
           </Link>
         </div>
+        <div className="logo-baku">
+          <Link href="/">
+            <Image src={baki}
+              alt="logo"
+              width={50}
+              height={50}
+            />
+          </Link>
+        </div>
+        <div className="call-contact">
+          <Link href="/call">143</Link>
+          <BiPhoneCall />
+        </div>
+
       </div>
       <div className="header-right">
         <div className="holder">
           <div className="icon">
-            <input placeholder="Axtarış" />
+            <input placeholder="Axtarış"
+            // onChange={(e) => onSearchHandle(e.target.value)}
+            />
+            {/* {userDatas.map((id, product) => (
+              <ProductCard key={product?.id} item={product} />
+            ))} */}
+
             <VscSearch />
           </div>
           <ul>
@@ -163,29 +244,35 @@ const Header = ({ setShow, size }) => {
         </div>
         <div className="users">
           <ul>
-            <li>
+            <li className="user">
               <button onClick={toggleDrawe(true)}>
                 <BiUser />
               </button>
             </li>
-            <li>
+            <li className="favori">
               <Link href="/favorites">
                 <button>
                   <BiHeart />
                 </button>
               </Link>
             </li>
-            <li>
+            <li className="search">
+              <button>
+                <VscSearch />
+              </button>
+            </li>
+            <li className="cart">
               <Link href="/cart">
                 <button>
                   <AiOutlineShoppingCart />
                 </button>
               </Link>
             </li>
+
+
           </ul>
         </div>
       </div>
-
       {sideMenuOpen && (
         <Drawer
 
@@ -196,7 +283,7 @@ const Header = ({ setShow, size }) => {
           <div className="other-right">
             <div className="other-right-child">
               <strong>Məlumat</strong>
-              <ul>
+              <ul className="other-content">
                 <li><Link href="/kampaniyalar">Kampaniyalar</Link></li>
                 <li><Link href="/kart">Müştəri kartı</Link></li>
                 <li><Link href="/bendler">Brendlər</Link></li>
@@ -205,7 +292,7 @@ const Header = ({ setShow, size }) => {
             </div>
             <div className="other-right-child">
               <strong>Şirkət</strong>
-              <ul>
+              <ul className="other-content">
                 <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
                 <li><Link href="/magazalar">Mağazalar</Link></li>
                 <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
@@ -214,7 +301,7 @@ const Header = ({ setShow, size }) => {
             </div>
             <div className="other-right-child">
               <strong>Alıcılara</strong>
-              <ul>
+              <ul className="other-content">
                 <li><Link href="/catdirilma">Çatdırılma və ödəniş</Link></li>
                 <li><Link href="/zemanet">Zәmanәt</Link></li>
                 <li><Link href="/Servis">Servis mərkəzləri</Link></li>
@@ -223,117 +310,105 @@ const Header = ({ setShow, size }) => {
           </div>
         </Drawer>
       )}
-      {user && (
+
+
+      {openAuthDrawer && (
         <Drawer
 
           anchor="right"
-          open={user}
+          open={openAuthDrawer}
           onClose={toggleDrawe(false)}
         >
-          <div className="modal">
-            <div className="modal-inner">
-              <div className="register">
-                <div className="register-childe">
-                  <Typography
-                    className="mt-32 text-4xl font-extrabold tracking-tight leading-tight text-center"
-                    mb={5}
-                  >
-                    Qeydiyyat
-
-                  </Typography>
-
-                  <form
-                    name="registerForm"
-                    noValidate
-                    className="flex flex-col justify-center w-full mt-32"
-                    onSubmit={handleSubmit(onSubmit)}
-                  >
-                    <Controller
-                      name="name"
-                      control={control}
-                      render={({ field }) => (
-                        <TextField
-                          {...field}
-                          className="mb-24"
-                          id="standard-start-adornment"
-                          label="Ad"
-                          type="name"
-                          error={!!errors.name}
-                          helperText={errors?.name?.message}
-                          variant="outlined"
-                          required
-                          fullWidth
-                          mb={2}
-                        />
-                      )}
-                    />
-                    <Controller
-                      name="Email"
-                      control={control}
-                      render={({ field }) => (
-                        <TextField
-                          {...field}
-                          className="mb-24"
-                          id="standard-start-adornment"
-                          label="Email"
-                          type="email"
-                          error={!!errors.mail}
-                          helperText={errors?.mail?.message}
-                          variant="outlined"
-                          required
-                          fullWidth
-                          onInput={(e) => {
-                            e.target.value = Math.max(0, e.target.value)
-                              .toString()
-                              .slice(0, 9);
-                          }}
-                        />
-                      )}
-                    />
-
-                    <Controller
-                      name="password"
-                      control={control}
-                      render={({ field }) => (
-                        <TextField
-                          {...field}
-                          className="mb-24"
-                          id="standard-start-adornment"
-                          // InputProps={{
-                          //   startAdornment: (
-                          //     <InputAdornment position="start">+994</InputAdornment>
-                          //   ),
-                          // }}
-                          label="Password"
-                          type="password"
-                          error={!!errors.password}
-                          helperText={errors?.surname?.password}
-                          variant="outlined"
-                          required
-                          fullWidth
-                        // onInput={(e) => {
-                        //   // eslint-disable-next-line radix
-                        //   e.target.value = Math.max(0, e.target.value)
-                        //     .toString()
-                        //     .slice(0, 9);
-                        // }}
-                        />
-                      )}
-                    />
-
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      className=" w-full mt-24"
-                      aria-label="Register"
-                      // disabled={_.isEmpty(dirtyFields) || !isValid}
-                      type="submit"
-                      size="large"
+          <div className="modal-right-box">
+            <div className="modal-inner-box">
+              <div className="register-icon">
+                {!linkIsSent ? (
+                  <div className="register-childe">
+                    <Typography
+                      className="mt-32 text-4xl font-extrabold tracking-tight leading-tight text-center"
+                      mb={5}
                     >
-                      Qeydiyyatdan keçmək
-                    </Button>
-                  </form>
-                </div>
+                      Qeydiyyat
+
+                    </Typography>
+
+                    <form
+                      name="registerForm"
+                      className="flex flex-col justify-center w-full mt-32"
+                      onSubmit={handleSubmit(onSubmit)}
+                    >
+                      {/* <Controller
+                       name="name"
+                       render={({ field }) => ( */}
+                      <TextField
+                        // {...field}
+                        className="mb-24"
+                        id="standard-start-adornment"
+                        label="Ad"
+                        required
+                        fullWidth
+                        mb={2}
+                        error={errors.name}
+                        {...register("name")}
+                      />
+                      {!!errors.name?.message && <p style={{ color: 'red' }}>{errors.name?.message}</p>}
+                      {/* )} */}
+                      {/* /> */}
+                      {/* <Controller
+                       name="Email"
+                       render={({ field }) => ( */}
+                      <TextField
+                        // {...field}
+                        className="mb-24"
+                        id="standard-start-adornment"
+                        label="Email"
+                        variant="outlined"
+                        required
+                        fullWidth
+                        error={errors.email}
+                        {...register("email")}
+                      />
+                      {!!errors.email?.message && <p style={{ color: 'red' }}>{errors.email?.message}</p>}
+                      {/* // )} */}
+                      {/* /> */}
+                      {/* 
+                     // <Controller
+                       name="password"
+                       render={({ field }) => ( */}
+                      <TextField
+                        // {...field}
+                        className="mb-24"
+                        id="standard-start-adornment"
+                        label="Password"
+                        type="password"
+                        variant="outlined"
+                        required
+                        fullWidth
+                        error={errors.password}
+                        {...register("password")}
+                      />
+                      {!!errors.password?.message && <p style={{ color: 'red' }}>{errors.password?.message}</p>}
+
+                      {/* )} */}
+                      {/* /> */}
+
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        className=" w-full mt-24"
+                        aria-label="Register"
+                        type="submit"
+                        size="large"
+                        style={{ opacity: !isValid ? 0.5 : 1 }}
+                        disabled={!isValid}
+                      >
+                        Qeydiyyatdan keçmək
+                      </Button>
+                    </form>
+                  </div>
+                ) : (
+                  <p>Link e-mail ünvanınıza göndərilib.</p>
+                )}
               </div>
             </div>
           </div>
@@ -341,7 +416,68 @@ const Header = ({ setShow, size }) => {
       )}
 
 
-    </header>
+      {burgerMenu && (
+        <div className="drawer">
+          <Drawer
+            anchor="left"
+            open={setBurgerMenu}
+            onClose={toggleMenu(false)}
+          >
+            <div className="menu-left">
+              <div className="users">
+                <ul>
+                  <li className="user">
+                    <button onClick={toggleDrawe(true)}>
+                      <BiUser />
+                    </button>
+                  </li>
+                  <li className="favori">
+                    <Link href="/favorites">
+                      <button>
+                        <BiHeart />
+                      </button>
+                    </Link>
+                  </li>
+
+
+
+                </ul>
+              </div>
+              <div className="menu-rigth">
+                <div className="menu-right-child">
+                  <strong className="title-menu">Məlumat</strong>
+                  <ul className="menu-content">
+                    <li><Link href="/kampaniyalar">Kampaniyalar</Link></li>
+                    <li><Link href="/kart">Müştəri kartı</Link></li>
+                    <li><Link href="/bendler">Brendlər</Link></li>
+                    <li><Link href="/blog">Bloq</Link></li>
+                  </ul>
+                </div>
+                <div className="menu-right-child">
+                  <strong className="title-menu">Şirkət</strong>
+                  <ul className="menu-content">
+                    <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
+                    <li><Link href="/magazalar">Mağazalar</Link></li>
+                    <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
+                    <li><Link href="/satislar">Korporativ satışlar</Link></li>
+                  </ul>
+                </div>
+                <div className="menu-right-child">
+                  <strong className="title-menu">Alıcılara</strong>
+                  <ul className="menu-content">
+                    <li><Link href="/catdirilma">Çatdırılma və ödəniş</Link></li>
+                    <li><Link href="/zemanet">Zәmanәt</Link></li>
+                    <li><Link href="/Servis">Servis mərkəzləri</Link></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </Drawer>
+        </div>
+
+      )}
+    </div >
   );
 };
 

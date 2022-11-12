@@ -50,7 +50,7 @@ export default function Home() {
           <aside>
             <div className="aside">
               <ul className="content-childe">
-                <li className="childe-one">
+                <li className="child">
                   <Link href="/catalog/telefonlar-qadcetler">
                     Telefonlar, planşetlər və qadcetlər
                   </Link>
@@ -90,7 +90,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-two">
+                <li className="child">
                   <Link href="/catalog/tv-audio-video">Televizorlar, audio-video və foto</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -131,7 +131,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-three">
+                <li className="child">
                   <Link href="/catalog/noutbuklar-kompyuterler/">Notbuklar və kompüter texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -176,7 +176,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-four">
+                <li className="child">
                   <Link href="/catalog/iqlim-texnikasi/">Kondisionerlər və digər iqlim texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -218,7 +218,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-five">
+                <li className="child">
                   <Link href="/catalog/boyuk-meiset-texnikasi/">Böyük məişət texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -254,7 +254,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-six">
+                <li className="child">
                   <Link href="/catalog/kicik-meiset-texnikasi/">Kiçik məişət texnikası</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -290,7 +290,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-seven">
+                <li className="child">
                   <Link href="/catalog/gozellik-saglamliq/">Gözəllik və sağlamlıq</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -329,7 +329,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-eight">
+                <li className="child">
                   <Link href="/catalog/oyun-konsollari-oyunlar/">Oyun konsolları və aksessuarlar</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -350,7 +350,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-nine">
+                <li className="child">
                   <Link href="/catalog/mebel/">Mebel, tekstil və dekor</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -405,7 +405,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-ten">
+                <li className="child">
                   <Link href="/catalog/qab-qacaq">Qab-qacaq, tava-qazan</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -425,7 +425,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-elevn">
+                <li className="child">
                   <Link href="/catalog/ev-bag/">Ev və bağ</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -452,7 +452,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-twelve">
+                <li className="child">
                   <Link href="/catalog/velosipedler-qirobordlar/">İdman və fəal istirahət</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -501,7 +501,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-thirteen">
+                <li className="child">
                   <Link href="/catalog/usaq-alemi/">Uşaq aləmi</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -515,7 +515,7 @@ export default function Home() {
                     </li>
                   </ul>
                 </li>
-                <li className="childe-fourteen">
+                <li className="child">
                   <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/">Musiqi alətləri və avadanlıqları</Link>
                   <span>
                     <MdOutlineArrowForwardIos />
@@ -664,13 +664,19 @@ export default function Home() {
         </section>
         <Viewed />
         <section className="smartphones">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Smartfonlar</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["telefonlar-qadcetler"]?.smartphones?.items?.slice(0, 4).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+
+              <ul className="ul-lists-items">
+                {data?.products?.["telefonlar-qadcetler"]?.smartphones?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -680,13 +686,19 @@ export default function Home() {
 
         {/* section Watches */}
         <section className="watches">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Smart saatlar və fitnes qolbaqları</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["telefonlar-qadcetler"]?.watches?.items?.slice(0, 4).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+
+              <ul className="ul-lists-items">
+                {data?.products?.["telefonlar-qadcetler"]?.watches?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -696,28 +708,41 @@ export default function Home() {
 
         {/* section Notebook */}
         <section className="notebook">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Noutbuklar</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.items?.slice(0, 4).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+
+              <ul className="ul-lists-items">
+                {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.items?.slice(0, 2).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+
             </div>
           </div>
         </section>
         {/* section Refrigerators */}
         <section className="refrigerators">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Soyuducular</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.items?.slice(0, 4).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+
+              <ul className="ul-lists-items">
+                {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -726,13 +751,18 @@ export default function Home() {
         </section>
         {/* section tv */}
         <section className="tv">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Televizorlar</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["tv-audio-video"]?.tv?.items?.slice(0, 4).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+              <ul className="ul-lists-items">
+                {data?.products?.["tv-audio-video"]?.tv?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
@@ -741,13 +771,19 @@ export default function Home() {
         </section>
         {/* section Washing machines */}
         <section className="washing-machines">
-          <div className="container">
+          <div className="container-sm">
             <div className="title">
               <h2>Paltaryuyan maşınlar</h2>
             </div>
-            <div className="list-holder">
+            <div className="list-holders">
               <ul>
                 {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.items?.slice(0, 4).map((product) => (
+                  <ProductCard key={product?.id} item={product} />
+                ))}
+              </ul>
+
+              <ul className="ul-lists-items">
+                {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>

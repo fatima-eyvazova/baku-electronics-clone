@@ -3,9 +3,11 @@ import ItemsCarousel from "react-items-carousel";
 import { AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasketAction } from "../../store/actions/actions";
 
 const Viewed = () => {
+
     const viewedProducts = useSelector(state => state.viewed.viewedProducts);
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 40;
@@ -17,7 +19,7 @@ const Viewed = () => {
 
     return (
         <section className="history">
-            <div className="container">
+            <div className="container-swpr">
                 <div className="history-number">
                     <h1 className="history-product">Baxdıqlarınız</h1>
                     <span className="product-number">{viewedProducts?.length} mehsul</span>
@@ -87,7 +89,7 @@ const Viewed = () => {
                                                 <div className="price-tocart">
                                                     <div className="product-price">{item?.price} </div>
                                                     <div className="add-to-cart">
-                                                        <button>
+                                                        <button >
                                                             <AiOutlineShoppingCart />
                                                         </button>
                                                     </div>

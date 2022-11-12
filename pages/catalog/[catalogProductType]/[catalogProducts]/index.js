@@ -10,7 +10,6 @@ import styled from "styled-components";
 import { ButtonPlay } from "pure-react-carousel";
 import News from "../../../../components/news/News";
 
-
 const CatalogProductPage = () => {
   const [products, setProducts] = useState([]);
   const [filteredByBrand, setFilteredByBrand] = useState([]);
@@ -126,6 +125,7 @@ const CatalogProductPage = () => {
 
   return (
     <>
+
       <div className="single">
         <aside className="sidebar">
           <form>
@@ -190,10 +190,7 @@ const CatalogProductPage = () => {
 
               </div>
             </div>
-            <div className="sidebar-block">
-              <div className="sidebar-title">Qiymәt</div>
-              <div></div>
-            </div>
+
           </form>
         </aside>
         <div className="right">
@@ -302,11 +299,11 @@ const CatalogProductPage = () => {
               </button>
             </>
           </ul>
-
-
         </div>
 
       </div>
+
+
 
 
 

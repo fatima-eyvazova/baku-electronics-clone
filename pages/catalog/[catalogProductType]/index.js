@@ -39,7 +39,7 @@ const CatalogProductTypePage = () => {
 
     return (
         <>
-            <div className="single page-wrapper">
+            <div className="single">
                 <aside className="sidebar">
                     <form>
                         {/* <div className="sidebar-block">

@@ -1,0 +1,168 @@
+.campaigns-section {
+    display: flex;
+    padding-left: 80px;
+    align-items: center;
+
+    .top-cards {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        padding: 50px;
+
+        .campaigns-top {
+            h2 {
+                font-size: 33px;
+                margin-bottom: 30px;
+            }
+
+            .categories {
+
+
+                .over-categories {
+                    font-size: 21px;
+                }
+
+                .lists-spans {
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    li {
+                        .child-one {
+                            font-size: 14px;
+                            color: #2f3030;
+                        }
+
+                        .child-two {
+                            font-size: 14px;
+                            color: gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        .campaigns-cards {
+            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .container-cm {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .news-card-campaigns,
+                .news-card-campaign,
+                .news-card-campaign-three,
+                .news-card-campaign-four {
+
+                    ::before {
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(127, 128, 128, .51) 41%, #020303);
+                    }
+
+                    position: relative;
+                    border-left: 4px solid #0076ff;
+                    background-size: auto 100%;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    box-shadow: 0 3px 0 0 rgb(163 163 163 / 5%);
+                    height: 262px;
+                    width: 449px;
+                    display: flex;
+                    align-items: flex-end;
+
+                }
+
+                .news-card-campaigns {
+                    background-image: url("../public/images/qab.jpeg");
+                }
+
+                .news-card-campaign {
+                    background-image: url("../public/images/kup.jpeg");
+
+                }
+
+                .news-card-campaign-three {
+                    background-image: url("../public/images/tvvv.jpeg");
+                    border-left: 4px solid #ffed00;
+
+                }
+
+                .news-card-campaign-four {
+                    background-image: url("../public/images/yo.jpeg");
+                    border-left: 4px solid #ffed00;
+
+                }
+
+                .blog-item-label {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    background: #fff;
+                    border-radius: 18px;
+                    font-size: 14px;
+                    line-height: 1;
+                    padding: 11px 23px;
+                    color: #020303;
+                }
+
+                .campaigns-about {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 229px;
+                    max-width: 340px;
+                    color: #fff;
+                    z-index: 10;
+
+                    .campaigns {
+                        display: block;
+                        margin: 0 0 2px;
+                        font-weight: 300;
+                    }
+
+                    .about-one {
+                        font-size: 20px;
+                        line-height: 1.25;
+                        font-weight: 600;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .campaigns-section {
+        padding-left: 0px;
+
+        .top-cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px;
+
+            .campaigns-top {
+                .categories {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 20px;
+                    margin: 20px 0px 0px;
+                }
+            }
+        }
+    }
+}

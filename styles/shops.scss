@@ -1,5 +1,7 @@
 main {
-    .contact-page {
+
+
+    .contact-page-top {
         .statik-header {
             background-image: url('/images/back.jpeg');
             background-position: center right;
@@ -139,19 +141,187 @@ main {
 
             }
         }
+    }
 
-        .contact-page {
-            .addresses {
-                .image-icon {
-                    transform: rotate(180deg);
-                    transition: all 1s;
+    .contact-page-bottom {
+        padding-top: 50px;
+
+        .container-address {
+
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 0px;
+
+            .shops-addresses {
+                padding: 40px;
+
+                .shops-a {
+                    font-size: 28px;
+                    font-weight: 700;
                 }
 
-                .image-icon-down {
-                    transform: rotate(360deg);
-                    transition: all 1s;
+            }
+
+            .address-contact {
+                .addresses {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: calc(100% - 100px);
+
+                    .addresses-child {
+
+                        .child {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 605px;
+                            padding: 18px 20px 18px 15px;
+                            border-radius: 4px;
+                            border: 1px solid #dee0e5;
+                            margin-bottom: 12px;
+
+                            .down {
+                                padding: 3px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 10px;
+                                font-weight: 400;
+                                background-color: #efe8de;
+                                text-align: center;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .address-about {
+                            font-size: 14px;
+                            display: flex;
+                            width: 605px;
+
+                            .addresses-shop {
+                                flex-direction: column;
+                                padding-right: 5px;
+                                display: flex;
+                                // width: calc(100% / 3);
+                                min-width: 190px;
+
+                                .address-title {
+                                    font-size: 12px;
+                                    line-height: 1.5;
+                                    color: rgba(0, 0, 0, .5);
+                                    margin: 5px 0;
+                                }
+
+                                .addres-map {
+                                    color: #020303;
+                                    margin: 5px 0 10px;
+                                }
+                            }
+                        }
+
+
+                        .image-icon {
+                            transform: rotate(180deg);
+                            transition: all 1s;
+                            color: #d90000;
+                        }
+
+                        .image-icon-down {
+                            transform: rotate(360deg);
+                            transition: all 1s;
+
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    main {
+        .contact-page-top {
+            .statik-header {
+
+                .static-header-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .static-header-title {
+                        font-size: 23px;
+                    }
+
+                    .static-header-contact {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .contact-email {
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                        }
+                    }
+                }
+
+                .static-header-icon {
+                    display: none;
+                }
+            }
+        }
+
+        .contact-page-bottom {
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+
+            .container-address {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .address-contact {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .addresses {
+                        width: 516px;
+
+                        .addresses-child {
+                            width: 516px;
+
+                            .child {
+                                width: calc(100% - 100px);
+                            }
+
+                            .about-address {
+                                display: flex;
+                                flex-direction: column;
+                                // .address-about {
+
+                                // .addresses-shop {
+
+                                //     .addres-map {}
+                                // }
+                                // }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
 }
