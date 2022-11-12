@@ -17,7 +17,6 @@ import slider13 from "../public/images/slider13.jpeg"
 
 // icons
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { HiOutlineArrowRight } from "react-icons/hi";
 import ProductCard from "../components/productCard/ProductCard";
 import dataJson from "../data/data.json";
 import React, { useState, useEffect, Component } from "react";
@@ -793,7 +792,6 @@ export default function Home() {
         <News />
       </main >
     </>
-
   );
 }
 

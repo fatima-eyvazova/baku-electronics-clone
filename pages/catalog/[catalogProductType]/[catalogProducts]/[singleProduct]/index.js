@@ -10,15 +10,14 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasketAction, addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
 import Viewed from "../../../../../components/viewed/Viewed";
-import chevronDown from '../../../../../public/icons/chevronDown.svg'
+import chevronDown from '../../../../../public/icons/chevronDown.svg';
+
 const SingleProductPage = () => {
   const boolList = new Array(9).fill(false);
   const [showDropDown, setShowDropdown] = useState(boolList);
   const toggleDropdown = (index) => {
     setShowDropdown(prev => ([...prev, prev[index] = !prev[index]]));
   }
-
-
 
   const [product, setProduct] = useState();
   const favs = useSelector(state => state.favorites.favoriteProducts);
@@ -1930,12 +1929,9 @@ const SingleProductPage = () => {
                 </div>
               </div>
             </div>
-
           </section>
           <Viewed />
-
         </div>
-
       </div >
     </>
   );

@@ -3,7 +3,6 @@ import { FaFacebookF } from "react-icons/fa"
 import { HiOutlineMapPin } from "react-icons/hi2"
 import Link from "next/link";
 import { useState } from "react";
-import { createPopper } from '@popperjs/core';
 import chevronDown from '../public/icons/chevronDown.svg'
 import Image from "next/image";
 
@@ -342,14 +341,8 @@ const ShopsPage = () => {
               </div>
             </div>
           </div>
-
         </div>
-
-
       </section>
-
-
-
     </main>
   )
 };

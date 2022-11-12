@@ -3,12 +3,8 @@ import { useState, useEffect } from "react";
 import dataJson from '../../../../data/data.json';
 import Link from "next/link";
 import { AiOutlineStar } from "react-icons/ai";
-import { HiOutlineArrowRight } from "react-icons/hi";
 import Image from "next/image";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import styled from "styled-components";
-import { ButtonPlay } from "pure-react-carousel";
-import News from "../../../../components/news/News";
 
 const CatalogProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -20,56 +16,22 @@ const CatalogProductPage = () => {
 
   const router = useRouter();
   const { query } = router;
-  const [toggle, setToggle] = useState(false)
-  const [hideUsers, setHideUsers] = useState(false)
-  const [product, setProduct] = useState();
-
-  const [priceMin, setPriceMin] = useState(200);
-  const [priceMax, setPriceMax] = useState(200);
-
-  const onPriceChange = (values) => {
-    setPriceMin(values[0]);
-    setPriceMax(values[1]);
-  }
-
-  let pageNumberArr;
 
   useEffect(() => {
     const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts];
-    setProducts(selected);
     if (selected) {
-      pageNumberArr = new Array(
-        Math.ceil(selected?.items?.length / limitOfThingsOnPage)
-      )
-        .fill(0)
-        .map((_, idx) => idx + 1);
+      setProducts(selected);
     }
-
   }, [query.catalogProducts]);
   const starList = [1, 2, 3, 4, 5];
 
-  const [pageNumber, setPageNumber] = useState(1);
-  const limitOfThingsOnPage = 2;
-
   const [dataArray, setDataArray] = useState(dataJson);
-
-  console.log(products?.items);
-
-  const handlePrev = () => {
-    setPageNumber(pageNumber - 1);
-  };
-
-  const handleNext = () => {
-    setPageNumber(pageNumber + 1);
-  };
-
 
   const hidehandler = (id) => {
     console.log("Hide Handler callled with ", dataArray[id]);
 
     const newDataArray = dataJson.map((image) => {
       if (image.id === id) {
-        // return { ...tourCard, active: false };
         console.log("Id is", id);
         return { ...image, hide: false };
       } else {
@@ -78,16 +40,7 @@ const CatalogProductPage = () => {
     });
 
     setDataArray([...newDataArray]);
-    // console.log(newDataArray);
   };
-
-  useEffect(() => {
-    function paginatedData(page, limit) {
-      return products?.items?.slice(page * limit - limit, page * limit);
-    }
-    setDataArray(paginatedData(pageNumber, limitOfThingsOnPage));
-    //console.log(paginatedData(pageNumber, 2), tourTravelData);
-  }, [pageNumber]);
 
   const handleCheckbox = (e) => {
     if (brand === e.target.name) {
@@ -103,7 +56,6 @@ const CatalogProductPage = () => {
       setColor(e.target.name);
     }
   }
-
 
   useEffect(() => {
     setFilteredByBrand(products?.items?.filter(item => item?.characteristics?.brand === brand));
@@ -121,16 +73,8 @@ const CatalogProductPage = () => {
     list = filteredByColor;
   }
 
-  // let page = current_page || 1,
-  //   per_page = per_page_items,
-  //   offset = (page - 1) * per_page,
-  //   paginatedItems = items.slice(offset).slice(0, per_page_items),
-  //   total_pages = Math.ceil(items.length / per_page);
-  // console.log("Anzahl: " + items.lgenth);
-
   return (
     <>
-
       <div className="single">
         <aside className="sidebar">
           <form>
@@ -275,44 +219,12 @@ const CatalogProductPage = () => {
                       <div className="product-price">{item?.price} </div>
                     </div>
                   </div>
-
                 </li>
-
               ))}
-            </>
-            <>
-              <button
-                className="prev-btn"
-                disabled={pageNumber === 1}
-                onClick={handlePrev}
-              >
-                Prev
-              </button>
-              {pageNumberArr?.map((item, idx) => {
-                return (
-                  <ButtonPlay key={idx} onClick={() => setPageNumber(idx + 1)}>
-                    {item}
-                  </ButtonPlay>
-                );
-              })}
-              <button
-                className="next-btn"
-                disabled={pageNumber === dataJson?.products?.length / limitOfThingsOnPage}
-                onClick={handleNext}
-              >
-                Next
-              </button>
             </>
           </ul>
         </div>
-
       </div>
-
-
-
-
-
-
     </>
   );
 };
