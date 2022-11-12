@@ -113,8 +113,13 @@ const CatalogProductPage = () => {
     setFilteredByColor(products?.items?.filter(item => item?.characteristics?.color === color));
   }, [color]);
 
-  let list = !!brand ? filteredByBrand : products?.items;
-  list = !!color ? filteredByColor : products?.items;
+  const list = products?.items;
+
+  if (!!brand) {
+    list = filteredByBrand;
+  } else if (!!color) {
+    list = filteredByColor;
+  }
 
   // let page = current_page || 1,
   //   per_page = per_page_items,

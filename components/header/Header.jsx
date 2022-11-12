@@ -32,11 +32,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Divide as Hamburger } from "hamburger-react"
-// const GENDER_OPTIONS = [
-//   { text: "Male", value: "male" },
-//   { text: "Female", value: "female" },
-//   { text: "Other", value: "other" },
-// ]
+
 const schema = yup
   .object({
     name: yup.string().min(2).required("Name is required").matches(/^[a-z]+$/, 'Name should contain only letters'),
@@ -167,29 +163,29 @@ const Header = ({ setShow, size }) => {
       </List>
     </Box>
   );
-  const menu = () => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleMenu(false)}
-      onKeyDown={toggleMenu(false)}
-    >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+  // const menu = () => (
+  //   <Box
+  //     sx={{ width: 250 }}
+  //     role="presentation"
+  //     onClick={toggleMenu(false)}
+  //     onKeyDown={toggleMenu(false)}
+  //   >
+  //     <List>
+  //       {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
+  //         <ListItem key={text} disablePadding>
+  //           <ListItemButton>
+  //             <ListItemText primary={text} />
+  //           </ListItemButton>
+  //         </ListItem>
+  //       ))}
+  //     </List>
+  //   </Box>
+  // );
   return (
     <div className={`header ${showLinks ? "show-header" : "hide-header"} `}>
       <div className="header-left">
         <div className="burger-menu" onClick={handleShowLinks}>
-          <button onClick={toggleMenu(true)} toggled={isOpen} rounded toggle={setOpen} size="40" >
+          <button onClick={() => setBurgerMenu(prev => !prev)} toggled={isOpen} rounded toggle={setOpen} size="40" >
             <Hamburger />
           </button>
         </div>
@@ -420,8 +416,8 @@ const Header = ({ setShow, size }) => {
         <div className="drawer">
           <Drawer
             anchor="left"
-            open={setBurgerMenu}
-            onClose={toggleMenu(false)}
+            open={burgerMenu}
+            onClose={() => setBurgerMenu(false)}
           >
             <div className="menu-left">
               <div className="users">

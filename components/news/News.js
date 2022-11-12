@@ -15,7 +15,7 @@ const News = () => {
                 <div className="container-news">
                     <Link href="/">
                         <a className='news-card-link'>
-                            <span></span>
+                            <Image src='/images/red-img.jpeg' alt='' width={500} height={300} />
                         </a>
                     </Link>
                     <div className='news-about'>
@@ -27,7 +27,7 @@ const News = () => {
                 <div className="container-news">
                     <Link href="/">
                         <a className='news-card-links'>
-                            <span></span>
+                            <Image src='/images/yyyy.jpeg' alt='' width={500} height={300} />
                         </a>
                     </Link>
                     <div className='news-about'>
