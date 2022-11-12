@@ -20,7 +20,7 @@ import { VscSearch } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 // forms
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -32,6 +32,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Divide as Hamburger } from "hamburger-react"
+import { useSelector } from "react-redux";
 
 const schema = yup
   .object({
@@ -51,18 +52,18 @@ const Header = ({ setShow, size }) => {
 
   const [showLinks, setShowLinks] = useState(false);
   const [isOpen, setOpen] = useState(false);
-  const [linkIsSent, setLinkIsSent] = useState(false)
+  const [linkIsSent, setLinkIsSent] = useState(false);
+  const favs = useSelector(state => state.favorites.favoriteProducts);
+  const basketProducts = useSelector(state => state.basket.basketProducts);
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks)
   }
 
-
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    reset,
   } = useForm({
     defaultValues: {
       name: "",
@@ -77,19 +78,6 @@ const Header = ({ setShow, size }) => {
     console.log(values);
     setLinkIsSent(true);
   };
-
-  // const [userDatas, setUserDatas] = useState(products);
-  // console.log(userDatas);
-
-  // const onSearchHandle = (value) => {
-  //   const newData = userData.filter(
-  //     (user) =>
-  //       user.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()) ||
-  //       user.order.includes(value) ||
-  //       user.address.toLocaleLowerCase().includes(value.toLocaleLowerCase())
-  //   );
-  //   setUserDatas(newData);
-  // };
 
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [openAuthDrawer, setOpenAuthDrawer] = useState(false)
@@ -163,24 +151,7 @@ const Header = ({ setShow, size }) => {
       </List>
     </Box>
   );
-  // const menu = () => (
-  //   <Box
-  //     sx={{ width: 250 }}
-  //     role="presentation"
-  //     onClick={toggleMenu(false)}
-  //     onKeyDown={toggleMenu(false)}
-  //   >
-  //     <List>
-  //       {["Inbox", "Starred", "Send email", "Drafts"].map((text) => (
-  //         <ListItem key={text} disablePadding>
-  //           <ListItemButton>
-  //             <ListItemText primary={text} />
-  //           </ListItemButton>
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //   </Box>
-  // );
+
   return (
     <div className={`header ${showLinks ? "show-header" : "hide-header"} `}>
       <div className="header-left">
@@ -213,12 +184,7 @@ const Header = ({ setShow, size }) => {
         <div className="holder">
           <div className="icon">
             <input placeholder="Axtarış"
-            // onChange={(e) => onSearchHandle(e.target.value)}
             />
-            {/* {userDatas.map((id, product) => (
-              <ProductCard key={product?.id} item={product} />
-            ))} */}
-
             <VscSearch />
           </div>
           <ul>
@@ -247,8 +213,11 @@ const Header = ({ setShow, size }) => {
             </li>
             <li className="favori">
               <Link href="/favorites">
-                <button>
+                <button style={{ position: 'relative' }}>
                   <BiHeart />
+                  <div className="badge">
+                    <span>{favs?.length || 0}</span>
+                  </div>
                 </button>
               </Link>
             </li>
@@ -259,13 +228,14 @@ const Header = ({ setShow, size }) => {
             </li>
             <li className="cart">
               <Link href="/cart">
-                <button>
+                <button style={{ position: 'relative' }}>
                   <AiOutlineShoppingCart />
+                  <div className="badge">
+                    <span>{basketProducts?.length || 0}</span>
+                  </div>
                 </button>
               </Link>
             </li>
-
-
           </ul>
         </div>
       </div>
@@ -325,19 +295,13 @@ const Header = ({ setShow, size }) => {
                       mb={5}
                     >
                       Qeydiyyat
-
                     </Typography>
-
                     <form
                       name="registerForm"
                       className="flex flex-col justify-center w-full mt-32"
                       onSubmit={handleSubmit(onSubmit)}
                     >
-                      {/* <Controller
-                       name="name"
-                       render={({ field }) => ( */}
                       <TextField
-                        // {...field}
                         className="mb-24"
                         id="standard-start-adornment"
                         label="Ad"
@@ -348,13 +312,7 @@ const Header = ({ setShow, size }) => {
                         {...register("name")}
                       />
                       {!!errors.name?.message && <p style={{ color: 'red' }}>{errors.name?.message}</p>}
-                      {/* )} */}
-                      {/* /> */}
-                      {/* <Controller
-                       name="Email"
-                       render={({ field }) => ( */}
                       <TextField
-                        // {...field}
                         className="mb-24"
                         id="standard-start-adornment"
                         label="Email"
@@ -365,14 +323,7 @@ const Header = ({ setShow, size }) => {
                         {...register("email")}
                       />
                       {!!errors.email?.message && <p style={{ color: 'red' }}>{errors.email?.message}</p>}
-                      {/* // )} */}
-                      {/* /> */}
-                      {/* 
-                     // <Controller
-                       name="password"
-                       render={({ field }) => ( */}
                       <TextField
-                        // {...field}
                         className="mb-24"
                         id="standard-start-adornment"
                         label="Password"
@@ -384,10 +335,6 @@ const Header = ({ setShow, size }) => {
                         {...register("password")}
                       />
                       {!!errors.password?.message && <p style={{ color: 'red' }}>{errors.password?.message}</p>}
-
-                      {/* )} */}
-                      {/* /> */}
-
                       <Button
                         variant="contained"
                         color="secondary"
@@ -434,9 +381,6 @@ const Header = ({ setShow, size }) => {
                       </button>
                     </Link>
                   </li>
-
-
-
                 </ul>
               </div>
               <div className="menu-rigth">
@@ -468,7 +412,6 @@ const Header = ({ setShow, size }) => {
                 </div>
               </div>
             </div>
-
           </Drawer>
         </div>
 

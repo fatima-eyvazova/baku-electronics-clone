@@ -6,6 +6,25 @@
   padding: 0 20px;
   border-bottom: 1px solid rgb(236, 230, 230);
 
+  .badge {
+    border-radius: 50%;
+    background-color: #020303;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    display: block;
+    min-width: 15px;
+    height: 15px;
+    line-height: 16px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+
+    span {
+      color: white;
+    }
+  }
+
   .header-left {
     padding: 0 25px 0 5px;
 
