@@ -36,7 +36,7 @@ import { useSelector } from "react-redux";
 
 const schema = yup
   .object({
-    name: yup.string().min(2).required("Ad tələb olunur").matches(/^[a-z]+$/, 'Ad yalnız hərflərdən ibarət olmalıdır'),
+    name: yup.string().min(2).required("Ad tələb olunur").matches(/^[A-Za-z]+$/, 'Ad yalnız hərflərdən ibarət olmalıdır'),
     email: yup
       .string()
       .email("Bu e-poçt olmalıdır")
@@ -288,7 +288,7 @@ const Header = ({ setShow, size }) => {
           <div className="modal-right-box">
             <div className="modal-inner-box">
               <div className="register-icon">
-                {!linkIsSent ? (
+                {linkIsSent == false ? (
                   <div className="register-childe">
                     <Typography
                       className="mt-32 text-4xl font-extrabold tracking-tight leading-tight text-center"
@@ -350,9 +350,7 @@ const Header = ({ setShow, size }) => {
                     </form>
                   </div>
                 ) : (
-
                   <div className="message-link"><p >Link e-mail ünvanınıza göndərilib.</p></div>
-
                 )}
               </div>
             </div>

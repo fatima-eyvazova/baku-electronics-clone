@@ -66,7 +66,7 @@ const SingleProductPage = () => {
   const handleAddToBasket = () => {
     const findedItem = basketProducts?.find((item) => item.product.id === product?.id && item.product.title === product?.title);
 
-    if (!findedItem) {
+    if (findedItem == undefined) {
       dispatch(
         addToBasketAction([...basketProducts, { product: product, count: 1 }])
       );
