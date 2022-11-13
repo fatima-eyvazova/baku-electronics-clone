@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../../../components/productCard/ProductCard';
+import CustomHead from "../../../components/customHead/customHead";
 import dataJson from "../../../data/data.json";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Image from 'next/image';
@@ -25,19 +26,20 @@ const CatalogProductTypePage = () => {
 
     return (
         <>
-            <div className="single">
-                <div className="right">
-                    <div className="top-share ">
-                        <div className="top-items">
-                            <div className="catagory-elements">
-                                <span className="catagory">Bütün kateqoriyalar</span>
-                                <span className="icon"><HiOutlineArrowNarrowRight /></span>
-                                <span className="catagory">{query.catalogProductType}</span>
+            <CustomHead title={`Baku Electronics Catalog ${query.catalogProductType}`} />
+            <div className="catalog-section">
+                <div className="catalog-right">
+                    <div className="top-catalog ">
+                        <div className="catalogs-items">
+                            <div className="catalogs-elements">
+                                <span className="catagory-span">Bütün kateqoriyalar</span>
+                                <span className="icon-span"><HiOutlineArrowNarrowRight /></span>
+                                <span className="catagory-span">{query.catalogProductType}</span>
                             </div>
 
-                            <h1 className="title-category">{products?.subCategoryTitle}</h1>
+                            <h1 className="title-catalog">{products?.subCategoryTitle}</h1>
                         </div>
-                        <figure className="image-catalog">
+                        <figure className="image-teg">
                             <span className="image-ctlg">
                                 <Image
                                     src={Object?.values(selected)?.[0]?.subCategoryImage || ''}
@@ -49,7 +51,7 @@ const CatalogProductTypePage = () => {
 
                         </figure>
                     </div>
-                    <ul className='product-wrap'>
+                    <ul className='product-card-item'>
                         {products?.map(item => (
                             <ProductCard key={item?.id} item={item} isViewed />
 

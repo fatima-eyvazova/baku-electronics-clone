@@ -36,15 +36,15 @@ import { useSelector } from "react-redux";
 
 const schema = yup
   .object({
-    name: yup.string().min(2).required("Name is required").matches(/^[a-z]+$/, 'Name should contain only letters'),
+    name: yup.string().min(2).required("Ad tələb olunur").matches(/^[a-z]+$/, 'Ad yalnız hərflərdən ibarət olmalıdır'),
     email: yup
       .string()
-      .email("This must be a email")
-      .required("Email is required"),
+      .email("Bu e-poçt olmalıdır")
+      .required("E-poçt tələb olunur"),
     password: yup
       .string()
-      .required("Password is required")
-      .min(6, "The password must be six characters"),
+      .required("Parol tələb olunur")
+      .min(6, "Parol 6 simvoldan ibarət olmalıdır"),
   })
   .required();
 
@@ -250,8 +250,8 @@ const Header = ({ setShow, size }) => {
             <div className="other-right-child">
               <strong>Məlumat</strong>
               <ul className="other-content">
-                <li><Link href="/kampaniyalar">Kampaniyalar</Link></li>
-                <li><Link href="/kart">Müştəri kartı</Link></li>
+                <li><Link href="/campaigns">Kampaniyalar</Link></li>
+                <li><Link href="/cart">Müştəri kartı</Link></li>
                 <li><Link href="/bendler">Brendlər</Link></li>
                 <li><Link href="/blog">Bloq</Link></li>
               </ul>
@@ -260,7 +260,7 @@ const Header = ({ setShow, size }) => {
               <strong>Şirkət</strong>
               <ul className="other-content">
                 <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
-                <li><Link href="/magazalar">Mağazalar</Link></li>
+                <li><Link href="/shops">Mağazalar</Link></li>
                 <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
                 <li><Link href="/satislar">Korporativ satışlar</Link></li>
               </ul>
@@ -350,7 +350,9 @@ const Header = ({ setShow, size }) => {
                     </form>
                   </div>
                 ) : (
-                  <p>Link e-mail ünvanınıza göndərilib.</p>
+
+                  <div className="message-link"><p >Link e-mail ünvanınıza göndərilib.</p></div>
+
                 )}
               </div>
             </div>
@@ -387,8 +389,8 @@ const Header = ({ setShow, size }) => {
                 <div className="menu-right-child">
                   <strong className="title-menu">Məlumat</strong>
                   <ul className="menu-content">
-                    <li><Link href="/kampaniyalar">Kampaniyalar</Link></li>
-                    <li><Link href="/kart">Müştəri kartı</Link></li>
+                    <li><Link href="/campaigns">Kampaniyalar</Link></li>
+                    <li><Link href="/cart">Müştəri kartı</Link></li>
                     <li><Link href="/bendler">Brendlər</Link></li>
                     <li><Link href="/blog">Bloq</Link></li>
                   </ul>
@@ -397,7 +399,7 @@ const Header = ({ setShow, size }) => {
                   <strong className="title-menu">Şirkət</strong>
                   <ul className="menu-content">
                     <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
-                    <li><Link href="/magazalar">Mağazalar</Link></li>
+                    <li><Link href="/shops">Mağazalar</Link></li>
                     <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
                     <li><Link href="/satislar">Korporativ satışlar</Link></li>
                   </ul>

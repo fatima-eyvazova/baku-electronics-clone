@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AiOutlineStar } from "react-icons/ai";
 import Image from "next/image";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import CustomHead from "../../../../components/customHead/customHead";
 
 const CatalogProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -75,6 +76,7 @@ const CatalogProductPage = () => {
 
   return (
     <>
+      <CustomHead title={`Baku Electronics Catalog ${query.catalogProducts}`} />
       <div className="single">
         <aside className="sidebar">
           <form>

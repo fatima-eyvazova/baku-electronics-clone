@@ -4,8 +4,6 @@ import Link from 'next/link';
 import New from "../../public/images/new1.jpeg"
 
 const News = () => {
-
-
     return (
         <section className="new">
             <div className="new-top">
@@ -15,19 +13,18 @@ const News = () => {
                 <div className="container-news">
                     <Link href="/">
                         <a className='news-card-link'>
-                            <Image src='/images/red-img.jpeg' alt='' width={500} height={300} />
+                            <Image src='/images/red-img.jpeg' alt='image' width={500} height={300} />
                         </a>
                     </Link>
                     <div className='news-about'>
                         <span className='news'>Xəbərlər</span>
                         <h3 className='about'>Qırmızını seç, daha çox endirim qazan!</h3>
                     </div>
-
                 </div >
                 <div className="container-news">
                     <Link href="/">
                         <a className='news-card-links'>
-                            <Image src='/images/yyyy.jpeg' alt='' width={500} height={300} />
+                            <Image src='/images/yyyy.jpeg' alt='image' width={500} height={300} />
                         </a>
                     </Link>
                     <div className='news-about'>

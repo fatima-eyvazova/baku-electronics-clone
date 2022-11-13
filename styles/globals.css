@@ -29,6 +29,12 @@ button:hover {
   cursor: pointer;
 }
 
+.favori-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

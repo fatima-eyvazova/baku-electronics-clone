@@ -1203,7 +1203,7 @@
         "brands": [
           "Samsung",
           "XIAOMI",
-          "INFINIX",
+          "LENOVO",
           "Apple",
           "HUAWEI"
         ],
@@ -1212,10 +1212,10 @@
         "brandI": "INFINIX",
         "brandA": "Apple",
         "brandH": "HUAWEI",
-        "colorOne": "Qızılı",
-        "colorTwo": "Qara",
+        "colorOne": "Çəhrayı",
+        "colorTwo": "Boz",
         "colorThree": "Gümüşü",
-        "colorFour": "Bej",
+        "colorFour": "Ağ",
         "colorFive": "Qırmızı",
         "colorSix": "Bənövşəyi",
         "colorSeven": "Göy",
@@ -1270,7 +1270,7 @@
               "bodyMaterial": "under display, optical",
               "size": "Üst şüşə / Plastik korpus",
               "weight": "189 qr",
-              "color": "Qara",
+              "color": "Göy",
               "garranty": "1 il"
             }
           },
@@ -1540,7 +1540,7 @@
               "bodyMaterial": "under display, optical",
               "size": "Üst şüşə / Plastik korpus",
               "weight": "477 qr",
-              "color": "Mavi",
+              "color": "Göy",
               "garranty": "1 il"
             }
           },
@@ -1651,6 +1651,60 @@
               "color": "Ağ",
               "garranty": "1 il"
             }
+          },
+          {
+            "id": 9,
+            "image": "/images/len.jpeg",
+            "price": "599.99 ₼",
+            "brand": "Xiaomi",
+            "title": "Planşet Lenovo Tab P11 Plus 4GB/64GB LTE",
+            "reviewCount": 0,
+            "stars": 0,
+            "code": 183364,
+            "hasDiscount": true,
+            "discountAmount": "90 ₼",
+            "subCategory": "tablets",
+            "category": "telefonlar-qadcetler",
+            "path": "planshet-lenovo-tab-p11-plus-4gb64gb-lte",
+            "characteristics": {
+              "hasDiscount": true,
+              "imageRefregeritor": "/images/len1.jpeg",
+              "number": "0",
+              "share": "/images/len2.jpeg",
+              "credit": "71 ₼",
+              "brand": "LENOVO",
+              "productType": "Planşet",
+              "network": "2G, 3G, 4G",
+              "simNumber": 1,
+              "simSize": "nano SIM+eSIM",
+              "screenSize": 10.9,
+              "displayPermission": "1640 x 2360",
+              "matrixType": "Liquid Retina IPS LCD",
+              "operatingMemory": "8GB",
+              "builtMemory": "256GB",
+              "processorType": "microSD, 1 TB-dək",
+              "numberCores": "Apple A14 Bionic (5 nm)",
+              "processorFrequency": "6",
+              "operatingSystem": "Octa-core (2x2.4 GHz Cortex-A7",
+              "mainCamera": "64MP + 12MP + 5MP + 5MP",
+              "diaphragm": "f/1.8 + f/2.2 + f/2.4 + f/2.4",
+              "opticalZoom": "var",
+              "ledFlash": "var",
+              "videoShooting": "4K@30fps, 1080p@30/60fps",
+              "frontCamera": "32 MP, f/2.2",
+              "batteryCapacity": "Li-Po 5000 mAh",
+              "chargingConnector": "USB Type-C 2.0",
+              "wifi": "Wi-Fi 802.11 a/b/g/n/ac",
+              "bluetooth": "5.1, A2DP, LE",
+              "navigationSYstem": "var",
+              "protection": "GPS, A-GPS, GLONASS, Beidou, G",
+              "scanner": "IP67",
+              "bodyMaterial": "under display, optical",
+              "size": "Üst şüşə / Plastik korpus",
+              "weight": "477 qr",
+              "color": "Boz",
+              "garranty": "1 il"
+            }
           }
         ]
       },
@@ -1672,10 +1726,10 @@
         "brandH": "HUAWEI",
         "colorOne": "Ağ",
         "colorTwo": "Qara",
-        "colorThree": "Gümüşü",
-        "colorFour": "Bej",
+        "colorThree": "Qehveyi",
+        "colorFour": "Çəhrayı",
         "colorFive": "Qırmızı",
-        "colorSix": "Bənövşəyi",
+        "colorSix": "Yaşıl",
         "colorSeven": "Göy",
         "items": [
           {
@@ -1714,7 +1768,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "39.3 x 40.4 x 9.8 mm",
               "bodyColor": "Gümüşü",
-              "braceletColor": "Göy",
+              "color": "Göy",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1il"
             }
@@ -1755,7 +1809,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "43 х 43 х 10.5 mm",
               "bodyColor": "Ağ",
-              "braceletColor": "Ağ",
+              "color": "Ağ",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -1796,7 +1850,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "40 x 34 x 10.7 mm",
               "bodyColor": "Boz",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -1837,7 +1891,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "40 x 34 x 10.7 mm",
               "bodyColor": "Boz",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -1878,7 +1932,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "40 x 34 x 10.7 mm",
               "bodyColor": "Boz",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -1919,7 +1973,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "40 x 34 x 10.7 mm",
               "bodyColor": "Boz",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -1960,7 +2014,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Gümüşü",
-              "braceletColor": "Çəhrayı",
+              "color": "Çəhrayı",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2001,7 +2055,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2042,7 +2096,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "47,4 x 18,6 x 12,7 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2083,7 +2137,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "47,4 x 18,6 x 12,7 mm",
               "bodyColor": "Yaşıl",
-              "braceletColor": "Yaşıl",
+              "color": "Yaşıl",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2124,7 +2178,7 @@
               "braceletMaterial": "Ftorelastomer",
               "dimensions": "40.4 x 39.3 x 9.8 mm",
               "bodyColor": "Qızılı / Çəhrayı",
-              "braceletColor": "Qızılı / Çəhrayı",
+              "color": "Qızılı / Çəhrayı",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2165,7 +2219,7 @@
               "braceletMaterial": "Ftorelastomer",
               "dimensions": "40.4 x 39.3 x 9.8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2206,7 +2260,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "40.4 x 39.3 x 9.8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2247,7 +2301,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "17.2x43x11.5",
               "bodyColor": "qara",
-              "braceletColor": "boz",
+              "color": "boz",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2288,7 +2342,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "38 х 45 х 10 mm",
               "bodyColor": "Qızılı",
-              "braceletColor": "Ağ",
+              "color": "Ağ",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2305,7 +2359,7 @@
             "discountAmount": "260 ₼",
             "subCategory": "watches",
             "category": "telefonlar-qadcetler",
-            "path": "fitnes-qolbaq-huawei-band-4e-black-misty-grey",
+            "path": "smart-saat-samsung-galaxy-watch-active2-44mm-aluminum-sm-r820nzsrser",
             "characteristics": {
               "hasDiscount": false,
               "imageRefregeritor": "/images/s6.jpeg",
@@ -2329,7 +2383,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "38 х 45 х 10 mm",
               "bodyColor": "Boz",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2370,7 +2424,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "45.9 x 45.9 x 10.7 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2411,7 +2465,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "31 x 52 x 11.8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2452,7 +2506,7 @@
               "braceletMaterial": "Ftorelastomer",
               "dimensions": "45.5 x 45.5 x 11 mm",
               "bodyColor": "Gümüşü",
-              "braceletColor": "Boz",
+              "color": "Boz",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2492,8 +2546,8 @@
               "caseMaterial": "Paslanmaz polad",
               "braceletMaterial": "Ftorelastomer",
               "dimensions": "45.5 x 45.5 x 11 mm",
-              "bodyColor": "Gümüşü",
-              "braceletColor": "Boz",
+              "bodyColor": "Qəhvəyi",
+              "color": "Qəhvəyi",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2534,7 +2588,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Qırmızı",
-              "braceletColor": "Qırmızı",
+              "color": "Qırmızı",
               "packagingIncludes": "adaptor,kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2575,7 +2629,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Gümüşü",
-              "braceletColor": "Narıncı",
+              "color": "Narıncı",
               "packagingIncludes": "kəmər,şarj aparatı",
               "garranty": "1 il"
             }
@@ -2616,7 +2670,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Çəhrayı",
-              "braceletColor": "Çəhrayı",
+              "color": "Çəhrayı",
               "packagingIncludes": "şarj aparatı",
               "garranty": "1 il"
             }
@@ -2657,7 +2711,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "şarj aparatı",
               "garranty": "1 il"
             }
@@ -2698,7 +2752,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Cəhrayı",
+              "color": "Cəhrayı",
               "packagingIncludes": "microUSB",
               "garranty": "1 il"
             }
@@ -2739,7 +2793,7 @@
               "braceletMaterial": "Silikon",
               "dimensions": "46 x 33,5 x 10,8 mm",
               "bodyColor": "Qara",
-              "braceletColor": "Qara",
+              "color": "Qara",
               "packagingIncludes": "microUSB",
               "garranty": "1 il"
             }
@@ -2752,11 +2806,25 @@
         "subCategoryImage": "/images/w3.png",
         "subCategoryTitle": "Notbuklar",
         "subCategoryDescription": "Notbuklar və kompüter texnikası",
-        "brandS": "Acer",
-        "brandX": "Apple",
+        "brands": [
+          "Apple",
+          "Acer",
+          "ASUS",
+          "HP",
+          "DELL"
+        ],
+        "brandS": "Apple",
+        "brandX": "Acer",
         "brandI": "ASUS",
-        "brandA": "DELL",
-        "brandH": "HP",
+        "brandA": "HP",
+        "brandH": "DELL",
+        "colorOne": "Ağ",
+        "colorTwo": "Qara",
+        "colorThree": "Boz",
+        "colorFour": "Gümüşü",
+        "colorFive": "Göy",
+        "colorSix": "Yaşıl",
+        "colorSeven": "Qırmızı",
         "items": [
           {
             "id": 1,
@@ -2779,7 +2847,7 @@
               "imageRefregeritor": "/images/macbookAir.jpg",
               "imageBatary": "/images/batareya.jpg",
               "share": "/images/notebookSilver.jpg",
-              "brand": "Acer",
+              "brand": "Apple",
               "operatingSystem": "FreeDos",
               "processorCode": "1115G4",
               "processorType": "Core i3",
@@ -3140,7 +3208,7 @@
               "numberSpeakers": 2,
               "dimensions": "358.5 х 262.4 х 19.9 mm",
               "weight": "2.4 kq",
-              "color": "Gümüşü",
+              "color": "Qara",
               "packagingIncludes": "Təlimat,təchizat kabeli",
               "warranty": "1 il"
             }
@@ -3531,8 +3599,8 @@
           },
           {
             "id": 17,
-            "image": "/images/acerR.jpg",
-            "title": "Notbuk Acer Aspire A315-57G (NX.HZRER.01F-N)",
+            "image": "/images/www.jpeg",
+            "title": "Notbuk HP Victus/15.6 FHD 144HZ/Intel Core i7-12650H 16/512GB SSD/NVIDIA RTX 3050Ti 4GB",
             "price": "1819.99 ₼",
             "reviewCount": 0,
             "stars": 0,
@@ -3541,16 +3609,16 @@
             "discountAmount": "270 ₼",
             "subCategory": "notebooks",
             "category": "noutbuklar-kompyuterler",
-            "path": "noutbuk-acer-aspire-a315-57g-nxhzrer01f-n",
+            "path": "noutbuk-hp-victus156-fhdintel-core-i7-12650h-12th-gen16512gb-ssdnvidia-geforce-r-15-fa0032dx",
             "characteristics": {
               "credit": "102 ₼",
               "hasDiscount": true,
               "number": 0,
               "technique": "Notbuklar və kompüter texnikası",
               "notebook": "Notbuklar",
-              "imageRefregeritor": "/images/aceR.jpg",
-              "share": "/images/acerrr.jpg",
-              "brand": "Acer",
+              "imageRefregeritor": "/images/www1.jpeg",
+              "share": "/images/www2.jpeg",
+              "brand": "HP",
               "operatingSystem": "FreeDos",
               "processorCode": "1035G1",
               "processorType": "Core i5",
@@ -4011,26 +4079,26 @@
           },
           {
             "id": 27,
-            "image": "/images/porsche.jpg",
-            "title": "Notbuk Acer Porsche Design Book RS AP714-51GT (NX.A2RER.004)",
-            "price": "4499.99 ₼",
+            "image": "/images/acer5.jpeg",
+            "title": "Notbuk HP 14s-fq1040ur Silver (4H2J1EA)",
+            "price": "1799.99 ₼",
             "reviewCount": 0,
             "stars": 0,
             "code": 174513,
             "hasDiscount": true,
-            "discountAmount": "500 ₼",
+            "discountAmount": "100 ₼",
             "subCategory": "notebooks",
             "category": "noutbuklar-kompyuterler",
-            "path": "noutbuk-acer-ap714-51gti7-1165g7mx35016gb1tb-ssdwin10",
+            "path": "notbuk-hp-14s-fq1040ur-silver-4h2j1ea",
             "characteristics": {
-              "credit": "300 ₼",
+              "credit": "180 ₼",
               "hasDiscount": true,
               "number": 0,
               "technique": "Notbuklar və kompüter texnikası",
               "notebook": "Notbuklar",
-              "imageRefregeritor": "/images/pors.jpg",
-              "share": "/images/design.jpg",
-              "brand": "Acer",
+              "imageRefregeritor": "/images/acer6.png",
+              "share": "/images/acer7.png",
+              "brand": "HP",
               "operatingSystem": "Windows 10",
               "processorCode": "1165G7",
               "processorType": "Core i7",
@@ -4161,11 +4229,25 @@
         "subCategoryImage": "/images/w15.png",
         "subCategoryTitle": "Soyuducular",
         "subCategoryDescription": "Böyük məişət texnikası",
+        "brands": [
+          "Bosch",
+          "Samsung",
+          "HAIER",
+          "Hitachi",
+          "LG"
+        ],
         "brandS": "Bosch",
         "brandX": "Samsung",
         "brandI": "HAIER",
         "brandA": "Hitachi",
         "brandH": "LG",
+        "colorOne": "Ağ",
+        "colorTwo": "Qara",
+        "colorThree": "Boz",
+        "colorFour": "Gümüşü",
+        "colorFive": "Qırmızı",
+        "colorSix": "Yaşıl",
+        "colorSeven": "Göy",
         "items": [
           {
             "id": 1,
@@ -4521,7 +4603,7 @@
               "iceMaker": "var",
               "dimensions": "178x91.2x71.6 sm",
               "weight": "103 kq",
-              "color": "Gümüşü",
+              "color": "Boz",
               "producingCountry": "Çin",
               "garranty": "1 il"
             }
@@ -4982,11 +5064,25 @@
         "subCategoryImage": "/images/w15.png",
         "subCategoryTitle": "Paltaryuyan maşınlar",
         "subCategoryDescription": "Böyük məişət texnikası",
+        "brands": [
+          "Bosch",
+          "Gorenje",
+          "HAIER",
+          "Hotpoint-Aristo",
+          "LG"
+        ],
         "brandS": "Bosch",
         "brandX": "Gorenje",
         "brandI": "HAIER",
         "brandA": "Hotpoint-Aristo",
         "brandH": "LG",
+        "colorOne": "Ağ",
+        "colorTwo": "Qara",
+        "colorThree": "Tünd gümüşü",
+        "colorFour": "Gümüşü",
+        "colorFive": "İnox",
+        "colorSix": "Bej",
+        "colorSeven": "Boz",
         "items": [
           {
             "id": 1,
@@ -5161,7 +5257,7 @@
               "leakProtection": "var",
               "childLock": "var",
               "weight": "60 kq",
-              "color": "Gümüşü",
+              "color": "Tünd gümüşü",
               "dimensions": "85x60x55 sm",
               "packagingIncludes": "Şlanqlar",
               "producingCountry": "Rusiya",
@@ -5431,7 +5527,7 @@
               "leakProtection": "var",
               "childLock": "var",
               "weight": "54 kq",
-              "color": "Ağ",
+              "color": "Bej",
               "dimensions": "85x60x55 sm",
               "packagingIncludes": "Şlanqlar",
               "producingCountry": "Rusiya",
@@ -5851,11 +5947,25 @@
         "subCategoryImage": "/images/s75.jpeg",
         "subCategoryTitle": "Paltaryuyan maşınlar",
         "subCategoryDescription": "Böyük məişət texnikası",
+        "brands": [
+          "Hisense",
+          "LG",
+          "Samsung",
+          "Sony",
+          "TCL"
+        ],
         "brandS": "Hisense",
         "brandX": "LG",
         "brandI": "Samsung",
         "brandA": "Sony",
         "brandH": "TCL",
+        "colorOne": "Ağ",
+        "colorTwo": "Qara",
+        "colorThree": "Tünd gümüşü",
+        "colorFour": "Gümüşü",
+        "colorFive": "İnox",
+        "colorSix": "Bej",
+        "colorSeven": "Boz",
         "items": [
           {
             "id": 1,

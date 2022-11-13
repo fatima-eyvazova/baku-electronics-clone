@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasketAction, addToFavoritesAction, addToViewedAction, removeFromFavoritesAction } from "../../../../../store/actions/actions";
 import Viewed from "../../../../../components/viewed/Viewed";
+import CustomHead from "../../../../../components/customHead/customHead";
 import chevronDown from '../../../../../public/icons/chevronDown.svg';
 
 const SingleProductPage = () => {
@@ -84,6 +85,7 @@ const SingleProductPage = () => {
 
   return (
     <>
+      <CustomHead title={`Baku Electronics Catalog ${query.singleProduct}`} />
       <div>
         <div className="container">
           <div className="catagorys">
@@ -548,16 +550,12 @@ const SingleProductPage = () => {
                       <span>{product?.characteristics?.dimensions}</span>
                     </li>
                     <li>
-                      <span>Çəki:</span>
-                      <span>{product?.characteristics?.weight}</span>
-                    </li>
-                    <li>
                       <span>Korpusun rəngi:</span>
                       <span>{product?.characteristics?.bodyColor}</span>
                     </li>
                     <li>
                       <span>Bilərziyin rəngi:</span>
-                      <span>{product?.characteristics?.braceletColor}</span>
+                      <span>{product?.characteristics?.color}</span>
                     </li>
                     <li>
                       <span>Qablaşdırmaya daxildir:</span>
