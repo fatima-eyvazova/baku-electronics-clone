@@ -10,7 +10,7 @@ const News = () => {
                 <h2>Yeni xəbərlər</h2>
             </div>
             <div className="new-bottom">
-                <div className="container-news">
+                <div className="container-news-one">
                     <Link href="/">
                         <a className='news-card-link'>
                             <Image src='/images/red-img.jpeg' alt='image' width={500} height={300} />
@@ -21,9 +21,9 @@ const News = () => {
                         <h3 className='about'>Qırmızını seç, daha çox endirim qazan!</h3>
                     </div>
                 </div >
-                <div className="container-news">
+                <div className="container-news-two">
                     <Link href="/">
-                        <a className='news-card-links'>
+                        <a className='news-card-link'>
                             <Image src='/images/yyyy.jpeg' alt='image' width={500} height={300} />
                         </a>
                     </Link>
@@ -31,9 +31,7 @@ const News = () => {
                         <span className='news'>Xəbərlər</span>
                         <h3 className='about'>Baku Electronics 30-cu mağazasını açdı!</h3>
                     </div>
-
                 </div >
-
             </div >
         </section>
 

@@ -1,8 +1,4 @@
 .favori-items {
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: auto;
-
 
     li {
         display: flex;
@@ -148,5 +144,38 @@
 
         }
 
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .favori-items {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .favori-items {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+
+        li {
+
+            .product-cart {
+
+                .product-value {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+
+                }
+
+
+            }
+
+        }
     }
 }

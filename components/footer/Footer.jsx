@@ -50,7 +50,7 @@ const Footer = () => {
                   <h3>Şirkət</h3>
                   <ul>
                     <li>
-                      <Link href='/companies'>Şirkət haqqında</Link>
+                      <Link href='/aboutCompany'>Şirkət haqqında</Link>
                     </li>
                     <li>
                       <Link href='/shops'>Mağazalar</Link>

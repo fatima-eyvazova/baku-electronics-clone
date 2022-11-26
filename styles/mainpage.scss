@@ -5,11 +5,36 @@
     font-size: 15px;
 
     .dropdawn {
+
         li {
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
+
+            .dropdawn-child {
+                display: none;
+            }
+
+            &:hover {
+                .dropdawn-child {
+                    display: flex;
+                    flex-direction: column;
+                    width: 331px;
+                    background-color: #efe8de;
+                    padding: 10px 0 20px 50px;
+                    height: 557px;
+                    position: absolute;
+                    top: 0;
+                    left: 307px;
+
+                    li {
+                        padding-bottom: 15px;
+                        display: block;
+                    }
+                }
+            }
+
         }
     }
 }
@@ -22,13 +47,11 @@
         width: 331px;
         background-color: #efe8de;
         padding: 10px 0 20px 50px;
-        height: 505px;
+        height: 557px;
         position: absolute;
         top: 0;
 
-
         li {
-
             padding-bottom: 15px;
 
             a {
@@ -68,6 +91,10 @@
             padding-bottom: 70px;
 
             .ul-lists-items {
+                display: none;
+            }
+
+            .ul-lists-telephones {
                 display: none;
             }
 
@@ -204,7 +231,7 @@
     }
 }
 
-main {
+.container {
     position: relative;
 
     .dropdawn {
@@ -226,18 +253,15 @@ main {
         top: 30px;
     }
 
-
     // -----------------aside-----------------
     .aside-swiper {
         display: flex;
-        justify-content: center;
-        align-items: center;
+
 
         .aside {
-            padding: 0 0 20px 80px;
+            padding: 10px 0px 20px 80px;
+            margin: 0;
             background-color: #fff;
-            margin-top: 0px;
-            padding-top: 0px;
             width: 350px;
             position: relative;
 
@@ -259,8 +283,6 @@ main {
 
 
         .swiper {
-
-
             #app {
                 height: 100%;
             }
@@ -276,6 +298,7 @@ main {
                 width: 61px;
                 height: 76px;
                 padding-left: 33px;
+                left: 0;
             }
 
             .swiper-button-next {
@@ -284,6 +307,7 @@ main {
                 width: 61px;
                 height: 76px;
                 padding-right: 33px;
+                right: 0;
 
             }
 
@@ -332,193 +356,6 @@ main {
             }
 
 
-        }
-    }
-
-    .history {
-        .container-swpr {
-            background-color: #f6f6f6;
-            padding: 30px 0px;
-
-            .history-number {
-                padding-left: 8vw;
-                padding-bottom: 30px;
-
-                .history-product {
-                    margin: 0 0 15px;
-                    padding: 0;
-                    color: #020303;
-                    font-weight: 700;
-                    line-height: 1;
-                    font-size: 28px;
-                }
-
-            }
-        }
-
-        .cards {
-            .card {
-                display: flex;
-                gap: 30px;
-
-                .product-card-two {
-                    border: 1px solid rgb(221, 219, 219);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: #fff;
-                    margin: 0 0 18px;
-                    width: 542px;
-                    height: 258px;
-                    padding: 20px 20px 11px;
-
-
-                    .card-top {
-
-                        a {
-                            position: relative;
-                        }
-                    }
-
-                    .product-discount {
-                        width: 70px;
-                        height: 70px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 12px;
-                        text-align: center;
-                        color: #fff;
-                        background-color: #ea2427;
-                        border-radius: 50%;
-                        margin-bottom: 10px;
-                        position: absolute;
-                        bottom: 35px;
-                        left: 10px;
-
-                        .discount-price {
-
-                            text-align: center;
-                            display: flex;
-                            flex-direction: column;
-
-                            .icon {
-                                font-size: 14px;
-                                font-weight: 700;
-                                font-family: Arial, Helvetica, sans-serif;
-                                color: #fff;
-                            }
-
-                            .sale {
-                                text-align: center;
-                                color: #fff;
-                            }
-                        }
-                    }
-
-
-
-
-                    .product-rate {
-                        display: flex;
-                        margin-bottom: 8px;
-
-                        .icons {
-                            font-size: 19px;
-                            margin-right: 15px;
-                            color: rgb(243, 202, 21);
-                        }
-
-                        .comment {
-                            a {
-                                font-size: 17px;
-                                color: #0076ff;
-                            }
-
-                        }
-                    }
-
-                    a {
-
-
-                        &:hover {
-                            transition: color .3s ease;
-                            color: #0076ff;
-                        }
-
-                        color: #020303;
-                        margin-bottom: 10px;
-                        font-family: 'Segoe UI',
-                        Tahoma,
-                        Geneva,
-                        Verdana,
-                        sans-serif;
-                    }
-
-                    .product-value {
-                        margin-top: 10px;
-
-                        .span-price-item {
-                            margin-right: 10px;
-                            margin-bottom: 10px;
-                            font-size: 14px;
-                            font-weight: 500;
-                            color: #020303;
-                            line-height: 1;
-                        }
-
-                        .price-tocart {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 20px;
-
-
-                            .product-price {
-                                line-height: 1;
-                                font-weight: 700;
-                                font-size: 24px;
-                                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                            }
-
-                            .add-to-cart {
-
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-
-
-                                button {
-                                    &:hover {
-                                        background-color: #ff696b;
-                                    }
-
-                                    border-radius: 50%;
-                                    background-color: #ea2427;
-                                    border: none;
-                                    color: #fff;
-                                    height: 48px;
-                                    width: 48px;
-                                    font-size: 24px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .sc-ifAKCX {
-            button {
-                color: transparent;
-                margin: 50px 0;
-                background-image: url('../public/images/sl.svg');
-                height: 60px;
-                width: 74px;
-                background-size: cover;
-                background-repeat: no-repeat;
-
-            }
         }
     }
 
@@ -649,21 +486,15 @@ main {
 
 
 @media only screen and (max-width:768px) {
-    main {
+    .container {
+        padding-top: 70px;
+
         .aside-swiper {
             .aside {
                 display: none;
 
                 .swiper {
                     width: 100%;
-
-                    // .swiper-button-prev {
-
-                    // }
-
-                    // .swiper-button-next {
-
-                    // }
                 }
 
 
@@ -673,17 +504,17 @@ main {
         .history {
 
             .sc-htpNat {
-                width: 100%;
+                width: 62%;
 
                 .sc-bxivhb {
-                    width: 608px;
+                    width: 100%;
                 }
             }
 
             .cards {
                 .card {
                     .product-card-two {
-                        width: 434px;
+                        width: 320px;
                         height: 380px;
                         display: flex;
                         flex-direction: column;
@@ -751,11 +582,11 @@ main {
                         justify-content: center;
                         align-items: center;
                         display: flex;
-                        gap: 10px;
+                        gap: 20px;
 
                         li {
                             .product-cart {
-                                width: 241px;
+                                width: 325px;
                                 height: 380px;
                             }
                         }
@@ -855,10 +686,171 @@ main {
                     }
                 }
 
-
             }
         }
     }
 
+
+}
+
+@media only screen and (max-width:420px) {
+    .container {
+        padding-top: 70px;
+
+        .aside-swiper {
+
+            .aside {
+                display: none;
+            }
+
+            .swiper {
+                width: 100%;
+
+                .swiper-button-prev {
+                    display: none;
+                }
+
+                .swiper-button-next {
+                    display: none;
+                }
+
+            }
+
+        }
+
+        // .history {
+
+        //     .sc-htpNat {
+        //         width: 400px;
+
+
+        //     }
+
+        //     .cards {
+        //         .card {
+        //             .product-card-two {
+        //                 height: 390px;
+        //                 width: 319px;
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 gap: 30px;
+
+        //                 .card-top {
+        //                     width: 240px;
+        //                     height: 194px;
+        //                 }
+
+        //                 .product-diss {
+        //                     .product-discount {
+        //                         bottom: 158px;
+        //                         left: 95px;
+        //                     }
+
+        //                     .product-value {
+        //                         .price-tocart {
+        //                             display: flex;
+        //                             justify-content: flex-start;
+
+        //                             .add-to-cart {
+        //                                 width: 50px;
+        //                                 height: 50px;
+
+        //                                 button {
+        //                                     display: flex;
+        //                                     align-items: center;
+        //                                     justify-content: center;
+        //                                 }
+        //                             }
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+
+        // }
+
+        .smartphones,
+        .watches,
+        .notebook,
+        .refrigerators,
+        .refrigerators,
+        .tv,
+        .washing-machines {
+            .container-sm {
+                .title {
+                    padding: 45px 0px 47px 21px;
+
+                    h2 {
+                        font-size: 40px;
+                    }
+                }
+
+                .list-holders {
+                    ul {
+                        display: none;
+                    }
+
+                    .ul-lists-items {
+                        display: none;
+                    }
+
+                    .ul-lists-telephones {
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        gap: 10px;
+
+                        li {
+                            .product-cart {
+                                width: 291px;
+                                height: 390px;
+                            }
+                        }
+
+                        .telephones-child {
+                            width: 100%;
+
+                            .sc-bdVaJa {
+                                .sc-bwzfXH {
+                                    .sc-htpNat {
+                                        display: flex;
+                                        gap: 86px;
+
+                                        .sc-bxivhb {
+                                            width: auto;
+
+                                            li {
+                                                .product-cart {
+                                                    width: 345px;
+                                                    height: 416px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .sc-ifAKCX {
+                                    button {
+                                        color: transparent;
+                                        margin: 50px 0;
+                                        background-image: url('../public/images/sl.svg');
+                                        height: 60px;
+                                        width: 74px;
+                                        background-size: cover;
+                                        background-repeat: no-repeat;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
 
 }

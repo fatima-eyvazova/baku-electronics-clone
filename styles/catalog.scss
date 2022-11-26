@@ -1,4 +1,5 @@
 .single {
+    margin-top: 70px;
     display: flex;
     justify-content: space-between;
 
@@ -55,12 +56,12 @@
         .top-share {
             width: 100%;
             background-color: #f3f3f3;
-            width: 70vw;
             height: 230px;
             position: relative;
 
             .top-items {
                 padding-left: 20px;
+
 
                 .catagory-elements {
                     display: flex;
@@ -107,119 +108,121 @@
             }
         }
 
+        .catalog-list {
+            .catalog {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
 
-        .catalog {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
+
+                li {
+                    display: flex;
+                    flex-direction: row;
+
+                    .products {
+                        &:hover {
+                            box-shadow: 5px 5px 5px 5px rgb(163 163 163 / 5%);
+                        }
+
+                        background-color: #fff;
+                        border-radius: 4px;
+                        margin: 0 0 18px;
+                        width: 300px;
+                        height: 430px;
+                        padding: 20px 20px 11px;
+
+                        .product-about-items {
+                            position: relative;
+
+                            .product-childe {
+                                width: 70px;
+                                height: 70px;
+                                display: flex;
+                                font-size: 12px;
+                                text-align: center;
+                                color: #fff;
+                                background-color: #ea2427;
+                                border-radius: 50%;
+                                margin-bottom: 10px;
+                                position: absolute;
+                                bottom: 1px;
+
+                                .discount-childe-price {
+
+                                    text-align: center;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                }
+
+                                .icon {
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    color: #fff;
+                                }
+
+                                .sale {
+                                    text-align: center;
+                                    color: #fff;
+                                }
+                            }
+                        }
 
 
-            li {
-                display: flex;
-                flex-direction: row;
-
-                .products {
-                    &:hover {
-                        box-shadow: 5px 5px 5px 5px rgb(163 163 163 / 5%);
                     }
 
-                    background-color: #fff;
-                    border-radius: 4px;
-                    margin: 0 0 18px;
-                    width: 300px;
-                    height: 430px;
-                    padding: 20px 20px 11px;
+                    .product-childe-rate {
+                        display: flex;
+                        margin-bottom: 8px;
 
-                    a {
-                        position: relative;
+                        .icons {
+                            font-size: 19px;
+                            margin-right: 15px;
+                            color: rgb(243, 202, 21);
+                        }
 
-                        .product-childe {
-                            width: 70px;
-                            height: 70px;
-                            display: flex;
-                            font-size: 12px;
-                            text-align: center;
-                            color: #fff;
-                            background-color: #ea2427;
-                            border-radius: 50%;
-                            margin-bottom: 10px;
-                            position: absolute;
-                            bottom: 1px;
-
-                            .discount-childe-price {
-
-                                text-align: center;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-direction: column;
+                        .comments {
+                            a {
+                                font-size: 17px;
+                                color: #0076ff;
                             }
 
-                            .icon {
-                                font-size: 14px;
-                                font-weight: 700;
-                                font-family: Arial, Helvetica, sans-serif;
-                                color: #fff;
-                            }
-
-                            .sale {
-                                text-align: center;
-                                color: #fff;
-                            }
                         }
                     }
 
-
-                }
-
-                .product-childe-rate {
-                    display: flex;
-                    margin-bottom: 8px;
-
-                    .icons {
-                        font-size: 19px;
-                        margin-right: 15px;
-                        color: rgb(243, 202, 21);
-                    }
-
-                    .comments {
-                        a {
-                            font-size: 17px;
+                    a {
+                        &:hover {
+                            transition: color .3s ease;
                             color: #0076ff;
                         }
 
+                        color: #020303;
+                        margin-bottom: 10px;
+                        font-family: 'Segoe UI',
+                        Tahoma,
+                        Geneva,
+                        Verdana,
+                        sans-serif;
                     }
-                }
 
-                a {
-                    &:hover {
-                        transition: color .3s ease;
-                        color: #0076ff;
+                    .product-value {
+                        margin-top: 10px;
+
+                        .product-price {
+                            line-height: 1;
+                            font-weight: 700;
+                            font-size: 24px;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        }
                     }
 
-                    color: #020303;
-                    margin-bottom: 10px;
-                    font-family: 'Segoe UI',
-                    Tahoma,
-                    Geneva,
-                    Verdana,
-                    sans-serif;
+
                 }
-
-                .product-value {
-                    margin-top: 10px;
-
-                    .product-price {
-                        line-height: 1;
-                        font-weight: 700;
-                        font-size: 24px;
-                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                    }
-                }
-
-
             }
         }
+
     }
 }
 
@@ -247,19 +250,111 @@
                 }
             }
 
-            .catalog {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: auto;
+            .catalog-list {
+                .catalog {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: auto;
 
 
-                li {
-                    .products {
-                        width: 250px;
+                    li {
+                        .products {
+                            width: 250px;
 
+                        }
                     }
                 }
             }
+
+        }
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .single {
+        display: block;
+
+        .sidebar {
+            display: none;
+        }
+
+        .right {
+            .top-share {
+                width: 100%;
+                height: 70px;
+
+                .top-items {
+                    .catagory-elements {
+                        display: none;
+                    }
+
+                    .title-category {
+                        font-size: 20px;
+                    }
+                }
+
+                .image-catalog {
+                    display: none;
+                }
+            }
+
+            .catalog-list {
+
+
+                .catalog {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: auto;
+
+
+                    li {
+                        .products {
+                            width: 210px;
+                            height: 350px;
+
+                            .product-about-items {
+                                .product-childe {
+                                    width: 60px;
+                                    height: 60px;
+
+                                    .discount-childe-price {
+
+                                        .icon,
+                                        .sale {
+                                            font-size: 11px;
+                                        }
+
+                                    }
+                                }
+                            }
+
+                            .product-childe-rate {
+                                .icons {
+                                    font-size: 17px;
+                                }
+
+                                .comments {
+                                    a {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+
+                            a {
+                                font-size: 14px;
+
+                            }
+
+                            .product-value {
+                                .product-price {
+                                    font-size: 21px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

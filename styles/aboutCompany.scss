@@ -1,0 +1,342 @@
+.about-company {
+    .about-company-top {
+        background-image: url('../public/images/tex3.jpeg');
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 250px;
+
+        .company-top-inner {
+            .about-company-title {
+                text-align: left;
+                font-size: 36px;
+                margin-top: 30px;
+                padding: 45px 70px;
+                margin-bottom: 30px;
+                font-weight: 600;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+
+        .company-top-icon {
+            font-size: 119px;
+            position: absolute;
+            right: 247px;
+            color: #d3cdbe;
+        }
+    }
+
+    .about-company-bottom {
+        .static-text {
+            .static-text-block {
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+
+                .static-text-aside {
+                    width: 260px;
+                    padding: 50px 27px 18px 83px;
+
+                    .static-text-title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+
+                    }
+                }
+
+                .static-text-container {
+                    width: calc(100% - 260px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .static-text-title {
+                        font-size: 14px;
+                        line-height: 1.71;
+                        margin-bottom: 15px;
+                        width: 605px;
+                    }
+
+                    .handorgelAbout {
+                        .mission-history {
+                            .mission-history-child {
+                                .image-icon {
+                                    transform: rotate(180deg);
+                                    transition: all 1s;
+                                    color: #d90000;
+                                }
+
+                                .image-icon-down {
+                                    transform: rotate(360deg);
+                                    transition: all 1s;
+
+                                }
+
+                                .child-one {
+                                    width: 605px;
+                                    padding: 18px 24px 18px 24px;
+                                    border-radius: 4px;
+                                    border: 1px solid #dee0e5;
+                                    margin-bottom: 12px;
+                                    background-color: #fff;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .down {
+                                        padding: 3px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 10px;
+                                        font-weight: 400;
+                                        background-color: #efe8de;
+                                        text-align: center;
+                                        border-radius: 50%;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                }
+
+                                .title-image {
+                                    align-items: center;
+                                    width: 605px;
+                                    display: flex;
+                                    justify-content: center;
+
+                                    .mission-title {
+                                        .title {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                            margin-bottom: 15px;
+                                        }
+
+                                    }
+
+                                    .history-block {
+                                        width: 505px;
+
+                                        .item {
+
+                                            display: flex;
+                                            gap: 40px;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            .year-section {
+
+                                                .year {
+                                                    display: block;
+                                                    color: #ea2427;
+                                                    font-size: 22px;
+                                                    line-height: 1.18;
+                                                    font-weight: 900;
+                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                                }
+
+                                                .year-note {
+                                                    display: block;
+                                                    font-size: 12px;
+                                                    line-height: 26px;
+                                                    width: 80px;
+
+                                                }
+                                            }
+
+                                            .value {
+                                                p {
+                                                    width: 441px;
+                                                    font-size: 14px;
+                                                    line-height: 24px;
+                                                    margin-bottom: 15px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .news-section {
+                        display: flex;
+                        justify-content: space-around;
+
+                        .new-title {
+                            padding-top: 45px;
+                        }
+
+                        .new {
+                            display: flex;
+
+                            .new-top {
+                                h2 {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+
+    .about-company {
+        margin-top: 70px;
+
+        .about-company-top {
+            background-image: none;
+            background-color: #f8f6f3;
+
+            .company-top-inner {
+                .about-company-title {
+                    font-size: 32px;
+                    padding: 20px 10px;
+                    margin-top: 0;
+                    font-weight: 700;
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .company-top-icon {
+                top: 211px;
+                right: 93px;
+                font-size: 133px;
+            }
+        }
+
+        .about-company-bottom {
+            .static-text {
+                .static-text-block {
+                    display: block;
+                    flex-direction: column;
+
+                    .static-text-container {
+                        width: auto;
+
+
+                        .news-section {
+
+                            .new {
+                                .new-bottom {
+                                    .container-news-two {
+                                        display: block;
+                                        width: 100%;
+
+                                        .news-card-link {
+                                            border-left: 4px solid #ea2427;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:420px) {
+    #__next {
+        width: 420px;
+
+        .about-company {
+            margin-top: 70px;
+
+            .about-company-top {
+                background-image: none;
+                background-color: #f8f6f3;
+
+                .company-top-inner {
+                    .about-company-title {
+                        font-size: 27px;
+                        padding: 20px 10px;
+                        margin-top: 0;
+                        font-weight: 700;
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .company-top-icon {
+                    top: 211px;
+                    right: 93px;
+                    font-size: 133px;
+                }
+            }
+
+            .about-company-bottom {
+                .static-text {
+                    .static-text-block {
+                        display: block;
+                        flex-direction: column;
+
+                        .static-text-container {
+                            width: auto;
+
+                            .static-text-title {
+                                width: 400px;
+                            }
+
+                            .handorgelAbout {
+                                width: 410px;
+
+                                .mission-history {
+                                    .mission-history-child {
+
+                                        .child-one {
+                                            width: 400px;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .news-section {
+
+                            .new {
+                                width: 400px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                .new-bottom {
+                                    .container-news-two {
+                                        display: block;
+                                        height: 283px;
+                                        width: 374px;
+
+                                        .news-card-link {
+                                            height: 302px;
+                                            width: 408px;
+                                            border-left: 4px solid #ea2427;
+                                            background-repeat: no-repeat;
+                                            box-shadow: 0 3px 0 0 rgb(163 163 163 / 5%);
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

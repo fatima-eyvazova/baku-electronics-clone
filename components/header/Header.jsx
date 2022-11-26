@@ -259,7 +259,7 @@ const Header = ({ setShow, size }) => {
             <div className="other-right-child">
               <strong>Şirkət</strong>
               <ul className="other-content">
-                <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
+                <li><Link href="/aboutCompany">Şirkət haqqında</Link></li>
                 <li><Link href="/shops">Mağazalar</Link></li>
                 <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
                 <li><Link href="/satislar">Korporativ satışlar</Link></li>
@@ -388,7 +388,7 @@ const Header = ({ setShow, size }) => {
                   <strong className="title-menu">Məlumat</strong>
                   <ul className="menu-content">
                     <li><Link href="/campaigns">Kampaniyalar</Link></li>
-                    <li><Link href="/cart">Müştəri kartı</Link></li>
+                    <li><Link href="/user-cart">Müştəri kartı</Link></li>
                     <li><Link href="/bendler">Brendlər</Link></li>
                     <li><Link href="/blog">Bloq</Link></li>
                   </ul>
@@ -396,9 +396,9 @@ const Header = ({ setShow, size }) => {
                 <div className="menu-right-child">
                   <strong className="title-menu">Şirkət</strong>
                   <ul className="menu-content">
-                    <li><Link href="/haqqqinda">Şirkət haqqında</Link></li>
+                    <li><Link href="/aboutCompany">Şirkət haqqında</Link></li>
                     <li><Link href="/shops">Mağazalar</Link></li>
-                    <li><Link href="/vakansiyalar">Vakansiyalar</Link></li>
+                    <li><Link href="/vacancies">Vakansiyalar</Link></li>
                     <li><Link href="/satislar">Korporativ satışlar</Link></li>
                   </ul>
                 </div>
@@ -414,7 +414,6 @@ const Header = ({ setShow, size }) => {
             </div>
           </Drawer>
         </div>
-
       )}
     </div >
   );

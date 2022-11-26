@@ -649,7 +649,7 @@
             "discountAmount": "50 ₼",
             "subCategory": "smartphones",
             "category": "telefonlar-qadcetler",
-            "path": "smartfon-realme-9i-4gb128gb-prism-blue",
+            "path": "smartfon-realme-c25y-4gb128gb-metal-grey",
             "characteristics": {
               "imageRefregeritor": "/images/ip19.jpeg",
               "number": "0",
@@ -687,7 +687,7 @@
               "material": "Üst şüşə / Plastik korpus",
               "dimensions": "138.4 x 67.3 x 7.3 mm",
               "weight": "195 qr",
-              "color": "Qara",
+              "color": "Boz",
               "includes": "Phone,Charger,USB Type-C Cableb",
               "garranty": "1 il"
             }
@@ -797,7 +797,7 @@
               "material": "Üst şüşə / Plastik korpus",
               "dimensions": "138.4 x 67.3 x 7.3 mm",
               "weight": "195 qr",
-              "color": "Qara",
+              "color": "Boz",
               "includes": "Phone,Charger,USB Type-C Cableb",
               "garranty": "1 il"
             }
@@ -1198,8 +1198,8 @@
       },
       "tablets": {
         "subCategoryImage": "/images/sll.png",
-        "subCategoryTitle": "Planshetler",
-        "subCategoryDescription": "Planshetler",
+        "subCategoryTitle": "Planşetlər",
+        "subCategoryDescription": "Telefonlar, planşetlər və qadcetlər",
         "brands": [
           "Samsung",
           "XIAOMI",
@@ -6805,6 +6805,22 @@
           }
         ]
       }
+    },
+    "blog": {
+      "items": [
+        {
+          "id": 1,
+          "image": "/images/a1.jpeg",
+          "news": "Xəbərlər",
+          "title": "Qırmızını seç, daha çox endirim qazan!"
+        },
+        {
+          "id": 2,
+          "image": "/images/a1.jpeg",
+          "news": "Xəbərlər",
+          "title": "Qırmızını seç, daha çox endirim qazan!"
+        }
+      ]
     }
   }
 }

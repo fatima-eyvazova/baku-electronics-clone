@@ -54,7 +54,6 @@ const CatalogProductTypePage = () => {
                     <ul className='product-card-item'>
                         {products?.map(item => (
                             <ProductCard key={item?.id} item={item} isViewed />
-
                         ))}
                     </ul>
                 </div>

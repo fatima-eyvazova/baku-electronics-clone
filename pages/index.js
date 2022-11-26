@@ -13,7 +13,6 @@ import slider10 from "../public/images/slider10.jpeg"
 import slider11 from "../public/images/slider11.jpeg"
 import slider12 from "../public/images/slider12.jpeg"
 import slider13 from "../public/images/slider13.jpeg"
-
 // icons
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ProductCard from "../components/productCard/ProductCard";
@@ -28,9 +27,14 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import Viewed from "../components/viewed/Viewed";
 import News from "../components/news/News";
 import CustomHead from "../components/customHead/customHead";
+import ItemsCarousel from "react-items-carousel";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const [data, setData] = useState();
+  const viewedProducts = useSelector(state => state.viewed.viewedProducts);
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const chevronWidth = 40;
 
   useEffect(() => {
     setData(dataJson);
@@ -38,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <main>
+      <div className="container">
         <CustomHead title='Baku Electronics Home' />
         {/* section aside-swiper */}
         <section className="aside-swiper" >
@@ -49,11 +53,9 @@ export default function Home() {
                   <Link href="/catalog/telefonlar-qadcetler">
                     Telefonlar, planşetlər və qadcetlər
                   </Link>
-
                   <span className="span">
                     <MdOutlineArrowForwardIos />
                   </span>
-                  {/* <div></div> */}
                   <ul className="dropdawn">
                     <li>
                       <Link href="/catalog/telefonlar-qadcetler/smartphones">Smartfonlar, mobil telefonlar</Link>
@@ -82,6 +84,17 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li >
+                          <Link href="/catalog/telefonlar-qadcetler/accessories/usb">USB və AUX kabellər</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/ceys">Telefon üçün keyslər</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/kart">Yaddaş kartları</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/protectors">Ekran qoruyucuları və plyonkalar</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/adapters">Adapterlər</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/selfieSticks">Selfi çubuqları və ştativlər</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/triggers">Smartfon üçün qeympadlar, triqqerlər</Link></li>
+                        <li><Link href="/catalog/telefonlar-qadcetler/accessories/various">Müxtəlif</Link></li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
@@ -123,6 +136,11 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/tv-audio-video/accessories/wallHangers">Kronşteyn və divar asılqanları</Link></li>
+                        <li><Link href="/catalog/tv-audio-video/accessories/tvStands">TV tumbalar</Link></li>
+                        <li><Link href="/catalog/tv-audio-video/accessories/hdmi">HDMI / Audio / Video kabelləri</Link></li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
@@ -153,6 +171,10 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/printers-and-cartridges/printers">Printerlər</Link></li>
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/printers-and-cartridges/cartridges">Kartriclər</Link></li>
+                      </ul>
                     </li>
                     <li>
                       <Link href="/catalog/noutbuklar-kompyuterler/mouses">Klaviatura və kompüter siçanları</Link>
@@ -168,6 +190,12 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/accessories/flashCollector">Fleş toplayıcı</Link></li>
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/accessories/webCamera">Veb kameralar</Link></li>
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/accessories/ipCamer">IP kameralar</Link></li>
+                        <li><Link href="/catalog/noutbuklar-kompyuterler/accessories/microphones">Mikrofonlar</Link></li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
@@ -210,6 +238,11 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/iqlim-texnikasi/merkezlesdirilmis-isitme-soyutma-havalandirma/cac">CAC (Ticari) tipli sistemlər</Link></li>
+                        <li><Link href="/catalog/iqlim-texnikasi/merkezlesdirilmis-isitme-soyutma-havalandirma/vrf">VRF sistemlər</Link></li>
+                        <li><Link href="/catalog/iqlim-texnikasi/merkezlesdirilmis-isitme-soyutma-havalandirma/ahu">AHU və Fanlar</Link></li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
@@ -260,25 +293,20 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/kicik-meiset-texnikasi/metbex-komekcileri/blenders">Blenderlər</Link></li>
+                        <li><Link href="/catalog/kicik-meiset-texnikasi/metbex-komekcileri/kitchenScales">Mətbəx tərəziləri</Link></li>
+                      </ul>
                     </li>
                     <li>
                       <Link href="/catalog/kicik-meiset-texnikasi/yemek-hazirlanmasi/">Yemək hazırlanması</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
                     </li>
                     <li>
                       <Link href="/catalog/kicik-meiset-texnikasi/qehve-sire-ickiler">Qəhvə, şirə, içkilər</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
                     </li>
 
                     <li>
                       <Link href="/catalog/kicik-meiset-texnikasi/eve-geyime-qulluq/">Evə və geyimə qulluq</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
                     </li>
                     <li>
                       <Link href="/catalog/kicik-meiset-texnikasi/accessories">Aksesuarlar</Link>
@@ -353,35 +381,25 @@ export default function Home() {
                   <ul className="dropdawn">
                     <li>
                       <Link href="/catalog/mebel/qonaq-otagi-ucun-mebel">Qonaq otağı</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
 
                     <li>
                       <Link href="/catalog/mebel/yataq-otagi-mebel">Yataq otağı</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                     <li>
                       <Link href="/catalog/mebel/yumsaq-mebel">Yumşaq mebel</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
 
                     <li>
                       <Link href="/catalog/mebel/genc-otagi/">Gənc otağı</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                     <li>
                       <Link href="/catalog/mebel/tv-stendler">TV stendlər</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                     <li>
                       <Link href="/catalog/mebel/jurnal-masalari">Jurnal masaları</Link>
@@ -394,6 +412,12 @@ export default function Home() {
                       <span>
                         <MdOutlineArrowForwardIos />
                       </span>
+                      <ul className="dropdawn-child">
+                        <li><Link href="/catalog/mebel/ev-tekstili/beddingSets">Yataq dəstləri</Link></li>
+                        <li><Link href="/catalog/mebel/ev-tekstili/bedCovers">Yataq örtükləri</Link></li>
+                        <li><Link href="/catalog/mebel/ev-tekstili/pillows">Yastıqlar</Link></li>
+                        <li><Link href="/catalog/mebel/ev-tekstili/blankets">Yorğanlar</Link></li>
+                      </ul>
                     </li>
                     <li>
                       <Link href="/catalog/mebel/dekor">Dekor və interyer</Link>
@@ -408,15 +432,10 @@ export default function Home() {
                   <ul className="dropdawn">
                     <li>
                       <Link href="/catalog/qab-qacaq/qab-qacaq/">Qab-qacaq</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                     <li>
                       <Link href="/catalog/qab-qacaq/tava-qazan">Tava-Qazan</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
                     </li>
                   </ul>
                 </li>
@@ -440,10 +459,8 @@ export default function Home() {
                       <Link href="/catalog/ev-bag/seyf">Seyflər</Link>
                     </li>
                     <li>
-                      <Link href="/catalog/ev-bag/insaat-mehsullari/">İnşaat məhsulları</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+                      <Link href="/catalog/ev-bag/insaat-mehsullari">İnşaat məhsulları</Link>
+
                     </li>
                   </ul>
                 </li>
@@ -481,18 +498,13 @@ export default function Home() {
                     </li>
                     <li>
                       <Link href="/catalog/velosipedler-qirobordlar/skuter-motosiklet-aksesuarlari/">Skuter və motosiklet aksesuarları</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
                     </li>
                     <li>
                       <Link href="/catalog/velosipedler-qirobordlar/velosiped-aksesuarlari/">Velosiped aksesuarları</Link>
                     </li>
                     <li>
                       <Link href="/catalog/velosipedler-qirobordlar/turizm-və-kempinq/">Turizm və kempinq</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                   </ul>
                 </li>
@@ -524,9 +536,7 @@ export default function Home() {
                     </li>
                     <li>
                       <Link href="/catalog/musiqi-aletleri-ve-avadanliqlari/musiqi-aletleri/">Musiqi alətləri</Link>
-                      <span>
-                        <MdOutlineArrowForwardIos />
-                      </span>
+
                     </li>
                   </ul>
                 </li>
@@ -553,104 +563,104 @@ export default function Home() {
                 <Image
                   src={slider1}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={527}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider2}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider3}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider4}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider5}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider6}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider7}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider8}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider9}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider10}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider11}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider12}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src={slider13}
                   alt="slide"
-                  width={1003}
-                  height={471}
+                  width={1093}
+                  height={557}
                 />
               </SwiperSlide>
             </Swiper>
@@ -675,6 +685,25 @@ export default function Home() {
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["telefonlar-qadcetler"]?.smartphones?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
+
+              </ul>
             </div>
           </div>
         </section>
@@ -696,6 +725,25 @@ export default function Home() {
                 {data?.products?.["telefonlar-qadcetler"]?.watches?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
+              </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["telefonlar-qadcetler"]?.watches?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
+
               </ul>
             </div>
           </div>
@@ -719,7 +767,25 @@ export default function Home() {
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["noutbuklar-kompyuterler"]?.notebooks?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
 
+              </ul>
             </div>
           </div>
         </section>
@@ -741,6 +807,25 @@ export default function Home() {
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["boyuk-meiset-texnikasi"]?.refrigerators?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
+
+              </ul>
             </div>
           </div>
         </section>
@@ -761,6 +846,25 @@ export default function Home() {
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["tv-audio-video"]?.tv?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
+
+              </ul>
             </div>
           </div>
         </section>
@@ -776,17 +880,36 @@ export default function Home() {
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
-
               <ul className="ul-lists-items">
                 {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.items?.slice(0, 2).map((product) => (
                   <ProductCard key={product?.id} item={product} />
                 ))}
               </ul>
+              <ul className="ul-lists-telephones">
+                <div className="telephones-child" style={{ padding: `0 ${chevronWidth}px` }}>
+                  <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={3}
+                    gutter={20}
+                    leftChevron={<button>{"<"}</button>}
+                    rightChevron={<button>{">"}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                  >
+                    {data?.products?.["boyuk-meiset-texnikasi"]?.washingMachine?.items?.slice(0, 4).map((product) => (
+                      <ProductCard key={product?.id} item={product} />
+                    ))}
+                  </ItemsCarousel>
+                </div>
+
+              </ul>
+
             </div>
           </div>
         </section>
         <News />
-      </main >
+      </div >
     </>
   );
 }

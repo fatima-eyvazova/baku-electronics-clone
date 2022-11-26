@@ -85,14 +85,7 @@ const FavoriteItem = ({ product }) => {
                     </div >
                 </div>
             </div>
-            {/* <div className="mobile">
-                <Link href={`/catalog/${product?.category}/${product?.subCategory}`}>
-                    {product?.subCategory}
-                </Link>
-                <span className="icon-row">
-                    <HiOutlineArrowRight />
-                </span>
-            </div> */}
+
         </li >
 
     )

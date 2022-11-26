@@ -2,6 +2,7 @@
     display: flex;
     padding-left: 80px;
     align-items: center;
+    margin-top: 70px;
 
     .top-cards {
         display: flex;
@@ -161,6 +162,49 @@
                 h2 {
                     font-size: 20px;
                     margin: 20px 0px 0px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .campaigns-section {
+        padding-left: 0px;
+
+        .top-cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 10px;
+
+            .campaigns-top {
+                .categories {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 20px;
+                    margin: 20px 0px 0px;
+                }
+            }
+
+            .campaigns-cards {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .container-cm {
+
+                    .news-card-campaign,
+                    .news-card-campaigns,
+                    .news-card-campaign-three,
+                    .news-card-campaign-four {
+
+                        width: 400px;
+
+                    }
                 }
             }
         }

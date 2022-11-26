@@ -5,6 +5,7 @@
   height: 120px;
   padding: 0 20px;
   border-bottom: 1px solid rgb(236, 230, 230);
+  top: 0;
 
   .badge {
     border-radius: 50%;
@@ -249,6 +250,81 @@
         color: #020303;
         transition: color .3s ease;
         font-size: 29px;
+        align-items: center;
+        padding-right: 10px;
+        font-family: 'Oswald', sans-serif;
+
+      }
+    }
+
+    .header-right {
+      .holder {
+        .icon {
+          display: none;
+        }
+
+        ul {
+          display: none;
+        }
+
+        .call {
+          display: none;
+        }
+      }
+
+      .users {
+        ul {
+          .search {
+            display: block;
+          }
+
+          .user,
+          .favori {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:420px) {
+  .header {
+    top: 0;
+    position: fixed;
+    background-color: white;
+    z-index: 1400;
+    min-width: 375px;
+    height: 70px;
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .burger-menu {
+        display: block;
+
+        button {
+          font-size: 30px;
+        }
+      }
+
+      .logo {
+        display: none;
+      }
+
+      .logo-baku {
+        display: block;
+      }
+
+      .call-contact {
+        display: block;
+        justify-content: center;
+        color: #020303;
+        transition: color .3s ease;
+        font-size: 20px;
         align-items: center;
         padding-right: 10px;
         font-family: 'Oswald', sans-serif;

@@ -46,8 +46,8 @@ const Viewed = () => {
                                                 <a>
                                                     <Image
                                                         src={item?.image}
-                                                        width={320}
-                                                        height={274}
+                                                        width={560}
+                                                        height={480}
                                                         alt="notebook"
                                                     />
                                                 </a>
@@ -88,11 +88,6 @@ const Viewed = () => {
                                                 <span className="span-price-item">Qiymet</span>
                                                 <div className="price-tocart">
                                                     <div className="product-price">{item?.price} </div>
-                                                    <div className="add-to-cart">
-                                                        <button >
-                                                            <AiOutlineShoppingCart />
-                                                        </button>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

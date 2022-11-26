@@ -238,6 +238,8 @@ $second-color: #4da0ff;
 
 @media only screen and (max-width:768px) {
     .footer {
+        width: 768px;
+
         .container-footer {
             .box {
 
@@ -257,5 +259,29 @@ $second-color: #4da0ff;
             }
         }
     }
+}
 
+@media only screen and (max-width:420px) {
+    .footer {
+        width: 420px;
+
+        .container-footer {
+            .box {
+
+                .footer-left {
+                    display: none;
+                }
+
+                .footer-right {
+                    width: 420px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+
+                }
+
+            }
+        }
+    }
 }

@@ -10,6 +10,7 @@ const BasketItem = ({ item }) => {
     const dispatch = useDispatch();
     const findedItem = basketProducts?.find((pr) => item.product.id === pr?.product?.id && item.product.title === pr?.product?.title);
 
+    console.log({ item });
     const handleAddToBasket = () => {
         if (findedItem) {
             const filteredProducts = basketProducts?.filter((pr) => item.product.id !== pr?.product?.id &&
@@ -63,41 +64,53 @@ const BasketItem = ({ item }) => {
         <div className="basket-item-left">
             <div className="basket-item">
                 <div className="order-card">
-                    <figure className="order-image">
-                        <Link href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}>
-                            <Image
-                                src={item?.product?.image}
-                                width={191}
-                                height={127}
-                            />
-                        </Link>
-                    </figure>
-                    <div className="order-title">
-                        <Link href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}>
-                            {item?.product?.title}
-                        </Link>
-                        <span className="product-code">
-                            Məhsul kodu: {item?.product?.code}
-                        </span>
-                    </div>
-                    <div className="order-counter">
-                        <form>
-                            <div className="counter">
-                                <button onClick={handleRemoveFromBasket}><IoRemove /></button>
-                                <span className="count">{item?.count}</span>
-                                <button onClick={handleAddToBasket}><IoAddSharp /></button>
-                            </div>
-                        </form>
-                    </div>
-                    <div className="order-price">
-                        <div className="price">
-                            <div className="product-price-cur">
-                                <span>
-                                    {item?.product?.price}
-                                </span>
-                            </div>
+                    <div className="order-card-left">
+                        <div className="card-left-child">
+                            <span className="image-title">
+                                <figure className="order-image">
+                                    <Link href={`/catalog/${item?.product?.category}/${item?.product?.subCategory}/${item?.product?.path}`}>
+                                        <Image
+                                            src={item?.product?.image}
+                                            width={191}
+                                            height={127}
+                                        />
+                                    </Link>
+                                </figure>
+                                <div className="order-title">
+                                    <Link href={`/catalog/${item?.product?.category}/${item?.product?.subCategory}/${item?.product?.path}`}>
+                                        {item?.product?.title}
+                                    </Link>
+                                    <span className="product-code">
+                                        Məhsul kodu: {item?.product?.code}
+                                    </span>
+                                </div>
+                            </span>
+
+                            <span className="counter-price">
+                                <div className="order-counter">
+                                    <form>
+                                        <div className="counter">
+                                            <button onClick={handleRemoveFromBasket}><IoRemove /></button>
+                                            <span className="count">{item?.count}</span>
+                                            <button onClick={handleAddToBasket}><IoAddSharp /></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div className="order-price">
+                                    <div className="price">
+                                        <div className="product-price-cur">
+                                            <span>
+                                                {item?.product?.price}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
                         </div>
+
                     </div>
+
+
                     <div className="order-close">
                         <button onClick={handleRemoveItemFromBasket}><CiCircleRemove /></button>
                     </div>
