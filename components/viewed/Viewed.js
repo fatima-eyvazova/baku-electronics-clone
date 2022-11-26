@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import ItemsCarousel from "react-items-carousel";
-import { AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useDispatch, useSelector } from "react-redux";
-import { addToBasketAction } from "../../store/actions/actions";
+import { useSelector } from "react-redux";
 
 const Viewed = () => {
 

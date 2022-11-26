@@ -17,7 +17,7 @@ import slider13 from "../public/images/slider13.jpeg"
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ProductCard from "../components/productCard/ProductCard";
 import dataJson from "../data/data.json";
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -28,11 +28,9 @@ import Viewed from "../components/viewed/Viewed";
 import News from "../components/news/News";
 import CustomHead from "../components/customHead/customHead";
 import ItemsCarousel from "react-items-carousel";
-import { useSelector } from "react-redux";
 
 export default function Home() {
   const [data, setData] = useState();
-  const viewedProducts = useSelector(state => state.viewed.viewedProducts);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 40;
 

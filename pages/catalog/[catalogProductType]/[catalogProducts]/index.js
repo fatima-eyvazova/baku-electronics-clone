@@ -26,23 +26,6 @@ const CatalogProductPage = () => {
   }, [query.catalogProducts]);
   const starList = [1, 2, 3, 4, 5];
 
-  const [dataArray, setDataArray] = useState(dataJson);
-
-  // const hidehandler = (id) => {
-  //   console.log("Hide Handler callled with ", dataArray[id]);
-
-  //   const newDataArray = dataJson.map((image) => {
-  //     if (image.id === id) {
-  //       console.log("Id is", id);
-  //       return { ...image, hide: false };
-  //     } else {
-  //       return { ...image, hide: true };
-  //     }
-  //   });
-
-  //   setDataArray([...newDataArray]);
-  // };
-
   const handleCheckboxBrand = (e) => {
     if (brand === e.target.name) {
       setBrand('');
@@ -68,9 +51,9 @@ const CatalogProductPage = () => {
 
   const list = products?.items;
 
-  if (!!brand) {
+  if (Boolean(brand)) {
     list = filteredByBrand;
-  } else if (!!color) {
+  } else if (Boolean(color)) {
     list = filteredByColor;
   }
 

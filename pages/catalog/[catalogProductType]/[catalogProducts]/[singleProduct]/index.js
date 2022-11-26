@@ -14,7 +14,7 @@ import CustomHead from "../../../../../components/customHead/customHead";
 import chevronDown from '../../../../../public/icons/chevronDown.svg';
 
 const SingleProductPage = () => {
-  const boolList = new Array(9).fill(false);
+  const boolList = new Array(4).fill(false);
   const [showDropDown, setShowDropdown] = useState(boolList);
   const toggleDropdown = (index) => {
     setShowDropdown(prev => ([...prev, prev[index] = !prev[index]]));
@@ -64,14 +64,14 @@ const SingleProductPage = () => {
   }
 
   const handleAddToBasket = () => {
-    const findedItem = basketProducts?.find((item) => item.product.id === product?.id && item.product.title === product?.title);
+    const findedItem = basketProducts?.find((item) => item.product.title === product?.title);
 
     if (findedItem == undefined) {
       dispatch(
         addToBasketAction([...basketProducts, { product: product, count: 1 }])
       );
     } else {
-      const filteredProducts = basketProducts?.filter((item) => item.product.id !== product?.id &&
+      const filteredProducts = basketProducts?.filter((item) =>
         item.product.title !== product?.title
       );
       dispatch(

@@ -10,12 +10,9 @@ const BasketItem = ({ item }) => {
     const dispatch = useDispatch();
     const findedItem = basketProducts?.find((pr) => item.product.id === pr?.product?.id && item.product.title === pr?.product?.title);
 
-    console.log({ item });
     const handleAddToBasket = () => {
         if (findedItem) {
-            const filteredProducts = basketProducts?.filter((pr) => item.product.id !== pr?.product?.id &&
-                item.product.title !== pr?.product?.title
-            );
+            const filteredProducts = basketProducts?.filter((pr) => item.product.title !== pr?.product?.title);
             dispatch(
                 addToBasketAction([
                     ...filteredProducts,
