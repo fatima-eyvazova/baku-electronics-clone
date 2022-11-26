@@ -37,7 +37,7 @@ const CampaignsPage = () => {
               <div className="blog-item-label">Endirim</div>
               <div className='campaigns-about'>
                 <span className='campaigns'>1 Oktyabr - 30 Noyabr</span>
-                <p className='about-one'>21gün: 23saat : 37deq</p>
+                <p className='about-one'>4gün: 23saat : 37deq</p>
               </div>
 
             </div >
@@ -50,7 +50,7 @@ const CampaignsPage = () => {
               <div className="blog-item-label">Endirim</div>
               <div className='campaigns-about'>
                 <span className='campaigns'>19 Sentyabr - 28 Fevral</span>
-                <p className='about-one'>112gün : 23saat : 37deq</p>
+                <p className='about-one'>94gün : 23saat : 37deq</p>
               </div>
 
             </div >
@@ -63,7 +63,7 @@ const CampaignsPage = () => {
               <div className="blog-item-label">Nisyə alış</div>
               <div className='campaigns-about'>
                 <span className='campaigns'>1 Noyabr - 31 Dekabr</span>
-                <p className='about-one'>53gün : 10saat : 20deq</p>
+                <p className='about-one'>43gün : 10saat : 20deq</p>
               </div>
 
             </div >
@@ -76,7 +76,7 @@ const CampaignsPage = () => {
               <div className="blog-item-label">Hədiyyə</div>
               <div className='campaigns-about'>
                 <span className='campaigns'>19 Sentyabr - 28 Fevral</span>
-                <p className='about-one'>13gün : 14saat : 18deq</p>
+                <p className='about-one'>52gün : 14saat : 18deq</p>
               </div>
 
             </div >
