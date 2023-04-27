@@ -21,7 +21,6 @@ const FavoriteItem = ({ product }) => {
             }
         }
     }
-
     return (
         <li>
             <div className="product-cart">

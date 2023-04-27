@@ -86,7 +86,6 @@ const CatalogProductPage = () => {
                   <input type="checkbox" id={products?.brandH} name={products?.brandH} checked={brand === `${products?.brandH}`} onChange={(e) => handleCheckboxBrand(e)} />
                   <label for={products?.brandH}>{products?.brandH}</label>
                 </div>
-
               </div>
             </div>
             <div className="sidebar-block">

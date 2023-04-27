@@ -4,13 +4,31 @@ import { AiOutlineStar } from "react-icons/ai";
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSelector } from "react-redux";
+const colors = {
+    orange: "#FFBA5A",
+    grey: "#a9a9a9"
+
+};
 
 const Viewed = () => {
 
     const viewedProducts = useSelector(state => state.viewed.viewedProducts);
     const [activeItemIndex, setActiveItemIndex] = useState(0);
+
     const chevronWidth = 40;
     const starList = [1, 2, 3, 4, 5];
+
+    const [colorClick, setColorClick] = useState(0)
+    const [colorOver, setColorOver] = useState(0)
+    function viewedClick(value) {
+        setColorClick(value)
+    }
+    function viewedOver(value) {
+        setColorOver(value)
+    }
+    function viewedLive() {
+        setColorOver(undefined)
+    }
 
     if (viewedProducts?.length === 0) {
         return;
@@ -65,7 +83,12 @@ const Viewed = () => {
                                                 <div className="icons">
                                                     {starList.map((star) => (
                                                         <span key={star}>
-                                                            <AiOutlineStar />
+                                                            <AiOutlineStar
+                                                                onMouseOver={() => viewedOver(star + 1)}
+                                                                onMouseLeave={viewedLive}
+                                                                onClick={() => viewedClick(star + 1)}
+                                                                color={(colorClick || colorOver) > star ? colors.orange : colors.grey}
+                                                            />
                                                         </span>
                                                     ))}
                                                 </div>
