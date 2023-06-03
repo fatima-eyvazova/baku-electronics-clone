@@ -39,7 +39,7 @@ const SingleProductPage = () => {
       setHeartColor(findedItem ? 'red' : 'black');
     }
     setProduct(selected);
-  }, [query.catalogProducts, query.singleProduct, favs]);
+  }, [query?.catalogProducts, query?.singleProduct, favs]);
 
   useEffect(() => {
     const viewedItem = viewedProducts?.find(item => item?.id === product?.id && item?.title === product?.title);

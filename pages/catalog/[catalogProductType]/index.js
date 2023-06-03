@@ -26,7 +26,7 @@ const CatalogProductTypePage = () => {
 
     return (
         <>
-            <CustomHead title={`Baku Electronics Catalog ${query.catalogProductType}`} />
+            <CustomHead title={`Baku Electronics Catalog ${query?.catalogProductType}`} />
             <div className="catalog-section">
                 <div className="catalog-right">
                     <div className="top-catalog ">
@@ -34,7 +34,7 @@ const CatalogProductTypePage = () => {
                             <div className="catalogs-elements">
                                 <span className="catagory-span">Bütün kateqoriyalar</span>
                                 <span className="icon-span"><HiOutlineArrowNarrowRight /></span>
-                                <span className="catagory-span">{query.catalogProductType}</span>
+                                <span className="catagory-span">{query?.catalogProductType}</span>
                             </div>
 
                             <h1 className="title-catalog">{products?.subCategoryTitle}</h1>

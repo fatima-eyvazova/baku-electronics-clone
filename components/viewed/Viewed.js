@@ -54,10 +54,11 @@ const Viewed = () => {
                             chevronWidth={chevronWidth}
                         >
                             {viewedProducts?.map(item => (
-                                <div className="card">
-                                    <div className="product-card-two">
+                                <div className="card" key={item}>
+                                    <div className="product-card-two" >
                                         <div className="card-top">
                                             <Link
+                                                key={item}
                                                 href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
                                             >
                                                 <a>

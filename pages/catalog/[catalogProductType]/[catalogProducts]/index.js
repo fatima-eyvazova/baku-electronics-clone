@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import dataJson from '../../../../data/data.json';
 import Link from "next/link";
 import { AiOutlineStar } from "react-icons/ai";
@@ -19,11 +19,11 @@ const CatalogProductPage = () => {
   const { query } = router;
 
   useEffect(() => {
-    const selected = dataJson?.products?.[query.catalogProductType]?.[query.catalogProducts];
+    const selected = dataJson?.products?.[query?.catalogProductType]?.[query?.catalogProducts];
     if (selected) {
       setProducts(selected);
     }
-  }, [query.catalogProducts]);
+  }, [query?.catalogProducts]);
   const starList = [1, 2, 3, 4, 5];
 
   const handleCheckboxBrand = (e) => {
@@ -155,7 +155,7 @@ const CatalogProductPage = () => {
             <ul className="catalog">
               <>
                 {list?.map(item => (
-                  <li>
+                  <li key={item}>
                     <div className="products">
                       <Link
                         href={`/catalog/${item?.category}/${item?.subCategory}/${item?.path}`}
