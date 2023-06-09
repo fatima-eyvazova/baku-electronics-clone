@@ -35,13 +35,13 @@
     "styled-components": "^5.3.6",
     "swiper": "^8.4.4",
     "uuid": "^9.0.0",
-    "yup": "^0.32.11"
-  },
-  "devDependencies": {
-    "@types/brainhubeu__react-carousel": "^2.0.5",
-    "eslint": "8.25.0",
+    "yup": "^0.32.11",
     "eslint-config-next": "12.3.1",
     "sass": "^1.55.0",
     "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/brainhubeu__react-carousel": "^2.0.5",
+    "eslint": "8.25.0"
   }
 }
