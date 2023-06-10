@@ -342,7 +342,18 @@ const Header = ({ setShow, size }) => {
                         aria-label="Register"
                         type="submit"
                         size="large"
-                        style={{ opacity: !isValid ? 0.5 : 1 }}
+                        style={{
+                          opacity: !isValid ? 0.5 : 1,
+                          backgroundColor: '#ea2427',
+                          color: '#fff',
+                          fontSize: '1rem',
+                          fontWeight: 700,
+                          lineHeight: 1,
+                          padding: '5px 15px',
+                          marginTop: '20px',
+                          borderRadius: '100px',
+                          height: '50px'
+                        }}
                         disabled={!isValid}
                       >
                         Qeydiyyatdan keçmək
