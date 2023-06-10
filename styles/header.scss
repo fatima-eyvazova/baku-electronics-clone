@@ -395,7 +395,8 @@
         display: flex;
         margin-left: 16px;
 
-        .user {
+        .user,
+        .favori {
           &:hover {
             border-color: red;
             cursor: pointer;
@@ -429,8 +430,10 @@
   }
 
   .menu-content {
-    &:hover {
-      color: rgb(59, 146, 217);
+    li {
+      &:hover {
+        color: rgb(59, 146, 217);
+      }
     }
   }
 }
