@@ -280,16 +280,22 @@ const Header = ({ setShow, size }) => {
 
       {openAuthDrawer && (
         <Drawer
-
           anchor="right"
           open={openAuthDrawer}
           onClose={toggleDrawe(false)}
+          PaperProps={{
+            style: {
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }
+          }}
         >
           <div className="modal-right-box">
             <div className="modal-inner-box">
               <div className="register-icon">
                 {linkIsSent == false ? (
-                  <div className="register-childe">
+                  <div className="register-childe" style={{ width: 400 }}>
                     <Typography
                       className="mt-32 text-4xl font-extrabold tracking-tight leading-tight text-center"
                       mb={5}
@@ -300,6 +306,11 @@ const Header = ({ setShow, size }) => {
                       name="registerForm"
                       className="flex flex-col justify-center w-full mt-32"
                       onSubmit={handleSubmit(onSubmit)}
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '10px'
+                      }}
                     >
                       <TextField
                         className="mb-24"
