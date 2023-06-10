@@ -397,7 +397,7 @@ const Header = ({ setShow, size }) => {
             anchor="left"
             open={burgerMenu}
             onClose={() => setBurgerMenu(false)}
-            style={{
+            PaperProps={{
               height: '87%',
               top: '70px',
               width: '440px',
