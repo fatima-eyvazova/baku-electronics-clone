@@ -287,7 +287,9 @@ const Header = ({ setShow, size }) => {
             style: {
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              width: '500px',
+              background: '#ece8e0'
             }
           }}
         >
@@ -299,6 +301,14 @@ const Header = ({ setShow, size }) => {
                     <Typography
                       className="mt-32 text-4xl font-extrabold tracking-tight leading-tight text-center"
                       mb={5}
+                      style={{
+                        lineHeight: 1.5,
+                        letterSpacing: '0.00938em',
+                        marginBottom: '40px',
+                        fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                        fontWeight: '700',
+                        fontSize: '23px'
+                      }}
                     >
                       Qeydiyyat
                     </Typography>
