@@ -397,6 +397,13 @@ const Header = ({ setShow, size }) => {
             anchor="left"
             open={burgerMenu}
             onClose={() => setBurgerMenu(false)}
+            PaperProps={{
+              height: '87%',
+              top: '70px',
+              width: '440px',
+              backgroundColor: '#efe8de',
+              animation: 'menu-shift 0.4s ease'
+            }}
           >
             <div className="menu-left">
               <div className="users">
