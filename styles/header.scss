@@ -368,3 +368,13 @@
   flex-direction: column;
   gap: 6px;
 }
+
+@media only screen and (max-width: 768px) {
+  .css-1u2w381-MuiModal-root-MuiDrawer-root .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+    height: 87%;
+    top: 70px;
+    width: 440px;
+    background-color: #efe8de;
+    animation: menu-shift 0.4s ease;
+  }
+}
