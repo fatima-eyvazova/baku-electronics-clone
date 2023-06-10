@@ -393,18 +393,18 @@
 
       ul {
         display: flex;
-        margin-left: 16px;
 
         .user,
         .favori {
-          &:hover {
-            border-color: red;
-            cursor: pointer;
-          }
 
           padding: 0 5px;
 
           button {
+            &:hover {
+              border-color: red;
+              cursor: pointer;
+            }
+
             justify-content: center;
             color: #020303;
             border: 1px solid #e1e2e7;
