@@ -435,7 +435,7 @@
                 align-items: center;
 
                 .register-childe {
-                    width: 400px;
+                    // width: 400px;
 
                     .css-17665zs-MuiTypography-root {
                         line-height: 1.5;
@@ -705,6 +705,7 @@
 
             .swiper {
                 width: 100%;
+                margin-top: 12px;
 
                 .swiper-button-prev {
                     display: none;
@@ -851,6 +852,10 @@
 
         }
 
+    }
+
+    .register-childe {
+        margin-left: 10%;
     }
 
 }
